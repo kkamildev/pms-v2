@@ -30,6 +30,12 @@ exports.insertLandTypesFile = async (req, res) => {
     });
 }
 
+exports.updateLandType = async (req, res) => {
+    const {idLandType, type} = req.body;
+    const [affectedRows] = await LandType.update({type}, {where:{id:idLandType}})
+    res.status(200).json({success:true, message:"Typ działki zaktulizowany", affectedRows})
+}
+
 exports.deleteLandType = async (req, res) => {
     const {idLandType} = req.body;
     const deletedCount = await LandType.destroy({where:{id:idLandType}});

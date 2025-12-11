@@ -11,7 +11,7 @@ exports.getAllUsers = async (req, res) => {
             ["role", "ASC"]
         ]
     });
-    res.status(200).json({success:true, message:"Pobrano użtkowników", users});
+    res.status(200).json({success:true, message:"Pobrano użytkowników", users});
 }
 
 exports.registerAdmin = async (req, res) => {
