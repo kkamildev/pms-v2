@@ -5,6 +5,7 @@ const Town = require("../models/Town");
 const LandPurpose = require("../models/LandPurpose");
 const Location = require("../models/Location");
 const Land = require("../models/Land");
+const {Op} = require("sequelize");
 
 exports.getOwners = async (req, res) => {
     const {nameFilter, limit} = req.query;
