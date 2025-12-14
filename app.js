@@ -16,6 +16,8 @@ const main = async () => {
     await createDatabase();
     const sequelize = require("./util/db");
 
+    const users = require("./routes/users");
+
     const app = express();
     // midlewares
     app.use(cors({
@@ -34,6 +36,8 @@ const main = async () => {
     }
 
     // routes
+
+    app.use("/api/users", users);
     
 
     sequelize.sync({force:false});
