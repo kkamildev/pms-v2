@@ -73,7 +73,7 @@ exports.getRenters = withErrorhandling(async (req, res) => {
         order:[["name", "ASC"]]
     });
     
-    res.status(200).json({success:true, message:"pobrano dzierżawców i ich dzierżawy", renters})
+    res.status(200).json({success:true, message:"pobrano dzierżawców i ich dzierżawy", renters});
 });
 
 exports.getAllRenters = withErrorhandling(async (req, res) => {

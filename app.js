@@ -22,6 +22,8 @@ const main = async () => {
     const landTypes = require("./routes/landTypes");
     const landPurposes = require("./routes/landPurposes");
     const files = require("./routes/files");
+    const owners = require("./routes/owners");
+    const renters = require("./routes/renters");
 
     const app = express();
     // midlewares
@@ -48,6 +50,8 @@ const main = async () => {
     app.use("/api/mpzp", mpzp);
     app.use("/api/general-plans", generalPlans);
     app.use("/api/files", files);
+    app.use("/api/renters", renters);
+    app.use("/api/owners", owners);
     
 
     sequelize.sync({force:false});
