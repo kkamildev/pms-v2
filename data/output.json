@@ -1,0 +1,3129 @@
+{
+  "lubelskie": {
+    "lubelski": [
+      "Głusk",
+      "Zakrzew",
+      "Krzczonów",
+      "Wysokie",
+      "Bełżyce",
+      "Jastków",
+      "Niemce",
+      "Borzechów",
+      "Garbów",
+      "Niedrzwica Duża",
+      "Strzyżewice",
+      "Bychawa",
+      "Wólka",
+      "Jabłonna",
+      "Wojciechów",
+      "Konopnica"
+    ],
+    "lubartowski": [
+      "Abramów",
+      "Michów",
+      "Kamionka",
+      "Lubartów",
+      "Kock",
+      "Ostrówek",
+      "Firlej",
+      "Niedźwiada",
+      "Jeziorzany",
+      "Ostrów Lubelski",
+      "Serniki",
+      "Uścimów"
+    ],
+    "biłgorajski": [
+      "Goraj",
+      "Biłgoraj",
+      "Obsza",
+      "Księżpol",
+      "Łukowa",
+      "Józefów",
+      "Biszcza",
+      "Tereszpol",
+      "Frampol",
+      "Turobin",
+      "Potok Górny",
+      "Tarnogród",
+      "Aleksandrów"
+    ],
+    "łukowski": [
+      "Adamów",
+      "Łuków",
+      "Stanin",
+      "Stoczek Łukowski",
+      "Wola Mysłowska",
+      "Serokomla",
+      "Krzywda",
+      "Wojcieszków",
+      "Trzebieszów"
+    ],
+    "łęczyński": [
+      "Cyców",
+      "Puchaczów",
+      "Milejów",
+      "Spiczyn",
+      "Łęczna",
+      "Ludwin"
+    ],
+    "zamojski": [
+      "Adamów",
+      "Komarów-Osada",
+      "Zwierzyniec",
+      "Łabunie",
+      "Grabowiec",
+      "Zamość",
+      "Szczebrzeszyn",
+      "Stary Zamość",
+      "Sitno",
+      "Radecznica",
+      "Miączyn",
+      "Nielisz",
+      "Sułów",
+      "Skierbieszów",
+      "Krasnobród"
+    ],
+    "krasnostawski": [
+      "Żółkiewka",
+      "Kraśniczyn",
+      "Gorzków",
+      "Siennica Różana",
+      "Krasnystaw",
+      "Fajsławice",
+      "Izbica",
+      "Łopiennik Górny",
+      "Rudnik"
+    ],
+    "opolski": [
+      "Chodel",
+      "Józefów nad Wisłą",
+      "Opole Lubelskie",
+      "Karczmiska",
+      "Łaziska",
+      "Wilków",
+      "Poniatowa"
+    ],
+    "hrubieszowski": [
+      "Werbkowice",
+      "Mircze",
+      "Hrubieszów",
+      "Uchanie",
+      "Horodło",
+      "Trzeszczany",
+      "Dołhobyczów"
+    ],
+    "kraśnicki": [
+      "Trzydnik Duży",
+      "Gościeradów",
+      "Annopol",
+      "Urzędów",
+      "Szastarka",
+      "Zakrzówek",
+      "Kraśnik",
+      "Dzierzkowice",
+      "Wilkołaz"
+    ],
+    "chełmski": [
+      "Rejowiec",
+      "Leśniowice",
+      "Kamień",
+      "Siedliszcze",
+      "Wierzbica",
+      "Dorohusk",
+      "Białopole",
+      "Żmudź",
+      "Dubienka",
+      "Sawin",
+      "Wojsławice",
+      "Chełm",
+      "Ruda-Huta",
+      "Rejowiec Fabryczny"
+    ],
+    "bialski": [
+      "Drelów",
+      "Konstantynów",
+      "Międzyrzec Podlaski",
+      "Zalesie",
+      "Łomazy",
+      "Janów Podlaski",
+      "Terespol",
+      "Tuczna",
+      "Rossosz",
+      "Leśna Podlaska",
+      "Biała Podlaska",
+      "Piszczac",
+      "Rokitno",
+      "Wisznice",
+      "Sosnówka",
+      "Kodeń",
+      "Sławatycze"
+    ],
+    "janowski": [
+      "Batorz",
+      "Godziszów",
+      "Modliborzyce",
+      "Janów Lubelski",
+      "Dzwola",
+      "Chrzanów",
+      "Potok Wielki"
+    ],
+    "parczewski": [
+      "Siemień",
+      "Podedwórze",
+      "Parczew",
+      "Dębowa Kłoda",
+      "Sosnowica",
+      "Milanów",
+      "Jabłoń"
+    ],
+    "włodawski": [
+      "Urszulin",
+      "Hańsk",
+      "Wola Uhruska",
+      "Hanna",
+      "Stary Brus",
+      "Wyryki",
+      "Włodawa"
+    ],
+    "puławski": [
+      "Puławy",
+      "Żyrzyn",
+      "Kurów",
+      "Wąwolnica",
+      "Markuszów",
+      "Kazimierz Dolny",
+      "Nałęczów",
+      "Janowiec",
+      "Końskowola",
+      "Baranów"
+    ],
+    "tomaszowski": [
+      "Krynice",
+      "Bełżec",
+      "Ulhówek",
+      "Jarczów",
+      "Tomaszów Lubelski",
+      "Susiec",
+      "Tyszowce",
+      "Tarnawatka",
+      "Łaszczów",
+      "Telatyn",
+      "Rachanie",
+      "Lubycza Królewska"
+    ],
+    "świdnicki": [
+      "Rybczewice",
+      "Trawniki",
+      "Piaski",
+      "Mełgiew",
+      "Świdnik"
+    ],
+    "radzyński": [
+      "Radzyń Podlaski",
+      "Czemierniki",
+      "Wohyń",
+      "Borki",
+      "Komarówka Podlaska",
+      "Kąkolewnica",
+      "Ulan-Majorat"
+    ],
+    "Biała Podlaska": [
+      "Biała Podlaska"
+    ],
+    "rycki": [
+      "Ułęż",
+      "Ryki",
+      "Nowodwór",
+      "Kłoczew",
+      "Stężyca",
+      "Dęblin"
+    ],
+    "Chełm": [
+      "Chełm"
+    ],
+    "Lublin": [
+      "Lublin"
+    ],
+    "Zamość": [
+      "Zamość"
+    ]
+  },
+  "mazowieckie": {
+    "miński": [
+      "Kałuszyn",
+      "Dobre",
+      "Jakubów",
+      "Dębe Wielkie",
+      "Mińsk Mazowiecki",
+      "Siennica",
+      "Stanisławów",
+      "Mrozy",
+      "Latowicz",
+      "Halinów",
+      "Cegłów",
+      "Sulejówek"
+    ],
+    "ostrołęcki": [
+      "Baranowo",
+      "Lelis",
+      "Troszyn",
+      "Czerwin",
+      "Łyse",
+      "Olszewo-Borki",
+      "Czarnia",
+      "Myszyniec",
+      "Rzekuń",
+      "Goworowo",
+      "Kadzidło"
+    ],
+    "sochaczewski": [
+      "Młodzieszyn",
+      "Iłów",
+      "Rybno",
+      "Sochaczew",
+      "Brochów",
+      "Nowa Sucha",
+      "Teresin"
+    ],
+    "żyrardowski": [
+      "Mszczonów",
+      "Radziejowice",
+      "Puszcza Mariańska",
+      "Wiskitki",
+      "Żyrardów"
+    ],
+    "grodziski": [
+      "Grodzisk Mazowiecki",
+      "Baranów",
+      "Żabia Wola",
+      "Jaktorów",
+      "Milanówek",
+      "Podkowa Leśna"
+    ],
+    "sierpecki": [
+      "Mochowo",
+      "Szczutowo",
+      "Gozdowo",
+      "Rościszewo",
+      "Sierpc",
+      "Zawidz"
+    ],
+    "żuromiński": [
+      "Bieżuń",
+      "Siemiątkowo",
+      "Kuczbork-Osada",
+      "Lubowidz",
+      "Żuromin",
+      "Lutocin"
+    ],
+    "mławski": [
+      "Strzegowo",
+      "Wieczfnia Kościelna",
+      "Radzanów",
+      "Szreńsk",
+      "Wiśniewo",
+      "Stupsk",
+      "Lipowiec Kościelny",
+      "Dzierzgowo",
+      "Szydłowo",
+      "Mława"
+    ],
+    "makowski": [
+      "Czerwonka",
+      "Krasnosielc",
+      "Karniewo",
+      "Sypniewo",
+      "Rzewnie",
+      "Płoniawy-Bramura",
+      "Różan",
+      "Szelków",
+      "Młynarze",
+      "Maków Mazowiecki"
+    ],
+    "płoński": [
+      "Nowe Miasto",
+      "Joniec",
+      "Płońsk",
+      "Baboszewo",
+      "Sochocin",
+      "Naruszewo",
+      "Raciąż",
+      "Dzierzążnia",
+      "Czerwińsk nad Wisłą",
+      "Załuski"
+    ],
+    "wyszkowski": [
+      "Długosiodło",
+      "Zabrodzie",
+      "Somianka",
+      "Brańszczyk",
+      "Rząśnik",
+      "Wyszków"
+    ],
+    "gostyniński": [
+      "Szczawin Kościelny",
+      "Sanniki",
+      "Gostynin",
+      "Pacyna"
+    ],
+    "węgrowski": [
+      "Wierzbno",
+      "Korytnica",
+      "Grębków",
+      "Łochów",
+      "Stoczek",
+      "Sadowne",
+      "Liw",
+      "Miedzna",
+      "Węgrów"
+    ],
+    "białobrzeski": [
+      "Promna",
+      "Wyśmierzyce",
+      "Stromiec",
+      "Białobrzegi",
+      "Radzanów",
+      "Stara Błotnica"
+    ],
+    "kozienicki": [
+      "Głowaczów",
+      "Magnuszew",
+      "Kozienice",
+      "Garbatka-Letnisko",
+      "Grabów nad Pilicą",
+      "Gniewoszów",
+      "Sieciechów"
+    ],
+    "lipski": [
+      "Sienno",
+      "Ciepielów",
+      "Lipsko",
+      "Chotcza",
+      "Rzeczniów",
+      "Solec nad Wisłą"
+    ],
+    "grójecki": [
+      "Chynów",
+      "Pniewy",
+      "Belsk Duży",
+      "Jasieniec",
+      "Błędów",
+      "Goszczyn",
+      "Nowe Miasto nad Pilicą",
+      "Grójec",
+      "Warka",
+      "Mogielnica"
+    ],
+    "nowodworski": [
+      "Czosnów",
+      "Nasielsk",
+      "Pomiechówek",
+      "Zakroczym",
+      "Leoncin",
+      "Nowy Dwór Mazowiecki"
+    ],
+    "wołomiński": [
+      "Jadów",
+      "Strachówka",
+      "Radzymin",
+      "Tłuszcz",
+      "Dąbrówka",
+      "Poświętne",
+      "Wołomin",
+      "Klembów",
+      "Kobyłka",
+      "Marki",
+      "Ząbki",
+      "Zielonka"
+    ],
+    "radomski": [
+      "Pionki",
+      "Jedlnia-Letnisko",
+      "Iłża",
+      "Skaryszew",
+      "Kowala",
+      "Jastrzębia",
+      "Zakrzew",
+      "Wolanów",
+      "Jedlińsk",
+      "Wierzbica",
+      "Przytyk",
+      "Gózd"
+    ],
+    "sokołowski": [
+      "Ceranów",
+      "Kosów Lacki",
+      "Sokołów Podlaski",
+      "Repki",
+      "Sterdyń",
+      "Bielany",
+      "Jabłonna Lacka",
+      "Sabnie"
+    ],
+    "siedlecki": [
+      "Kotuń",
+      "Mokobody",
+      "Siedlce",
+      "Wodynie",
+      "Wiśniew",
+      "Zbuczyn",
+      "Suchożebry",
+      "Skórzec",
+      "Korczew",
+      "Przesmyki",
+      "Domanice",
+      "Paprotnia",
+      "Mordy"
+    ],
+    "płocki": [
+      "Staroźreby",
+      "Słubice",
+      "Łąck",
+      "Bodzanów",
+      "Słupno",
+      "Brudzeń Duży",
+      "Stara Biała",
+      "Radzanowo",
+      "Bielsk",
+      "Drobin",
+      "Bulkowo",
+      "Wyszogród",
+      "Gąbin",
+      "Mała Wieś",
+      "Nowy Duninów"
+    ],
+    "legionowski": [
+      "Nieporęt",
+      "Serock",
+      "Jabłonna",
+      "Wieliszew",
+      "Legionowo"
+    ],
+    "piaseczyński": [
+      "Góra Kalwaria",
+      "Piaseczno",
+      "Prażmów",
+      "Konstancin-Jeziorna",
+      "Tarczyn",
+      "Lesznowola"
+    ],
+    "garwoliński": [
+      "Łaskarzew",
+      "Sobolew",
+      "Maciejowice",
+      "Trojanów",
+      "Borowie",
+      "Miastków Kościelny",
+      "Żelechów",
+      "Garwolin",
+      "Wilga",
+      "Górzno",
+      "Parysów",
+      "Pilawa"
+    ],
+    "szydłowiecki": [
+      "Chlewiska",
+      "Szydłowiec",
+      "Orońsko",
+      "Mirów",
+      "Jastrząb"
+    ],
+    "zwoleński": [
+      "Policzna",
+      "Przyłęk",
+      "Zwoleń",
+      "Tczów",
+      "Kazanów"
+    ],
+    "ostrowski": [
+      "Andrzejewo",
+      "Ostrów Mazowiecka",
+      "Wąsewo",
+      "Boguty-Pianki",
+      "Małkinia Górna",
+      "Brok",
+      "Szulborze Wielkie",
+      "Zaręby Kościelne",
+      "Stary Lubotyń",
+      "Nur"
+    ],
+    "przasnyski": [
+      "Przasnysz",
+      "Krasne",
+      "Chorzele",
+      "Czernice Borowe",
+      "Krzynowłoga Mała",
+      "Jednorożec"
+    ],
+    "otwocki": [
+      "Kołbiel",
+      "Osieck",
+      "Wiązowna",
+      "Karczew",
+      "Celestynów",
+      "Sobienie-Jeziory",
+      "Józefów",
+      "Otwock"
+    ],
+    "przysuski": [
+      "Gielniów",
+      "Odrzywół",
+      "Rusinów",
+      "Przysucha",
+      "Borkowice",
+      "Klwów",
+      "Wieniawa",
+      "Potworów"
+    ],
+    "warszawski zachodni": [
+      "Stare Babice",
+      "Błonie",
+      "Kampinos",
+      "Ożarów Mazowiecki",
+      "Leszno",
+      "Łomianki",
+      "Izabelin"
+    ],
+    "ciechanowski": [
+      "Ciechanów",
+      "Opinogóra Górna",
+      "Ojrzeń",
+      "Sońsk",
+      "Glinojeck",
+      "Gołymin-Ośrodek",
+      "Grudusk",
+      "Regimin"
+    ],
+    "łosicki": [
+      "Huszlew",
+      "Olszanka",
+      "Łosice",
+      "Sarnaki",
+      "Platerów",
+      "Stara Kornica"
+    ],
+    "pułtuski": [
+      "Obryte",
+      "Gzy",
+      "Winnica",
+      "Pułtusk",
+      "Zatory",
+      "Świercze",
+      "Pokrzywnica"
+    ],
+    "pruszkowski": [
+      "Brwinów",
+      "Raszyn",
+      "Michałowice",
+      "Nadarzyn",
+      "Piastów",
+      "Pruszków"
+    ],
+    "Ostrołęka": [
+      "Ostrołęka"
+    ],
+    "Płock": [
+      "Płock"
+    ],
+    "Radom": [
+      "Radom"
+    ],
+    "Siedlce": [
+      "Siedlce"
+    ],
+    "Warszawa": [
+      "Warszawa"
+    ]
+  },
+  "podlaskie": {
+    "sokólski": [
+      "Kuźnica",
+      "Korycin",
+      "Szudziałowo",
+      "Sokółka",
+      "Dąbrowa Białostocka",
+      "Krynki",
+      "Janów",
+      "Sidra",
+      "Nowy Dwór",
+      "Suchowola"
+    ],
+    "suwalski": [
+      "Szypliszki",
+      "Filipów",
+      "Bakałarzewo",
+      "Wiżajny",
+      "Jeleniewo",
+      "Raczki",
+      "Rutka-Tartak",
+      "Suwałki",
+      "Przerośl"
+    ],
+    "siemiatycki": [
+      "Mielnik",
+      "Grodzisk",
+      "Siemiatycze",
+      "Drohiczyn",
+      "Nurzec-Stacja",
+      "Milejczyce",
+      "Perlejewo",
+      "Dziadkowice"
+    ],
+    "kolneński": [
+      "Turośl",
+      "Grabowo",
+      "Stawiski",
+      "Kolno",
+      "Mały Płock"
+    ],
+    "sejneński": [
+      "Krasnopol",
+      "Giby",
+      "Sejny",
+      "Puńsk"
+    ],
+    "białostocki": [
+      "Zabłudów",
+      "Choroszcz",
+      "Michałowo",
+      "Turośń Kościelna",
+      "Tykocin",
+      "Juchnowiec Kościelny",
+      "Gródek",
+      "Dobrzyniewo Duże",
+      "Łapy",
+      "Poświętne",
+      "Czarna Białostocka",
+      "Supraśl",
+      "Zawady",
+      "Wasilków",
+      "Suraż"
+    ],
+    "hajnowski": [
+      "Narew",
+      "Czeremcha",
+      "Narewka",
+      "Kleszczele",
+      "Białowieża",
+      "Hajnówka",
+      "Dubicze Cerkiewne",
+      "Czyże"
+    ],
+    "bielski": [
+      "Boćki",
+      "Bielsk Podlaski",
+      "Wyszki",
+      "Brańsk",
+      "Orla",
+      "Rudka"
+    ],
+    "łomżyński": [
+      "Łomża",
+      "Przytuły",
+      "Nowogród",
+      "Jedwabne",
+      "Zbójna",
+      "Wizna",
+      "Śniadowo",
+      "Piątnica",
+      "Miastkowo"
+    ],
+    "wysokomazowiecki": [
+      "Ciechanowiec",
+      "Wysokie Mazowieckie",
+      "Czyżew",
+      "Sokoły",
+      "Kulesze Kościelne",
+      "Szepietowo",
+      "Kobylin-Borzymy",
+      "Klukowo",
+      "Nowe Piekuty"
+    ],
+    "augustowski": [
+      "Nowinka",
+      "Augustów",
+      "Sztabin",
+      "Bargłów Kościelny",
+      "Lipsk",
+      "Płaska"
+    ],
+    "zambrowski": [
+      "Zambrów",
+      "Kołaki Kościelne",
+      "Rutki",
+      "Szumowo"
+    ],
+    "grajewski": [
+      "Wąsosz",
+      "Radziłów",
+      "Rajgród",
+      "Szczuczyn",
+      "Grajewo"
+    ],
+    "moniecki": [
+      "Jaświły",
+      "Krypno",
+      "Goniądz",
+      "Mońki",
+      "Trzcianne",
+      "Jasionówka",
+      "Knyszyn"
+    ],
+    "Białystok": [
+      "Białystok"
+    ],
+    "Łomża": [
+      "Łomża"
+    ],
+    "Suwałki": [
+      "Suwałki"
+    ]
+  },
+  "świętokrzyskie": {
+    "sandomierski": [
+      "Klimontów",
+      "Samborzec",
+      "Łoniów",
+      "Koprzywnica",
+      "Obrazów",
+      "Wilczyce",
+      "Dwikozy",
+      "Zawichost",
+      "Sandomierz"
+    ],
+    "konecki": [
+      "Stąporków",
+      "Smyków",
+      "Końskie",
+      "Słupia (Konecka)",
+      "Gowarczów",
+      "Fałków",
+      "Ruda Maleniecka",
+      "Radoszyce"
+    ],
+    "starachowicki": [
+      "Brody",
+      "Pawłów",
+      "Wąchock",
+      "Mirzec",
+      "Starachowice"
+    ],
+    "opatowski": [
+      "Opatów",
+      "Lipnik",
+      "Baćkowice",
+      "Wojciechowice",
+      "Ożarów",
+      "Sadowie",
+      "Iwaniska",
+      "Tarłów"
+    ],
+    "kielecki": [
+      "Strawczyn",
+      "Łopuszno",
+      "Mniów",
+      "Masłów",
+      "Raków",
+      "Zagnańsk",
+      "Nowa Słupia",
+      "Bieliny",
+      "Górno",
+      "Morawica",
+      "Miedziana Góra",
+      "Bodzentyn",
+      "Sitkówka-Nowiny",
+      "Chęciny",
+      "Daleszyce",
+      "Chmielnik",
+      "Pierzchnica",
+      "Piekoszów",
+      "Łagów"
+    ],
+    "jędrzejowski": [
+      "Sędziszów",
+      "Imielno",
+      "Sobków",
+      "Oksa",
+      "Małogoszcz",
+      "Jędrzejów",
+      "Nagłowice",
+      "Wodzisław",
+      "Słupia (Jędrzejowska)"
+    ],
+    "pińczowski": [
+      "Pińczów",
+      "Działoszyce",
+      "Złota",
+      "Kije",
+      "Michałów"
+    ],
+    "ostrowiecki": [
+      "Bałtów",
+      "Kunów",
+      "Bodzechów",
+      "Waśniów",
+      "Ćmielów",
+      "Ostrowiec Świętokrzyski"
+    ],
+    "buski": [
+      "Nowy Korczyn",
+      "Gnojno",
+      "Busko-Zdrój",
+      "Stopnica",
+      "Pacanów",
+      "Wiślica",
+      "Tuczępy",
+      "Solec-Zdrój"
+    ],
+    "włoszczowski": [
+      "Radków",
+      "Włoszczowa",
+      "Secemin",
+      "Kluczewsko",
+      "Krasocin",
+      "Moskorzew"
+    ],
+    "kazimierski": [
+      "Skalbmierz",
+      "Bejsce",
+      "Czarnocin",
+      "Kazimierza Wielka",
+      "Opatowiec"
+    ],
+    "staszowski": [
+      "Łubnice",
+      "Bogoria",
+      "Oleśnica",
+      "Szydłów",
+      "Połaniec",
+      "Osiek",
+      "Staszów",
+      "Rytwiany"
+    ],
+    "skarżyski": [
+      "Bliżyn",
+      "Łączna",
+      "Skarżysko Kościelne",
+      "Suchedniów",
+      "Skarżysko-Kamienna"
+    ],
+    "Kielce": [
+      "Kielce"
+    ]
+  },
+  "wielkopolskie": {
+    "słupecki": [
+      "Zagórów",
+      "Powidz",
+      "Strzałkowo",
+      "Słupca",
+      "Orchowo",
+      "Ostrowite",
+      "Lądek"
+    ],
+    "kolski": [
+      "Olszówka",
+      "Chodów",
+      "Koło",
+      "Przedecz",
+      "Dąbie",
+      "Babiak",
+      "Grzegorzew",
+      "Kościelec",
+      "Kłodawa",
+      "Osiek Mały"
+    ],
+    "wolsztyński": [
+      "Wolsztyn",
+      "Przemęt",
+      "Siedlec"
+    ],
+    "koniński": [
+      "Kleczew",
+      "Golina",
+      "Krzymów",
+      "Grodziec",
+      "Kramsk",
+      "Kazimierz Biskupi",
+      "Rzgów",
+      "Stare Miasto",
+      "Sompolno",
+      "Rychwał",
+      "Wilczyn",
+      "Ślesin",
+      "Wierzbinek",
+      "Skulsk"
+    ],
+    "grodziski": [
+      "Rakoniewice",
+      "Grodzisk Wielkopolski",
+      "Wielichowo",
+      "Granowo",
+      "Kamieniec"
+    ],
+    "turecki": [
+      "Turek",
+      "Przykona",
+      "Władysławów",
+      "Kawęczyn",
+      "Malanów",
+      "Dobra",
+      "Brudzew",
+      "Tuliszków"
+    ],
+    "kaliski": [
+      "Brzeziny",
+      "Mycielin",
+      "Żelazków",
+      "Lisków",
+      "Szczytniki",
+      "Godziesze Wielkie",
+      "Ceków-Kolonia",
+      "Blizanów",
+      "Koźminek",
+      "Opatówek",
+      "Stawiszyn"
+    ],
+    "wągrowiecki": [
+      "Wapno",
+      "Wągrowiec",
+      "Skoki",
+      "Gołańcz",
+      "Mieścisko",
+      "Damasławek"
+    ],
+    "kępiński": [
+      "Trzcinica",
+      "Baranów",
+      "Łęka Opatowska",
+      "Kępno",
+      "Bralin",
+      "Perzów",
+      "Rychtal"
+    ],
+    "jarociński": [
+      "Jarocin",
+      "Żerków-obszar wiejski w gminie miejsko-wiejskiej",
+      "Jaraczewo",
+      "Kotlin",
+      "Żerków"
+    ],
+    "średzki": [
+      "Środa Wielkopolska",
+      "Dominowo",
+      "Krzykosy",
+      "Nowe Miasto nad Wartą",
+      "Zaniemyśl"
+    ],
+    "poznański": [
+      "Czerwonak",
+      "Mosina",
+      "Tarnowo Podgórne",
+      "Pobiedziska",
+      "Stęszew",
+      "Murowana Goślina",
+      "Suchy Las",
+      "Kórnik",
+      "Swarzędz",
+      "Kostrzyn",
+      "Buk",
+      "Kleszczewo",
+      "Rokietnica",
+      "Komorniki",
+      "Dopiewo",
+      "Luboń",
+      "Puszczykowo"
+    ],
+    "czarnkowsko-trzcianecki": [
+      "Lubasz",
+      "Wieleń",
+      "Trzcianka",
+      "Czarnków",
+      "Połajewo",
+      "Krzyż Wielkopolski",
+      "Drawsko"
+    ],
+    "ostrowski": [
+      "Przygodzice",
+      "Ostrów Wielkopolski",
+      "Raszków",
+      "Sieroszewice",
+      "Nowe Skalmierzyce",
+      "Sośnie",
+      "Odolanów"
+    ],
+    "obornicki": [
+      "Oborniki",
+      "Rogoźno",
+      "Ryczywół"
+    ],
+    "chodzieski": [
+      "Szamocin",
+      "Budzyń",
+      "Chodzież",
+      "Margonin"
+    ],
+    "gnieźnieński": [
+      "Niechanowo",
+      "Łubowo",
+      "Kłecko",
+      "Trzemeszno",
+      "Kiszkowo",
+      "Mieleszyn",
+      "Gniezno",
+      "Witkowo",
+      "Czerniejewo"
+    ],
+    "pilski": [
+      "Miasteczko Krajeńskie",
+      "Wyrzysk",
+      "Wysoka",
+      "Białośliwie",
+      "Kaczory",
+      "Ujście",
+      "Łobżenica",
+      "Szydłowo",
+      "Piła"
+    ],
+    "leszczyński": [
+      "Rydzyna",
+      "Krzemieniewo",
+      "Włoszakowice",
+      "Wijewo",
+      "Święciechowa",
+      "Osieczna",
+      "Lipno"
+    ],
+    "międzychodzki": [
+      "Kwilcz",
+      "Chrzypsko Wielkie",
+      "Międzychód",
+      "Sieraków"
+    ],
+    "złotowski": [
+      "Krajenka",
+      "Lipka",
+      "Złotów",
+      "Okonek",
+      "Jastrowie",
+      "Zakrzewo",
+      "Tarnówka"
+    ],
+    "gostyński": [
+      "Pępowo",
+      "Poniec",
+      "Pogorzela",
+      "Piaski",
+      "Borek Wielkopolski",
+      "Gostyń",
+      "Krobia"
+    ],
+    "szamotulski": [
+      "Szamotuły",
+      "Ostroróg",
+      "Wronki",
+      "Kaźmierz",
+      "Duszniki",
+      "Pniewy",
+      "Obrzycko"
+    ],
+    "ostrzeszowski": [
+      "Kobyla Góra",
+      "Mikstat",
+      "Ostrzeszów",
+      "Grabów nad Prosną",
+      "Czajków",
+      "Doruchów",
+      "Kraszewice"
+    ],
+    "wrzesiński": [
+      "Pyzdry",
+      "Nekla",
+      "Września",
+      "Miłosław",
+      "Kołaczkowo"
+    ],
+    "pleszewski": [
+      "Pleszew",
+      "Gizałki",
+      "Gołuchów",
+      "Czermin",
+      "Chocz",
+      "Dobrzyca"
+    ],
+    "rawicki": [
+      "Jutrosin",
+      "Pakosław",
+      "Bojanowo",
+      "Miejska Górka",
+      "Rawicz"
+    ],
+    "krotoszyński": [
+      "Zduny",
+      "Krotoszyn",
+      "Koźmin Wielkopolski",
+      "Rozdrażew",
+      "Kobylin",
+      "Sulmierzyce"
+    ],
+    "kościański": [
+      "Czempiń",
+      "Śmigiel",
+      "Krzywiń",
+      "Kościan"
+    ],
+    "śremski": [
+      "Śrem",
+      "Dolsk",
+      "Brodnica",
+      "Książ Wielkopolski"
+    ],
+    "nowotomyski": [
+      "Miedzichowo",
+      "Nowy Tomyśl",
+      "Lwówek",
+      "Kuślin",
+      "Zbąszyń",
+      "Opalenica"
+    ],
+    "Kalisz": [
+      "Kalisz"
+    ],
+    "Konin": [
+      "Konin"
+    ],
+    "Leszno": [
+      "Leszno"
+    ],
+    "Poznań": [
+      "Poznań"
+    ]
+  },
+  "małopolskie": {
+    "dąbrowski": [
+      "Olesno",
+      "Gręboszów",
+      "Bolesław",
+      "Szczucin",
+      "Dąbrowa Tarnowska",
+      "Mędrzechów",
+      "Radgoszcz"
+    ],
+    "miechowski": [
+      "Gołcza",
+      "Książ Wielki",
+      "Miechów",
+      "Kozłów",
+      "Słaboszów",
+      "Charsznica",
+      "Racławice"
+    ],
+    "krakowski": [
+      "Zabierzów",
+      "Kocmyrzów-Luborzyca",
+      "Skała",
+      "Zielonki",
+      "Wielka Wieś",
+      "Iwanowice",
+      "Skawina",
+      "Słomniki",
+      "Mogilany",
+      "Liszki",
+      "Krzeszowice",
+      "Czernichów",
+      "Jerzmanowice-Przeginia",
+      "Igołomia-Wawrzeńczyce",
+      "Michałowice",
+      "Świątniki Górne",
+      "Sułoszowa"
+    ],
+    "chrzanowski": [
+      "Alwernia",
+      "Babice",
+      "Chrzanów",
+      "Trzebinia",
+      "Libiąż"
+    ],
+    "wadowicki": [
+      "Andrychów",
+      "Wadowice",
+      "Spytkowice",
+      "Kalwaria Zebrzydowska",
+      "Brzeźnica",
+      "Stryszów",
+      "Wieprz",
+      "Lanckorona",
+      "Mucharz",
+      "Tomice"
+    ],
+    "nowosądecki": [
+      "Muszyna",
+      "Stary Sącz",
+      "Łabowa",
+      "Nawojowa",
+      "Krynica-Zdrój",
+      "Grybów",
+      "Łososina Dolna",
+      "Chełmiec",
+      "Kamionka Wielka",
+      "Podegrodzie",
+      "Łącko",
+      "Gródek nad Dunajcem",
+      "Korzenna",
+      "Piwniczna-Zdrój",
+      "Rytro"
+    ],
+    "oświęcimski": [
+      "Oświęcim",
+      "Kęty",
+      "Chełmek",
+      "Brzeszcze",
+      "Osiek",
+      "Zator",
+      "Przeciszów",
+      "Polanka Wielka"
+    ],
+    "bocheński": [
+      "Bochnia",
+      "Żegocina",
+      "Drwinia",
+      "Łapanów",
+      "Rzezawa",
+      "Lipnica Murowana",
+      "Nowy Wiśnicz",
+      "Trzciana"
+    ],
+    "suski": [
+      "Budzów",
+      "Maków Podhalański",
+      "Bystra-Sidzina",
+      "Stryszawa",
+      "Jordanów",
+      "Zembrzyce",
+      "Zawoja",
+      "Sucha Beskidzka"
+    ],
+    "limanowski": [
+      "Limanowa",
+      "Dobra",
+      "Mszana Dolna",
+      "Jodłownik",
+      "Łukowica",
+      "Laskowa",
+      "Kamienica",
+      "Niedźwiedź",
+      "Tymbark",
+      "Słopnice"
+    ],
+    "gorlicki": [
+      "Uście Gorlickie",
+      "Sękowa",
+      "Lipinki",
+      "Biecz",
+      "Gorlice",
+      "Łużna",
+      "Bobowa",
+      "Ropa",
+      "Moszczenica"
+    ],
+    "nowotarski": [
+      "Szaflary",
+      "Raba Wyżna",
+      "Rabka-Zdrój",
+      "Czarny Dunajec",
+      "Jabłonka",
+      "Czorsztyn",
+      "Nowy Targ",
+      "Łapsze Niżne",
+      "Krościenko nad Dunajcem",
+      "Szczawnica",
+      "Lipnica Wielka",
+      "Ochotnica Dolna",
+      "Spytkowice"
+    ],
+    "brzeski": [
+      "Szczurowa",
+      "Czchów",
+      "Dębno",
+      "Borzęcin",
+      "Gnojnik",
+      "Brzesko",
+      "Iwkowa"
+    ],
+    "myślenicki": [
+      "Myślenice",
+      "Dobczyce",
+      "Sułkowice",
+      "Tokarnia",
+      "Raciechowice",
+      "Siepraw",
+      "Wiśniowa",
+      "Lubień",
+      "Pcim"
+    ],
+    "tarnowski": [
+      "Wojnicz",
+      "Tarnów",
+      "Zakliczyn",
+      "Radłów",
+      "Ryglice",
+      "Wierzchosławice",
+      "Żabno",
+      "Ciężkowice",
+      "Lisia Góra",
+      "Gromnik",
+      "Tuchów",
+      "Szerzyny",
+      "Pleśna",
+      "Wietrzychowice",
+      "Rzepiennik Strzyżewski",
+      "Skrzyszów"
+    ],
+    "tatrzański": [
+      "Bukowina Tatrzańska",
+      "Biały Dunajec",
+      "Poronin",
+      "Kościelisko",
+      "Zakopane"
+    ],
+    "wielicki": [
+      "Gdów",
+      "Biskupice",
+      "Wieliczka",
+      "Kłaj",
+      "Niepołomice"
+    ],
+    "proszowicki": [
+      "Koniusza",
+      "Koszyce",
+      "Radziemice",
+      "Proszowice",
+      "Pałecznica",
+      "Nowe Brzesko"
+    ],
+    "olkuski": [
+      "Klucze",
+      "Olkusz",
+      "Bolesław",
+      "Wolbrom",
+      "Bukowno",
+      "Trzyciąż"
+    ],
+    "Kraków": [
+      "Kraków"
+    ],
+    "Nowy Sącz": [
+      "Nowy Sącz"
+    ],
+    "Tarnów": [
+      "Tarnów"
+    ]
+  },
+  "kujawsko-pomorskie": {
+    "włocławski": [
+      "Włocławek",
+      "Lubraniec",
+      "Brześć Kujawski",
+      "Boniewo",
+      "Lubień Kujawski",
+      "Izbica Kujawska",
+      "Baruchowo",
+      "Choceń",
+      "Lubanie",
+      "Chodecz",
+      "Fabianki",
+      "Kowal"
+    ],
+    "golubsko-dobrzyński": [
+      "Zbójno",
+      "Golub-Dobrzyń",
+      "Kowalewo Pomorskie",
+      "Radomin",
+      "Ciechocin"
+    ],
+    "tucholski": [
+      "Kęsowo",
+      "Gostycyn",
+      "Tuchola",
+      "Śliwice",
+      "Cekcyn",
+      "Lubiewo"
+    ],
+    "brodnicki": [
+      "Jabłonowo Pomorskie",
+      "Zbiczno",
+      "Bartniczka",
+      "Brodnica",
+      "Bobrowo",
+      "Świedziebnia",
+      "Brzozie",
+      "Górzno",
+      "Osiek"
+    ],
+    "lipnowski": [
+      "Chrostkowo",
+      "Dobrzyń nad Wisłą",
+      "Wielgie",
+      "Lipno",
+      "Bobrowniki",
+      "Skępe",
+      "Tłuchowo",
+      "Kikół"
+    ],
+    "bydgoski": [
+      "Dobrcz",
+      "Białe Błota",
+      "Dąbrowa Chełmińska",
+      "Osielsko",
+      "Nowa Wieś Wielka",
+      "Koronowo",
+      "Solec Kujawski",
+      "Sicienko"
+    ],
+    "żniński": [
+      "Barcin",
+      "Łabiszyn",
+      "Gąsawa",
+      "Żnin",
+      "Janowiec Wielkopolski",
+      "Rogowo"
+    ],
+    "aleksandrowski": [
+      "Aleksandrów Kujawski",
+      "Bądkowo",
+      "Waganiec",
+      "Zakrzewo",
+      "Koneck",
+      "Ciechocinek",
+      "Raciążek",
+      "Nieszawa"
+    ],
+    "radziejowski": [
+      "Dobre",
+      "Piotrków Kujawski",
+      "Osięciny",
+      "Radziejów",
+      "Topólka",
+      "Bytoń"
+    ],
+    "nakielski": [
+      "Sadki",
+      "Mrocza",
+      "Nakło nad Notecią",
+      "Szubin",
+      "Kcynia"
+    ],
+    "grudziądzki": [
+      "Gruta",
+      "Świecie nad Osą",
+      "Rogóźno",
+      "Grudziądz",
+      "Radzyń Chełmiński",
+      "Łasin"
+    ],
+    "rypiński": [
+      "Skrwilno",
+      "Rypin",
+      "Wąpielsk",
+      "Rogowo",
+      "Brzuze"
+    ],
+    "inowrocławski": [
+      "Kruszwica",
+      "Inowrocław",
+      "Janikowo",
+      "Gniewkowo",
+      "Złotniki Kujawskie",
+      "Rojewo",
+      "Dąbrowa Biskupia",
+      "Pakość"
+    ],
+    "świecki": [
+      "Pruszcz",
+      "Warlubie",
+      "Jeżewo",
+      "Drzycim",
+      "Lniano",
+      "Nowe",
+      "Bukowiec",
+      "Dragacz",
+      "Osie",
+      "Świecie",
+      "Świekatowo"
+    ],
+    "chełmiński": [
+      "Kijewo Królewskie",
+      "Lisewo",
+      "Chełmno",
+      "Unisław",
+      "Stolno",
+      "Papowo Biskupie"
+    ],
+    "mogileński": [
+      "Mogilno",
+      "Jeziora Wielkie",
+      "Dąbrowa",
+      "Strzelno"
+    ],
+    "wąbrzeski": [
+      "Płużnica",
+      "Książki",
+      "Wąbrzeźno",
+      "Dębowa Łąka"
+    ],
+    "toruński": [
+      "Chełmża",
+      "Łubianka",
+      "Zławieś Wielka",
+      "Lubicz",
+      "Wielka Nieszawka",
+      "Obrowo",
+      "Czernikowo",
+      "Łysomice"
+    ],
+    "sępoleński": [
+      "Więcbork",
+      "Sępólno Krajeńskie",
+      "Kamień Krajeński",
+      "Sośno"
+    ],
+    "Bydgoszcz": [
+      "Bydgoszcz"
+    ],
+    "Grudziądz": [
+      "Grudziądz"
+    ],
+    "Toruń": [
+      "Toruń"
+    ],
+    "Włocławek": [
+      "Włocławek"
+    ]
+  },
+  "łódzkie": {
+    "poddębicki": [
+      "Zadzim",
+      "Poddębice",
+      "Dalików",
+      "Wartkowice",
+      "Pęczniew",
+      "Uniejów"
+    ],
+    "sieradzki": [
+      "Błaszki",
+      "Burzenin",
+      "Warta",
+      "Brzeźnio",
+      "Złoczew",
+      "Sieradz",
+      "Wróblew",
+      "Brąszewice",
+      "Goszczanów",
+      "Klonowa"
+    ],
+    "kutnowski": [
+      "Kutno",
+      "Strzelce",
+      "Żychlin",
+      "Bedlno",
+      "Łanięta",
+      "Dąbrowice",
+      "Krośniewice",
+      "Krzyżanów",
+      "Nowe Ostrowy",
+      "Oporów"
+    ],
+    "skierniewicki": [
+      "Nowy Kawęczyn",
+      "Skierniewice",
+      "Głuchów",
+      "Bolimów",
+      "Słupia",
+      "Kowiesy",
+      "Godzianów",
+      "Lipce Reymontowskie",
+      "Maków"
+    ],
+    "tomaszowski": [
+      "Budziszewice",
+      "Rokiciny",
+      "Lubochnia",
+      "Ujazd",
+      "Czerniewice",
+      "Rzeczyca",
+      "Będków",
+      "Żelechlinek",
+      "Inowłódz",
+      "Tomaszów Mazowiecki"
+    ],
+    "brzeziński": [
+      "Brzeziny",
+      "Dmosin",
+      "Jeżów",
+      "Rogów"
+    ],
+    "piotrkowski": [
+      "Łęki Szlacheckie",
+      "Wolbórz",
+      "Sulejów",
+      "Aleksandrów",
+      "Moszczenica",
+      "Rozprza",
+      "Ręczno",
+      "Grabica",
+      "Gorzkowice",
+      "Czarnocin",
+      "Wola Krzysztoporska"
+    ],
+    "radomszczański": [
+      "Ładzice",
+      "Kamieńsk",
+      "Radomsko",
+      "Wielgomłyny",
+      "Kodrąb",
+      "Kobiele Wielkie",
+      "Masłowice",
+      "Żytno",
+      "Gidle",
+      "Przedbórz",
+      "Dobryszyce",
+      "Lgota Wielka",
+      "Gomunice"
+    ],
+    "opoczyński": [
+      "Opoczno",
+      "Paradyż",
+      "Żarnów",
+      "Poświętne",
+      "Sławno",
+      "Drzewica",
+      "Białaczów",
+      "Mniszków"
+    ],
+    "zgierski": [
+      "Zgierz",
+      "Głowno",
+      "Ozorków",
+      "Aleksandrów Łódzki",
+      "Parzęczew",
+      "Stryków"
+    ],
+    "pabianicki": [
+      "Lutomiersk",
+      "Dobroń",
+      "Dłutów",
+      "Pabianice",
+      "Konstantynów Łódzki",
+      "Ksawerów"
+    ],
+    "rawski": [
+      "Biała Rawska",
+      "Regnów",
+      "Rawa Mazowiecka",
+      "Sadkowice",
+      "Cielądz"
+    ],
+    "bełchatowski": [
+      "Rusiec",
+      "Kleszczów",
+      "Bełchatów",
+      "Szczerców",
+      "Zelów",
+      "Kluki",
+      "Drużbice"
+    ],
+    "łęczycki": [
+      "Grabów",
+      "Góra Świętej Małgorzaty",
+      "Piątek",
+      "Świnice Warckie",
+      "Łęczyca",
+      "Witonia",
+      "Daszyna"
+    ],
+    "łaski": [
+      "Łask",
+      "Wodzierady",
+      "Widawa",
+      "Buczek",
+      "Sędziejowice"
+    ],
+    "łódzki wschodni": [
+      "Andrespol",
+      "Rzgów",
+      "Tuszyn",
+      "Koluszki",
+      "Nowosolna",
+      "Brójce"
+    ],
+    "wieruszowski": [
+      "Łubnice",
+      "Lututów",
+      "Sokolniki",
+      "Galewice",
+      "Bolesławiec",
+      "Wieruszów",
+      "Czastary"
+    ],
+    "zduńskowolski": [
+      "Zduńska Wola",
+      "Szadek",
+      "Zapolice"
+    ],
+    "wieluński": [
+      "Konopnica",
+      "Biała",
+      "Wieluń",
+      "Pątnów",
+      "Skomlin",
+      "Ostrówek",
+      "Osjaków",
+      "Wierzchlas",
+      "Mokrsko",
+      "Czarnożyły"
+    ],
+    "pajęczański": [
+      "Strzelce Wielkie",
+      "Rząśnia",
+      "Pajęczno",
+      "Kiełczygłów",
+      "Sulmierzyce",
+      "Działoszyn",
+      "Siemkowice",
+      "Nowa Brzeźnica"
+    ],
+    "łowicki": [
+      "Nieborów",
+      "Zduny",
+      "Bielawy",
+      "Chąśno",
+      "Łyszkowice",
+      "Łowicz",
+      "Kocierzew Południowy",
+      "Kiernozia",
+      "Domaniewice"
+    ],
+    "Łódź": [
+      "Łódź"
+    ],
+    "Piotrków Trybunalski": [
+      "Piotrków Trybunalski"
+    ],
+    "Skierniewice": [
+      "Skierniewice"
+    ]
+  },
+  "śląskie": {
+    "rybnicki": [
+      "Lyski",
+      "Czerwionka-Leszczyny",
+      "Gaszowice",
+      "Świerklany",
+      "Jejkowice"
+    ],
+    "częstochowski": [
+      "Kłomnice",
+      "Koniecpol",
+      "Przyrów",
+      "Mykanów",
+      "Janów",
+      "Kruszyna",
+      "Poczesna",
+      "Lelów",
+      "Olsztyn",
+      "Blachownia",
+      "Dąbrowa Zielona",
+      "Mstów",
+      "Konopiska",
+      "Kamienica Polska",
+      "Rędziny",
+      "Starcza"
+    ],
+    "kłobucki": [
+      "Lipie",
+      "Panki",
+      "Popów",
+      "Przystajń",
+      "Wręczyca Wielka",
+      "Miedźno",
+      "Kłobuck",
+      "Krzepice",
+      "Opatów"
+    ],
+    "raciborski": [
+      "Pietrowice Wielkie",
+      "Nędza",
+      "Krzyżanowice",
+      "Krzanowice",
+      "Rudnik",
+      "Kuźnia Raciborska",
+      "Kornowac",
+      "Racibórz"
+    ],
+    "myszkowski": [
+      "Niegowa",
+      "Poraj",
+      "Koziegłowy",
+      "Żarki",
+      "Myszków"
+    ],
+    "lubliniecki": [
+      "Woźniki",
+      "Boronów",
+      "Herby",
+      "Koszęcin",
+      "Ciasna",
+      "Pawonków",
+      "Kochanowice",
+      "Lubliniec"
+    ],
+    "gliwicki": [
+      "Sośnicowice",
+      "Wielowieś",
+      "Toszek",
+      "Rudziniec",
+      "Gierałtowice",
+      "Knurów",
+      "Pilchowice",
+      "Pyskowice"
+    ],
+    "cieszyński": [
+      "Goleszów",
+      "Strumień",
+      "Skoczów",
+      "Brenna",
+      "Hażlach",
+      "Chybie",
+      "Cieszyn",
+      "Dębowiec",
+      "Istebna",
+      "Zebrzydowice",
+      "Ustroń",
+      "Wisła"
+    ],
+    "wodzisławski": [
+      "Gorzyce",
+      "Lubomia",
+      "Godów",
+      "Mszana",
+      "Pszów",
+      "Radlin",
+      "Rydułtowy",
+      "Wodzisław Śląski",
+      "Marklowice"
+    ],
+    "bielski": [
+      "Bestwina",
+      "Jasienica",
+      "Czechowice-Dziedzice",
+      "Buczkowice",
+      "Porąbka",
+      "Wilamowice",
+      "Jaworze",
+      "Kozy",
+      "Wilkowice",
+      "Szczyrk"
+    ],
+    "będziński": [
+      "Będzin",
+      "Bobrowniki",
+      "Mierzęcice",
+      "Siewierz",
+      "Psary",
+      "Czeladź",
+      "Sławków",
+      "Wojkowice"
+    ],
+    "zawierciański": [
+      "Kroczyce",
+      "Pilica",
+      "Irządze",
+      "Szczekociny",
+      "Żarnowiec",
+      "Łazy",
+      "Ogrodzieniec",
+      "Włodowice",
+      "Poręba",
+      "Zawiercie"
+    ],
+    "Bielsko-Biała": [
+      "Bielsko-Biała"
+    ],
+    "żywiecki": [
+      "Łodygowice",
+      "Radziechowy-Wieprz",
+      "Węgierska Górka",
+      "Czernichów",
+      "Gilowice",
+      "Ujsoły",
+      "Jeleśnia",
+      "Milówka",
+      "Rajcza",
+      "Łękawica",
+      "Ślemień",
+      "Koszarawa",
+      "Lipowa",
+      "Świnna",
+      "Żywiec"
+    ],
+    "bieruńsko-lędziński": [
+      "Bieruń",
+      "Bojszowy",
+      "Chełm Śląski",
+      "Imielin",
+      "Lędziny"
+    ],
+    "tarnogórski": [
+      "Zbrosławice",
+      "Tworóg",
+      "Ożarowice",
+      "Kalety",
+      "Krupski Młyn",
+      "Miasteczko Śląskie",
+      "Świerklaniec",
+      "Radzionków",
+      "Tarnowskie Góry"
+    ],
+    "pszczyński": [
+      "Pszczyna",
+      "Miedźna",
+      "Goczałkowice-Zdrój",
+      "Pawłowice",
+      "Suszec",
+      "Kobiór"
+    ],
+    "Bytom": [
+      "Bytom"
+    ],
+    "Chorzów": [
+      "Chorzów"
+    ],
+    "Częstochowa": [
+      "Częstochowa"
+    ],
+    "Dąbrowa Górnicza": [
+      "Dąbrowa Górnicza"
+    ],
+    "Gliwice": [
+      "Gliwice"
+    ],
+    "mikołowski": [
+      "Wyry",
+      "Łaziska Górne",
+      "Mikołów",
+      "Ornontowice",
+      "Orzesze"
+    ],
+    "Jastrzębie-Zdrój": [
+      "Jastrzębie-Zdrój"
+    ],
+    "Jaworzno": [
+      "Jaworzno"
+    ],
+    "Katowice": [
+      "Katowice"
+    ],
+    "Mysłowice": [
+      "Mysłowice"
+    ],
+    "Piekary Śląskie": [
+      "Piekary Śląskie"
+    ],
+    "Ruda Śląska": [
+      "Ruda Śląska"
+    ],
+    "Rybnik": [
+      "Rybnik"
+    ],
+    "Siemianowice Śląskie": [
+      "Siemianowice Śląskie"
+    ],
+    "Sosnowiec": [
+      "Sosnowiec"
+    ],
+    "Świętochłowice": [
+      "Świętochłowice"
+    ],
+    "Tychy": [
+      "Tychy"
+    ],
+    "Zabrze": [
+      "Zabrze"
+    ],
+    "Żory": [
+      "Żory"
+    ]
+  },
+  "warmińsko-mazurskie": {
+    "elbląski": [
+      "Elbląg",
+      "Pasłęk",
+      "Markusy",
+      "Godkowo",
+      "Gronowo Elbląskie",
+      "Młynary",
+      "Tolkmicko",
+      "Rychliki",
+      "Milejewo"
+    ],
+    "iławski": [
+      "Susz",
+      "Zalewo",
+      "Kisielice",
+      "Lubawa",
+      "Iława"
+    ],
+    "działdowski": [
+      "Lidzbark",
+      "Iłowo-Osada",
+      "Działdowo",
+      "Rybno",
+      "Płośnica"
+    ],
+    "olsztyński": [
+      "Biskupiec",
+      "Jonkowo",
+      "Purda",
+      "Dobre Miasto",
+      "Barczewo",
+      "Stawiguda",
+      "Gietrzwałd",
+      "Dywity",
+      "Świątki",
+      "Olsztynek",
+      "Jeziorany",
+      "Kolno"
+    ],
+    "szczycieński": [
+      "Rozogi",
+      "Wielbark",
+      "Świętajno",
+      "Jedwabno",
+      "Szczytno",
+      "Dźwierzuty",
+      "Pasym"
+    ],
+    "giżycki": [
+      "Giżycko",
+      "Miłki",
+      "Kruklanki",
+      "Wydminy",
+      "Ryn"
+    ],
+    "bartoszycki": [
+      "Bartoszyce",
+      "Górowo Iławeckie",
+      "Bisztynek",
+      "Sępopol"
+    ],
+    "kętrzyński": [
+      "Barciany",
+      "Korsze",
+      "Srokowo",
+      "Reszel",
+      "Kętrzyn"
+    ],
+    "gołdapski": [
+      "Banie Mazurskie",
+      "Gołdap",
+      "Dubeninki"
+    ],
+    "lidzbarski": [
+      "Orneta",
+      "Lidzbark Warmiński",
+      "Kiwity",
+      "Lubomino"
+    ],
+    "nowomiejski": [
+      "Biskupiec",
+      "Nowe Miasto Lubawskie",
+      "Grodziczno",
+      "Kurzętnik"
+    ],
+    "mrągowski": [
+      "Piecki",
+      "Mrągowo",
+      "Mikołajki",
+      "Sorkwity"
+    ],
+    "olecki": [
+      "Olecko",
+      "Świętajno",
+      "Kowale Oleckie",
+      "Wieliczki"
+    ],
+    "piski": [
+      "Pisz",
+      "Biała Piska",
+      "Orzysz",
+      "Ruciane-Nida"
+    ],
+    "ostródzki": [
+      "Miłomłyn",
+      "Morąg",
+      "Miłakowo",
+      "Dąbrówno",
+      "Ostróda",
+      "Łukta",
+      "Grunwald",
+      "Małdyty"
+    ],
+    "ełcki": [
+      "Ełk",
+      "Stare Juchy",
+      "Prostki",
+      "Kalinowo"
+    ],
+    "braniewski": [
+      "Wilczęta",
+      "Pieniężno",
+      "Frombork",
+      "Lelkowo",
+      "Braniewo",
+      "Płoskinia"
+    ],
+    "nidzicki": [
+      "Kozłowo",
+      "Nidzica",
+      "Janowiec Kościelny",
+      "Janowo"
+    ],
+    "węgorzewski": [
+      "Węgorzewo",
+      "Budry",
+      "Pozezdrze"
+    ],
+    "Elbląg": [
+      "Elbląg"
+    ],
+    "Olsztyn": [
+      "Olsztyn"
+    ]
+  },
+  "pomorskie": {
+    "sztumski": [
+      "Stary Dzierzgoń",
+      "Dzierzgoń",
+      "Sztum",
+      "Stary Targ",
+      "Mikołajki Pomorskie"
+    ],
+    "chojnicki": [
+      "Chojnice",
+      "Brusy",
+      "Czersk",
+      "Konarzyny"
+    ],
+    "kwidzyński": [
+      "Prabuty",
+      "Kwidzyn",
+      "Ryjewo",
+      "Gardeja",
+      "Sadlinki"
+    ],
+    "kartuski": [
+      "Żukowo",
+      "Przodkowo",
+      "Sierakowice",
+      "Kartuzy",
+      "Somonino",
+      "Sulęczyno",
+      "Stężyca",
+      "Chmielno"
+    ],
+    "gdański": [
+      "Kolbudy",
+      "Trąbki Wielkie",
+      "Cedry Wielkie",
+      "Pruszcz Gdański",
+      "Przywidz",
+      "Suchy Dąb",
+      "Pszczółki"
+    ],
+    "słupski": [
+      "Ustka",
+      "Kępice",
+      "Główczyce",
+      "Słupsk",
+      "Damnica",
+      "Kobylnica",
+      "Dębnica Kaszubska",
+      "Smołdzino",
+      "Potęgowo"
+    ],
+    "tczewski": [
+      "Tczew",
+      "Pelplin",
+      "Morzeszczyn",
+      "Gniew",
+      "Subkowy"
+    ],
+    "bytowski": [
+      "Parchowo",
+      "Kołczygłowy",
+      "Miastko",
+      "Czarna Dąbrówka",
+      "Lipnica",
+      "Borzytuchom",
+      "Trzebielino",
+      "Bytów",
+      "Tuchomie",
+      "Studzienice"
+    ],
+    "starogardzki": [
+      "Starogard Gdański",
+      "Skórcz",
+      "Kaliska",
+      "Skarszewy",
+      "Zblewo",
+      "Lubichowo",
+      "Bobowo",
+      "Smętowo Graniczne",
+      "Osiek",
+      "Czarna Woda",
+      "Osieczna"
+    ],
+    "człuchowski": [
+      "Człuchów",
+      "Koczała",
+      "Czarne",
+      "Rzeczenica",
+      "Debrzno",
+      "Przechlewo"
+    ],
+    "wejherowski": [
+      "Luzino",
+      "Szemud",
+      "Wejherowo",
+      "Choczewo",
+      "Łęczyce",
+      "Gniewino",
+      "Linia",
+      "Reda",
+      "Rumia"
+    ],
+    "kościerski": [
+      "Stara Kiszewa",
+      "Karsin",
+      "Nowa Karczma",
+      "Kościerzyna",
+      "Liniewo",
+      "Dziemiany",
+      "Lipusz"
+    ],
+    "lęborski": [
+      "Wicko",
+      "Cewice",
+      "Nowa Wieś Lęborska",
+      "Lębork",
+      "Łeba"
+    ],
+    "pucki": [
+      "Krokowa",
+      "Puck",
+      "Władysławowo",
+      "Kosakowo",
+      "Hel",
+      "Jastarnia"
+    ],
+    "malborski": [
+      "Lichnowy",
+      "Nowy Staw",
+      "Miłoradz",
+      "Malbork",
+      "Stare Pole"
+    ],
+    "nowodworski": [
+      "Stegna",
+      "Ostaszewo",
+      "Nowy Dwór Gdański",
+      "Sztutowo",
+      "Krynica Morska"
+    ],
+    "Gdańsk": [
+      "Gdańsk"
+    ],
+    "Gdynia": [
+      "Gdynia"
+    ],
+    "Słupsk": [
+      "Słupsk"
+    ],
+    "Sopot": [
+      "Sopot"
+    ]
+  },
+  "podkarpackie": {
+    "przeworski": [
+      "Adamówka",
+      "Gać",
+      "Kańczuga",
+      "Przeworsk",
+      "Sieniawa",
+      "Tryńcza",
+      "Jawornik Polski",
+      "Zarzecze"
+    ],
+    "stalowowolski": [
+      "Zaleszany",
+      "Radomyśl nad Sanem",
+      "Bojanów",
+      "Pysznica",
+      "Zaklików",
+      "Stalowa Wola"
+    ],
+    "przemyski": [
+      "Fredropol",
+      "Krzywcza",
+      "Dubiecko",
+      "Stubno",
+      "Żurawica",
+      "Przemyśl",
+      "Bircza",
+      "Krasiczyn",
+      "Orły",
+      "Medyka"
+    ],
+    "łańcucki": [
+      "Łańcut",
+      "Białobrzegi",
+      "Żołynia",
+      "Czarna",
+      "Markowa",
+      "Rakszawa"
+    ],
+    "tarnobrzeski": [
+      "Nowa Dęba",
+      "Baranów Sandomierski",
+      "Gorzyce",
+      "Grębów"
+    ],
+    "lubaczowski": [
+      "Lubaczów",
+      "Wielkie Oczy",
+      "Oleszyce",
+      "Stary Dzików",
+      "Narol",
+      "Cieszanów",
+      "Horyniec-Zdrój"
+    ],
+    "strzyżowski": [
+      "Czudec",
+      "Niebylec",
+      "Strzyżów",
+      "Frysztak",
+      "Wiśniowa"
+    ],
+    "mielecki": [
+      "Tuszów Narodowy",
+      "Padew Narodowa",
+      "Przecław",
+      "Borowa",
+      "Mielec",
+      "Czermin",
+      "Gawłuszowice",
+      "Radomyśl Wielki",
+      "Wadowice Górne"
+    ],
+    "leski": [
+      "Lesko",
+      "Baligród",
+      "Solina",
+      "Cisna",
+      "Olszanica"
+    ],
+    "rzeszowski": [
+      "Dynów",
+      "Błażowa",
+      "Chmielnik",
+      "Świlcza",
+      "Boguchwała",
+      "Tyczyn",
+      "Hyżne",
+      "Głogów Małopolski",
+      "Sokołów Małopolski",
+      "Trzebownisko",
+      "Kamień",
+      "Krasne",
+      "Lubenia"
+    ],
+    "krośnieński": [
+      "Wojaszówka",
+      "Rymanów",
+      "Dukla",
+      "Chorkówka",
+      "Jedlicze",
+      "Korczyna",
+      "Jaśliska",
+      "Miejsce Piastowe",
+      "Iwonicz-Zdrój",
+      "Krościenko Wyżne"
+    ],
+    "niżański": [
+      "Harasiuki",
+      "Ulanów",
+      "Krzeszów",
+      "Jeżowe",
+      "Jarocin",
+      "Nisko",
+      "Rudnik nad Sanem"
+    ],
+    "bieszczadzki": [
+      "Ustrzyki Dolne",
+      "Lutowiska",
+      "Czarna"
+    ],
+    "brzozowski": [
+      "Domaradz",
+      "Jasienica Rosielna",
+      "Brzozów",
+      "Haczów",
+      "Dydnia",
+      "Nozdrzec"
+    ],
+    "sanocki": [
+      "Zarszyn",
+      "Bukowsko",
+      "Besko",
+      "Sanok",
+      "Zagórz",
+      "Komańcza",
+      "Tyrawa Wołoska"
+    ],
+    "jasielski": [
+      "Skołyszyn",
+      "Jasło",
+      "Kołaczyce",
+      "Brzyska",
+      "Nowy Żmigród",
+      "Tarnowiec",
+      "Dębowiec",
+      "Osiek Jasielski",
+      "Krempna"
+    ],
+    "dębicki": [
+      "Brzostek",
+      "Pilzno",
+      "Żyraków",
+      "Czarna",
+      "Dębica",
+      "Jodłowa"
+    ],
+    "ropczycko-sędziszowski": [
+      "Sędziszów Małopolski",
+      "Iwierzyce",
+      "Ostrów",
+      "Wielopole Skrzyńskie",
+      "Ropczyce"
+    ],
+    "leżajski": [
+      "Leżajsk",
+      "Kuryłówka",
+      "Grodzisko Dolne",
+      "Nowa Sarzyna"
+    ],
+    "jarosławski": [
+      "Laszki",
+      "Chłopice",
+      "Radymno",
+      "Roźwienica",
+      "Wiązownica",
+      "Pawłosiów",
+      "Rokietnica",
+      "Pruchnik",
+      "Jarosław"
+    ],
+    "kolbuszowski": [
+      "Majdan Królewski",
+      "Kolbuszowa",
+      "Cmolas",
+      "Dzikowiec",
+      "Niwiska",
+      "Raniżów"
+    ],
+    "Krosno": [
+      "Krosno"
+    ],
+    "Przemyśl": [
+      "Przemyśl"
+    ],
+    "Rzeszów": [
+      "Rzeszów"
+    ],
+    "Tarnobrzeg": [
+      "Tarnobrzeg"
+    ]
+  },
+  "dolnośląskie": {
+    "wołowski": [
+      "Wińsko",
+      "Wołów",
+      "Brzeg Dolny"
+    ],
+    "karkonoski": [
+      "Stara Kamienica",
+      "Mysłakowice",
+      "Podgórzyn",
+      "Jeżów Sudecki",
+      "Janowice Wielkie",
+      "Karpacz",
+      "Kowary",
+      "Piechowice",
+      "Szklarska Poręba"
+    ],
+    "legnicki": [
+      "Krotoszyce",
+      "Legnickie Pole",
+      "Chojnów",
+      "Kunice",
+      "Miłkowice",
+      "Ruja",
+      "Prochowice"
+    ],
+    "świdnicki": [
+      "Jaworzyna Śląska",
+      "Strzegom",
+      "Marcinowice",
+      "Świdnica",
+      "Dobromierz",
+      "Żarów",
+      "Świebodzice"
+    ],
+    "trzebnicki": [
+      "Oborniki Śląskie",
+      "Żmigród",
+      "Trzebnica",
+      "Prusice",
+      "Zawonia",
+      "Wisznia Mała"
+    ],
+    "lubiński": [
+      "Rudna",
+      "Lubin",
+      "Ścinawa"
+    ],
+    "ząbkowicki": [
+      "Ciepłowody",
+      "Bardo",
+      "Ziębice",
+      "Złoty Stok",
+      "Ząbkowice Śląskie",
+      "Stoszowice",
+      "Kamieniec Ząbkowicki"
+    ],
+    "górowski": [
+      "Wąsosz",
+      "Niechlów",
+      "Jemielno",
+      "Góra"
+    ],
+    "milicki": [
+      "Milicz",
+      "Cieszków",
+      "Krośnice"
+    ],
+    "wrocławski": [
+      "Kąty Wrocławskie",
+      "Kobierzyce",
+      "Długołęka",
+      "Sobótka",
+      "Siechnice",
+      "Jordanów Śląski",
+      "Żórawina",
+      "Mietków",
+      "Czernica"
+    ],
+    "oleśnicki": [
+      "Dobroszyce",
+      "Międzybórz",
+      "Bierutów",
+      "Syców",
+      "Oleśnica",
+      "Twardogóra",
+      "Dziadowa Kłoda"
+    ],
+    "kłodzki": [
+      "Nowa Ruda",
+      "Bystrzyca Kłodzka",
+      "Stronie Śląskie",
+      "Kłodzko",
+      "Międzylesie",
+      "Szczytna",
+      "Lewin Kłodzki",
+      "Duszniki-Zdrój",
+      "Radków",
+      "Lądek-Zdrój",
+      "Kudowa-Zdrój",
+      "Polanica-Zdrój"
+    ],
+    "strzeliński": [
+      "Borów",
+      "Kondratowice",
+      "Strzelin",
+      "Wiązów",
+      "Przeworno"
+    ],
+    "lubański": [
+      "Leśna",
+      "Olszyna",
+      "Lubań",
+      "Siekierczyn",
+      "Platerówka",
+      "Świeradów-Zdrój"
+    ],
+    "jaworski": [
+      "Mściwojów",
+      "Wądroże Wielkie",
+      "Paszowice",
+      "Bolków",
+      "Męcinka",
+      "Jawor"
+    ],
+    "głogowski": [
+      "Jerzmanowa",
+      "Pęcław",
+      "Głogów",
+      "Żukowice",
+      "Kotla"
+    ],
+    "lwówecki": [
+      "Wleń",
+      "Lwówek Śląski",
+      "Mirsk",
+      "Lubomierz",
+      "Gryfów Śląski"
+    ],
+    "średzki": [
+      "Miękinia",
+      "Kostomłoty",
+      "Środa Śląska",
+      "Malczyce",
+      "Udanin"
+    ],
+    "zgorzelecki": [
+      "Zgorzelec",
+      "Bogatynia",
+      "Pieńsk",
+      "Sulików",
+      "Węgliniec",
+      "Zawidów"
+    ],
+    "polkowicki": [
+      "Polkowice",
+      "Chocianów",
+      "Grębocice",
+      "Radwanice",
+      "Gaworzyce",
+      "Przemków"
+    ],
+    "złotoryjski": [
+      "Świerzawa",
+      "Złotoryja",
+      "Zagrodno",
+      "Pielgrzymka",
+      "Wojcieszów"
+    ],
+    "dzierżoniowski": [
+      "Bielawa",
+      "Pieszyce",
+      "Niemcza",
+      "Dzierżoniów",
+      "Łagiewniki",
+      "Piława Górna"
+    ],
+    "oławski": [
+      "Jelcz-Laskowice",
+      "Oława",
+      "Domaniów"
+    ],
+    "kamiennogórski": [
+      "Lubawka",
+      "Marciszów",
+      "Kamienna Góra"
+    ],
+    "wałbrzyski": [
+      "Boguszów-Gorce",
+      "Czarny Bór",
+      "Stare Bogaczowice",
+      "Walim",
+      "Głuszyca",
+      "Mieroszów",
+      "Jedlina-Zdrój",
+      "Szczawno-Zdrój"
+    ],
+    "bolesławiecki": [
+      "Bolesławiec",
+      "Gromadka",
+      "Osiecznica",
+      "Nowogrodziec",
+      "Warta Bolesławiecka"
+    ],
+    "Jelenia Góra": [
+      "Jelenia Góra"
+    ],
+    "Legnica": [
+      "Legnica"
+    ],
+    "Wałbrzych": [
+      "Wałbrzych"
+    ],
+    "Wrocław": [
+      "Wrocław"
+    ]
+  },
+  "opolskie": {
+    "oleski": [
+      "Praszka",
+      "Radłów",
+      "Dobrodzień",
+      "Rudniki",
+      "Olesno",
+      "Gorzów Śląski",
+      "Zębowice"
+    ],
+    "opolski": [
+      "Ozimek",
+      "Łubniany",
+      "Turawa",
+      "Prószków",
+      "Niemodlin",
+      "Murów",
+      "Dobrzeń Wielki",
+      "Dąbrowa",
+      "Chrząstowice",
+      "Komprachcice",
+      "Tułowice",
+      "Popielów",
+      "Tarnów Opolski"
+    ],
+    "głubczycki": [
+      "Baborów",
+      "Głubczyce",
+      "Branice",
+      "Kietrz"
+    ],
+    "strzelecki": [
+      "Ujazd",
+      "Jemielnica",
+      "Strzelce Opolskie",
+      "Izbicko",
+      "Leśnica",
+      "Zawadzkie",
+      "Kolonowskie"
+    ],
+    "namysłowski": [
+      "Namysłów",
+      "Świerczów",
+      "Wilków",
+      "Pokój",
+      "Domaszowice"
+    ],
+    "kluczborski": [
+      "Kluczbork",
+      "Byczyna",
+      "Wołczyn",
+      "Lasowice Wielkie"
+    ],
+    "brzeski": [
+      "Grodków",
+      "Skarbimierz",
+      "Lubsza",
+      "Lewin Brzeski",
+      "Brzeg",
+      "Olszanka"
+    ],
+    "prudnicki": [
+      "Biała",
+      "Głogówek",
+      "Prudnik",
+      "Lubrza"
+    ],
+    "nyski": [
+      "Nysa",
+      "Kamiennik",
+      "Pakosławice",
+      "Łambinowice",
+      "Głuchołazy",
+      "Korfantów",
+      "Otmuchów",
+      "Skoroszyce",
+      "Paczków"
+    ],
+    "kędzierzyńsko-kozielski": [
+      "Bierawa",
+      "Cisek",
+      "Pawłowiczki",
+      "Reńska Wieś",
+      "Polska Cerekiew",
+      "Kędzierzyn-Koźle"
+    ],
+    "krapkowicki": [
+      "Krapkowice",
+      "Walce",
+      "Gogolin",
+      "Strzeleczki",
+      "Zdzieszowice"
+    ],
+    "Opole": [
+      "Opole"
+    ]
+  },
+  "zachodniopomorskie": {
+    "łobeski": [
+      "Dobra",
+      "Łobez",
+      "Radowo Małe",
+      "Węgorzyno",
+      "Resko"
+    ],
+    "goleniowski": [
+      "Przybiernów",
+      "Maszewo",
+      "Goleniów",
+      "Nowogard",
+      "Osina",
+      "Stepnica"
+    ],
+    "pyrzycki": [
+      "Bielice",
+      "Warnice",
+      "Pyrzyce",
+      "Przelewice",
+      "Kozielice",
+      "Lipiany"
+    ],
+    "gryfiński": [
+      "Banie",
+      "Gryfino",
+      "Chojna",
+      "Moryń",
+      "Cedynia",
+      "Stare Czarnowo",
+      "Trzcińsko-Zdrój",
+      "Mieszkowice",
+      "Widuchowa"
+    ],
+    "kamieński": [
+      "Golczewo",
+      "Kamień Pomorski",
+      "Świerzno",
+      "Wolin",
+      "Dziwnów",
+      "Międzyzdroje"
+    ],
+    "kołobrzeski": [
+      "Ustronie Morskie",
+      "Dygowo",
+      "Siemyśl",
+      "Kołobrzeg",
+      "Gościno",
+      "Rymań"
+    ],
+    "sławieński": [
+      "Malechowo",
+      "Darłowo",
+      "Sławno",
+      "Postomino"
+    ],
+    "myśliborski": [
+      "Barlinek",
+      "Dębno",
+      "Boleszkowice",
+      "Myślibórz",
+      "Nowogródek Pomorski"
+    ],
+    "choszczeński": [
+      "Drawno",
+      "Pełczyce",
+      "Bierzwnik",
+      "Choszczno",
+      "Krzęcin",
+      "Recz"
+    ],
+    "policki": [
+      "Kołbaskowo",
+      "Police",
+      "Nowe Warpno",
+      "Dobra (Szczecińska)"
+    ],
+    "szczecinecki": [
+      "Barwice",
+      "Biały Bór",
+      "Borne Sulinowo",
+      "Szczecinek",
+      "Grzmiąca"
+    ],
+    "gryficki": [
+      "Gryfice",
+      "Trzebiatów",
+      "Brojce",
+      "Karnice",
+      "Płoty",
+      "Rewal"
+    ],
+    "świdwiński": [
+      "Rąbino",
+      "Świdwin",
+      "Sławoborze",
+      "Połczyn-Zdrój",
+      "Brzeżno"
+    ],
+    "drawski": [
+      "Wierzchowo",
+      "Kalisz Pomorski",
+      "Złocieniec",
+      "Ostrowice",
+      "Czaplinek",
+      "Drawsko Pomorskie"
+    ],
+    "koszaliński": [
+      "Będzino",
+      "Sianów",
+      "Biesiekierz",
+      "Bobolice",
+      "Manowo",
+      "Polanów",
+      "Mielno",
+      "Świeszyno"
+    ],
+    "stargardzki": [
+      "Dobrzany",
+      "Stara Dąbrowa",
+      "Kobylanka",
+      "Chociwel",
+      "Dolice",
+      "Suchań",
+      "Ińsko",
+      "Marianowo",
+      "Stargard Szczeciński"
+    ],
+    "białogardzki": [
+      "Białogard",
+      "Tychowo",
+      "Karlino"
+    ],
+    "wałecki": [
+      "Mirosławiec",
+      "Człopa",
+      "Wałcz",
+      "Tuczno"
+    ],
+    "Koszalin": [
+      "Koszalin"
+    ],
+    "Szczecin": [
+      "Szczecin"
+    ],
+    "Świnoujście": [
+      "Świnoujście"
+    ]
+  },
+  "lubuskie": {
+    "zielonogórski": [
+      "Babimost",
+      "Bojadła",
+      "Czerwieńsk",
+      "Nowogród Bobrzański",
+      "Trzebiechów",
+      "Sulechów",
+      "Świdnica",
+      "Kargowa",
+      "Zabór"
+    ],
+    "gorzowski": [
+      "Lubiszyn",
+      "Santok",
+      "Witnica",
+      "Deszczno",
+      "Bogdaniec",
+      "Kłodawa",
+      "Kostrzyn nad Odrą"
+    ],
+    "strzelecko-drezdenecki": [
+      "Drezdenko",
+      "Stare Kurowo",
+      "Zwierzyn",
+      "Strzelce Krajeńskie",
+      "Dobiegniew"
+    ],
+    "wschowski": [
+      "Sława",
+      "Wschowa",
+      "Szlichtyngowa"
+    ],
+    "sulęciński": [
+      "Torzym",
+      "Sulęcin",
+      "Krzeszyce",
+      "Słońsk",
+      "Lubniewice"
+    ],
+    "krośnieński": [
+      "Bobrowice",
+      "Krosno Odrzańskie",
+      "Gubin",
+      "Dąbie",
+      "Bytnica",
+      "Maszewo"
+    ],
+    "żarski": [
+      "Lubsko",
+      "Brody",
+      "Żary",
+      "Jasień",
+      "Lipinki Łużyckie",
+      "Trzebiel",
+      "Przewóz",
+      "Tuplice",
+      "Łęknica"
+    ],
+    "słubicki": [
+      "Cybinka",
+      "Górzyca",
+      "Słubice",
+      "Rzepin",
+      "Ośno Lubuskie"
+    ],
+    "nowosolski": [
+      "Siedlisko",
+      "Otyń",
+      "Bytom Odrzański",
+      "Nowe Miasteczko",
+      "Kożuchów",
+      "Nowa Sól",
+      "Kolsko"
+    ],
+    "międzyrzecki": [
+      "Trzciel",
+      "Bledzew",
+      "Międzyrzecz",
+      "Pszczew",
+      "Przytoczna",
+      "Skwierzyna"
+    ],
+    "żagański": [
+      "Szprotawa",
+      "Małomice",
+      "Iłowa",
+      "Żagań",
+      "Brzeźnica",
+      "Niegosławice",
+      "Gozdnica",
+      "Wymiarki"
+    ],
+    "świebodziński": [
+      "Skąpe",
+      "Świebodzin",
+      "Lubrza",
+      "Szczaniec",
+      "Zbąszynek",
+      "Łagów"
+    ],
+    "Gorzów Wielkopolski": [
+      "Gorzów Wielkopolski"
+    ],
+    "Zielona Góra": [
+      "Zielona Góra"
+    ]
+  }
+}
