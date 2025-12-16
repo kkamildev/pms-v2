@@ -13,7 +13,7 @@ if (!fs.existsSync(folderPath)) {
 
 const storage = multer.diskStorage({
     destination:(req, file, cb) =>{
-        const dist = path.join(folderPath, req.params.id);
+        const dist = path.join(folderPath, req.params.idLand);
         if(!fs.existsSync(dist)) {
             fs.mkdirSync(dist, {recursive:true});
         }
