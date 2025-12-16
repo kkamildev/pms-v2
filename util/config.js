@@ -6,6 +6,7 @@ module.exports = {
     dbUser:process.env.DB_USER || "root",
     dbPassword:process.env.DB_PASSWORD || "",
     development:Number(process.env.DEVELOPMENT),
+    appPort:process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000,
     cookieSecurity:Number(process.env.COOKIE_SECURITY),
     refreshTokenKey:process.env.REFRESH_TOKEN_KEY || "inWhm0r9gfwJ_s07KEYrX",
     accessTokenKey:process.env.ACCESS_TOKEN_KEY || "K1BjP6-xTEAS8uKoq1vNm",
@@ -18,5 +19,6 @@ module.exports = {
     mailUser:process.env.MAIL_USER || "name.surname@domain.com",
     mailPassword:process.env.MAIL_PASSWORD || "123456",
     mailAdmin:process.env.MAIL_ADMIN || "name.surname@domain.com",
-    backupDir:process.env.BACKUP_DIR || "./backups"
+    backupDir:process.env.BACKUP_DIR || "./backups",
+    cronExpression:process.env.CRON_EXPRESSION || "0 12 * * 1"
 };

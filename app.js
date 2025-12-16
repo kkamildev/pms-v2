@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const createDatabase = require("./util/createDatabase");
-const createBackup = require("./util/createBackup")
+const createShedule = require("./util/createShedule");
 
 
 const main = async () => {
@@ -43,10 +43,8 @@ const main = async () => {
     app.use(limiter);
     app.use(express.json());
     app.use(cookieParser());
-    if(!config.development) {
-        app.use(express.static(path.join(__dirname, "app", "dist")));
-    }
-
+    await sequelize.sync({force:false});
+    
     // routes
 
     app.use("/api/users", users);
@@ -62,10 +60,20 @@ const main = async () => {
     app.use("/api/lands", lands);
     app.use("/api/ground-classes", groundClasses);
     app.use("/api/areas", areas);
-    
 
-    sequelize.sync({force:false});
-    createBackup();
+    if(!config.development) {
+        app.use(express.static(path.join(__dirname, "app", "dist")));
+        app.use((req, res) => res.redirect(path.join(__dirname, "app", "dist", "index.html")));
+    } else {
+      app.use((req, res) => res.status(404).json({error:"Route not found"}));
+    }
+
+    // utils
+    createShedule();
+
+    app.listen(config.appPort, "0.0.0.0", () => {
+      console.log(`Server is listening on port ${config.appPort}`);
+    });
 };
 
 main();
