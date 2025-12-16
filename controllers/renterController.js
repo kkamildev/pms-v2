@@ -28,7 +28,7 @@ exports.getRenters = withErrorhandling(async (req, res) => {
                         attributes:["id", "name", "phone"],
                         where:{
                             name:{
-                                [Op.like]:`%${ownerNameFilter}%`
+                                [Op.like]:`%${ownerNameFilter || ""}%`
                             }
                         }
                     },
@@ -67,7 +67,7 @@ exports.getRenters = withErrorhandling(async (req, res) => {
         ...(limit && {limit:Number(limit)}),
         where:{
             name:{
-                [Op.like]:`%${nameFilter}%`
+                [Op.like]:`%${nameFilter || ""}%`
             }
         },
         order:[["name", "ASC"]]

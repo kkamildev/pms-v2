@@ -4,15 +4,44 @@ const express = require("express");
 const router = express.Router();
 
 const renterController = require('../controllers/renterController');
+const { query, body } = require("express-validator");
 
 router.get("/get-all", renterController.getAllRenters);
 
-router.get("/get", renterController.getRenters);
+router.get("/get", [
+    query("monthFilter").trim().toInt(),
+    query("nameFilter").trim(),
+    query("endYearFilter").trim().optional().
+    isDate().withMessage("endYearFilter is not valid date format").toDate(),
+    query("ownerNameFilter").trim(),
+    query("limit").trim().optional().isInt({min:0}).withMessage("limit must be a number greater or equal 0").
+    toInt(),
+    query("showExpired").trim().toBoolean()
+], renterController.getRenters);
 
-router.post("/insert", renterController.insertRenter);
+router.post("/insert",[
+    body("name").trim().toUpperCase().
+    exists({checkFalsy:true}).withMessage("name is required").
+    isLength({min:1, max:100}).withMessage("name must be less or equal 100"),
+    body("phone").trim().
+    exists({checkFalsy:true}).withMessage("phone is required").
+    isMobilePhone("pl-PL").withMessage("phone is not valid phone format")
+], renterController.insertRenter);
 
-router.put("/update", renterController.updateRenter);
+router.put("/update", [
+    body("idRenter").trim().
+    exists({checkFalsy:true}).withMessage("idRenter is required"),
+    body("name").trim().toUpperCase().
+    exists({checkFalsy:true}).withMessage("name is required").
+    isLength({min:1, max:100}).withMessage("name must be less or equal 100"),
+    body("phone").trim().
+    exists({checkFalsy:true}).withMessage("phone is required").
+    isMobilePhone("pl-PL").withMessage("phone is not valid phone format")
+], renterController.updateRenter);
 
-router.delete("/delete", renterController.deleteRenter);
+router.delete("/delete",[
+    body("idRenter").trim().
+    exists({checkFalsy:true}).withMessage("idRenter is required")
+], renterController.deleteRenter);
 
 module.exports = router;
