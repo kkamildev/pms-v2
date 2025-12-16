@@ -16,7 +16,7 @@ exports.getTowns = withErrorHandling(async (req, res) => {
         },
         where:{
             name:{
-                [Op.like]:`${town}%`
+                [Op.like]:`${town || ""}%`
             }
         },
         order:[["name", "ASC"]]
@@ -29,13 +29,13 @@ exports.getLocations = withErrorHandling(async (req, res) => {
     const locations = await Location.findAll({
         where:{
             province:{
-                [Op.like]:`${province}%`
+                [Op.like]:`${province | ""}%`
             },
             district:{
-                [Op.like]:`${district}%`
+                [Op.like]:`${district | ""}%`
             },
             commune:{
-                [Op.like]:`${commune}%`
+                [Op.like]:`${commune || ""}%`
             },
             ...(taxDistrict && {taxDistrict}),
             ...(agriculturalTax && (agriculturalTax == "1" ? {agriculturalTax:{[Op.ne]:null}} : {agriculturalTax:{[Op.eq]:null}})),
