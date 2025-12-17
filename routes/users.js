@@ -39,7 +39,7 @@ router.post("/insert",[
     isLength({min:8}).withMessage("password is too weak"),
     body("role").
     exists({checkFalsy:true}).withMessage("role is required").
-    isWhitelisted(["ADMIN", "SEKRETARIAT", "KSIEGOWOSC", "TEREN"]).withMessage("Role is not whitelisted")
+    isIn(["ADMIN", "SEKRETARIAT", "KSIEGOWOSC", "TEREN"]).withMessage("Role is not whitelisted")
 ], userController.insertUser);
 
 router.put("/update", [
@@ -51,12 +51,9 @@ router.put("/update", [
     body("surname").trim().toUpperCase().
     exists({checkFalsy:true}).withMessage("surname is required").
     isLength({max:50}).withMessage("surname must be less or equal than 50 characters"),
-    body("password").
-    exists({checkFalsy:true}).withMessage("password is required").
-    isLength({min:8}).withMessage("password is too weak"),
     body("role").
     exists({checkFalsy:true}).withMessage("role is required").
-    isWhitelisted(["ADMIN", "SEKRETARIAT", "KSIEGOWOSC", "TEREN"]).withMessage("Role is not whitelisted")
+    isIn(["ADMIN", "SEKRETARIAT", "KSIEGOWOSC", "TEREN"]).withMessage("Role is not whitelisted")
 ], userController.updateUser);
 
 router.put("/update-password", [

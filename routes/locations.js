@@ -10,9 +10,9 @@ router.get("/get", [
     isInt().withMessage("taxDistrict must be a int value")
     .toInt(),
     query("agriculturalTax").trim().default(null).optional({checkFalsy:true}).
-    isWhitelisted(["0", "1"]).withMessage("agriculturalTax must be 0 or 1"),
+    isIn(["0", "1"]).withMessage("agriculturalTax must be 0 or 1"),
     query("forestTax").trim().default(null).optional({checkFalsy:true}).
-    isWhitelisted(["0", "1"]).withMessage("forestTax must be 0 or 1"),
+    isIn(["0", "1"]).withMessage("forestTax must be 0 or 1"),
     query("commune").trim().default(null),
     query("district").trim().default(null),
     query("province").trim().default(null),

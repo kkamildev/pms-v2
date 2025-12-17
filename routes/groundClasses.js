@@ -33,7 +33,7 @@ router.post("/insert", [
     isInt().withMessage("taxDistrict must be int value").toInt(),
     body("tax").trim().
     exists({checkFalsy:true}).withMessage("tax is required").
-    isWhitelisted(["rolny", "lesny", "brak"]).withMessage("tax is not whitelisted")
+    isIn(["rolny", "lesny", "brak"]).withMessage("tax is not whitelisted")
 ], groundClassController.insertGroundClass);
 
 router.put("/update", [
@@ -50,7 +50,7 @@ router.put("/update", [
     isInt().withMessage("taxDistrict must be a int value").toInt(),
     body("tax").trim().
     exists({checkFalsy:true}).withMessage("tax is required").
-    isWhitelisted(["rolny", "lesny", "brak"]).withMessage("tax is not whitelisted")
+    isIn(["rolny", "lesny", "brak"]).withMessage("tax is not whitelisted")
 ], groundClassController.updateGroundClass);
 
 router.delete("/delete", [

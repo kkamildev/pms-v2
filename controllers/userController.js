@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const config = require("../util/config");
 const withErrorHandling = require("../middlewares/withErrorHandling");
+const jwt = require("jsonwebtoken");
 
 exports.getAllUsers = withErrorHandling(async (req, res) => {
     const users = await User.findAll({
