@@ -11,10 +11,10 @@ router.get("/get-all", generalPlanController.getAllGeneralPlans);
 router.post("/insert", [
     body("code").trim().
     exists({checkFalsy:true}).withMessage("code is required").
-    isLength({min:1, max:5}).withMessage("code must be less or equal 5 characters"),
+    isLength({max:5}).withMessage("code must be less or equal 5 characters"),
     body("description").trim().
     exists({checkFalsy:true}).withMessage("description is required").
-    isLength({min:1, max:70}).withMessage("description must be less or equal 70 characters"),
+    isLength({max:70}).withMessage("description must be less or equal 70 characters"),
 ], generalPlanController.insertGeneralPlan);
 
 router.post("/insert-file", generalPlanController.insertGeneralPlansFile);
@@ -24,10 +24,10 @@ router.put("/update", [
     exists({checkFalsy:true}).withMessage("idGeneralPlan is required"),
     body("code").trim().
     exists({checkFalsy:true}).withMessage("code is required").
-    isLength({min:1, max:5}).withMessage("code must be less or equal 5 characters"),
+    isLength({max:5}).withMessage("code must be less or equal 5 characters"),
     body("description").trim().
     exists({checkFalsy:true}).withMessage("description is required").
-    isLength({min:1, max:70}).withMessage("description must be less or equal 70 characters"),
+    isLength({max:70}).withMessage("description must be less or equal 70 characters"),
 ], generalPlanController.updateGeneralPlan);
 
 router.delete("/delete", [

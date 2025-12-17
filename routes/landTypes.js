@@ -11,7 +11,7 @@ router.get("/get-all", landTypeController.getAllLandTypes);
 router.post("/insert", [
     body("type").trim().
     exists({checkFalsy:true}).withMessage("type is required").
-    isLength({min:1, max:50}).withMessage("type must be less or equal 50 characters")
+    isLength({max:50}).withMessage("type must be less or equal 50 characters")
 ], landTypeController.insertLandType);
 
 router.post("/insert-file", landTypeController.insertLandTypesFile);
@@ -21,7 +21,7 @@ router.put("/update", [
     exists({checkFalsy:true}).withMessage("idLandType is required"),
     body("type").trim().
     exists({checkFalsy:true}).withMessage("type is required").
-    isLength({min:1, max:50}).withMessage("type must be less or equal 50 characters")
+    isLength({max:50}).withMessage("type must be less or equal 50 characters")
 ], landTypeController.updateLandType);
 
 router.delete("/delete", [
