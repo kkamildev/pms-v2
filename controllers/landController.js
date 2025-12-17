@@ -92,7 +92,6 @@ exports.getLand = withErrorHandling(async (req, res) => {
 });
 
 exports.getRentLands = withErrorHandling(async (req, res) => {
-    const {purpose} = req.body;
     const lands = await Land.findAll({
         attributes:["serialNumber", "landNumber", "area"],
         include:[
@@ -117,7 +116,7 @@ exports.getRentLands = withErrorHandling(async (req, res) => {
                 required:false,
                 attributes:[],
                 where:{
-                    type:purpose
+                    type:"Dzierżawa"
                 }
             }
         ]
@@ -153,7 +152,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                 attributes:["name"],
                 where:{
                     name:{
-                        [Op.like]:`${townFilter}%`
+                        [Op.like]:`${townFilter || ""}%`
                     }
                 },
                 include:{
@@ -162,13 +161,13 @@ exports.getLands = withErrorHandling(async (req, res) => {
                     attributes:["province", "district", "commune", "agriculturalTax", "forestTax"],
                     where:{
                         commune:{
-                            [Op.like]:`${communeFilter}%`
+                            [Op.like]:`${communeFilter || ""}%`
                         },
                         district:{
-                            [Op.like]:`${districtFilter}%`
+                            [Op.like]:`${districtFilter || ""}%`
                         },
                         province:{
-                            [Op.like]:`${provinceFilter}%`
+                            [Op.like]:`${provinceFilter || ""}%`
                         }
                     }
                 }
@@ -201,7 +200,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                 attributes:["name", "phone"],
                 where:{
                     name:{
-                        [Op.like]:`%${ownerFilter}%`
+                        [Op.like]:`%${ownerFilter || ""}%`
                     }
                 }
             },
@@ -218,7 +217,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                 attributes:["type"],
                 where:{
                     type:{
-                        [Op.like]:`${purposeFilter}%`
+                        [Op.like]:`${purposeFilter || ""}%`
                     }
                 }
             },
@@ -256,7 +255,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                     attributes:["id", "class", "converter", "tax"],
                     where:{
                         class:{
-                            [Op.like]:`%${groundClassFilter}%`
+                            [Op.like]:`%${groundClassFilter || ""}%`
                         }
                     }
                 }
@@ -264,10 +263,10 @@ exports.getLands = withErrorHandling(async (req, res) => {
         ],
         where:{
             serialNumber:{
-                [Op.like]:`${serialFilter}%`
+                [Op.like]:`${serialFilter || ""}%`
             },
             landNumber:{
-                [Op.like]:`${landNumberFilter}%`
+                [Op.like]:`${landNumberFilter || ""}%`
             },
             area:{
                 ...(lowAreaFilter && {[Op.gte]:lowAreaFilter}),
@@ -338,7 +337,7 @@ exports.insertLand = withErrorHandling(async (req, res) => {
         landNumber,
         area,
         idTown,
-        registerNumber,
+        registerNumber:registerNumber || null,
         mortgage,
         idOwner,
         idLandType:idLandType || null,

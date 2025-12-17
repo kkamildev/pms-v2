@@ -43,7 +43,8 @@ const Land = sequelize.define("Land", {
     },
     registerNumber:{
         type:DataTypes.STRING(15),
-        allowNull:false
+        allowNull:true,
+        defaultValue:null
     },
     mortgage:{
         type:DataTypes.BOOLEAN(),
