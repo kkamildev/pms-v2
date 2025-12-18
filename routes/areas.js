@@ -4,6 +4,11 @@ const router = express.Router();
 
 const areaController = require('../controllers/areaController');
 const { body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
+router.use(roleAuthorization(["KSIEGOWOSC", "SEKRETARIAT"]));
 
 router.post("/insert", [
     body("idLand").trim().

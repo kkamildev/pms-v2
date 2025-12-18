@@ -5,6 +5,10 @@ const router = express.Router();
 
 const rentController = require('../controllers/rentController');
 const { body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
 
 router.post("/insert",[
     body("idRenter").trim().
@@ -48,6 +52,8 @@ router.put("/update",[
     exists({checkFalsy:true}).withMessage("issueRentalFactureDate is required").
     isDate().withMessage("issueRentalFactureDate must be a date").toDate(),
 ], rentController.updateRent);
+
+router.use(roleAuthorization(["ADMIN"]));
 
 router.delete("/delete", [
     body("idRent").trim().

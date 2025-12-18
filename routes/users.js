@@ -4,6 +4,8 @@ const {body} = require("express-validator");
 
 const router = express.Router();
 const userController = require('../controllers/userController');
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
 
 router.get("/get-all", userController.getAllUsers);
 
@@ -26,6 +28,9 @@ router.post("/login-user",[
     exists({checkFalsy:true}).withMessage("idUser is required"),
     body("password").exists({checkFalsy:true}).withMessage("password is required")
 ], userController.loginUser);
+
+router.use(authorization());
+router.use(roleAuthorization(["ADMIN"]));
 
 router.post("/insert",[
     body("name").trim().toUpperCase().

@@ -4,6 +4,10 @@ const router = express.Router();
 
 const groundClassController = require('../controllers/groundClassController');
 const { query, body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
 
 router.get("/get",[
     query("taxDistrict").trim().
@@ -20,6 +24,8 @@ router.get("/count",[
 ], groundClassController.getGroundClassCount);
 
 router.get("/get-unique", groundClassController.getUniqueGroundClasses);
+
+router.use(roleAuthorization(["KSIEGOWOSC", "SEKRETARIAT"]));
 
 router.post("/insert", [
     body("groundClass").trim().

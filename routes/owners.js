@@ -5,6 +5,11 @@ const router = express.Router();
 
 const ownerController = require('../controllers/ownerController');
 const { query, body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+
+router.use(authorization());
 
 router.get("/get", [
     query("nameFilter").trim().default(null),
@@ -29,6 +34,8 @@ router.put("/update",[
     body("phone").trim().default(null).optional({checkFalsy:true}).
     isMobilePhone("pl-PL").withMessage("phone is not valid PL phone format")
 ], ownerController.updateOwner);
+
+router.use(roleAuthorization(["ADMIN"]));
 
 router.delete("/delete",[
     body("idOwner").trim().exists({checkFalsy:true}).withMessage("idOwner is required"),

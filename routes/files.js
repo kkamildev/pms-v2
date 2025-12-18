@@ -6,6 +6,9 @@ const router = express.Router();
 
 const fileController = require('../controllers/fileController');
 const { param, body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+
+router.use(authorization());
 
 router.get("/get", [
     param("idLand").trim().

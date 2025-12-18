@@ -5,6 +5,10 @@ const router = express.Router();
 
 const landController = require('../controllers/landController');
 const { query, body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
 
 router.get("/serial-exist", [
     query("serialNumber").trim().
@@ -172,6 +176,8 @@ router.put("/update", [
     exists({checkFalsy:true}).withMessage("propertyTax is required").
     isBoolean().withMessage("propertyTax must be a boolean value").toBoolean()
 ], landController.updateLand);
+
+router.use(roleAuthorization(["ADMIN"]));
 
 router.delete("/delete",[
     body("idLand").trim().

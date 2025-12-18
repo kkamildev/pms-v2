@@ -5,6 +5,10 @@ const router = express.Router();
 
 const renterController = require('../controllers/renterController');
 const { query, body } = require("express-validator");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+const authorization = require("../middlewares/authorization");
+
+router.use(authorization());
 
 router.get("/get-all", renterController.getAllRenters);
 
@@ -41,6 +45,8 @@ router.put("/update", [
     exists({checkFalsy:true}).withMessage("phone is required").
     isMobilePhone("pl-PL").withMessage("phone is not valid PL phone format")
 ], renterController.updateRenter);
+
+router.use(roleAuthorization(["ADMIN"]));
 
 router.delete("/delete",[
     body("idRenter").trim().

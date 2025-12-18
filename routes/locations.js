@@ -4,6 +4,16 @@ const router = express.Router();
 
 const locationController = require('../controllers/locationController');
 const { query, body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
+
+router.get("/get-towns", [
+    query("town").trim().default(null)
+], locationController.getTowns);
+
+router.use(roleAuthorization(["KSIEGOWOSC", "SEKRETARIAT"]))
 
 router.get("/get", [
     query("taxDistrict").trim().default(null).optional({checkFalsy:true}).
@@ -20,10 +30,6 @@ router.get("/get", [
     isInt({min:0}).withMessage("limit must be int value greater or equal 0").
     toInt()
 ], locationController.getLocations);
-
-router.get("/get-towns", [
-    query("town").trim().default(null)
-], locationController.getTowns);
 
 router.put("/update", [
     body("idLocation").trim().

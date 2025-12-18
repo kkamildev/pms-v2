@@ -5,8 +5,14 @@ const router = express.Router();
 
 const landPurposeController = require('../controllers/landPurposeController');
 const { body } = require("express-validator");
+const authorization = require("../middlewares/authorization");
+const roleAuthorization = require("../middlewares/roleAuthorization");
+
+router.use(authorization());
 
 router.get("/get-all", landPurposeController.getAllLandPurposes);
+
+router.use(roleAuthorization(["ADMIN"]));
 
 router.post("/insert", [
     body("type").trim().
