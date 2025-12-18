@@ -1,6 +1,8 @@
 
 const Mpzp = require("../models/Mpzp");
 const withErrorHandling = require("../middlewares/withErrorHandling");
+const path = require("path");
+const fs = require("fs");
 
 exports.getAllMpzp = withErrorHandling(async (req, res) => {
     const mpzp = await Mpzp.findAll({order:[["code", "ASC"]]});
@@ -21,7 +23,7 @@ exports.insertMpzpFile = withErrorHandling(async (req, res) => {
         const json = JSON.parse(data);
         Object.keys(json).forEach(async (key) => {
             if(!codes.some((value) => key == value.code)) {
-                await Mpzp.create({code:key, description:data[key]})
+                await Mpzp.create({code:key, description:json[key]})
             }
         });
         res.status(201).json({success:true, message:"Wstawiono mpzp"})

@@ -1,6 +1,8 @@
 
 const GeneralPlan = require("../models/GeneralPlan");
 const withErrorHandling = require("../middlewares/withErrorHandling");
+const path = require("path");
+const fs = require("fs");
 
 exports.getAllGeneralPlans = withErrorHandling(async (req, res) => {
     const generalPlans = await GeneralPlan.findAll({order:[["code", "ASC"]]});
@@ -21,7 +23,7 @@ exports.insertGeneralPlansFile = withErrorHandling(async (req, res) => {
         const json = JSON.parse(data);
         Object.keys(json).forEach(async (key) => {
             if(!codes.some((value) => key == value.code)) {
-                await GeneralPlan.create({code:key, description:data[key]})
+                await GeneralPlan.create({code:key, description:json[key]})
             }
         });
         res.status(201).json({success:true, message:"Wstawiono plany ogólne"})
