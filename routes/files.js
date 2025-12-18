@@ -8,6 +8,8 @@ const fileController = require('../controllers/fileController');
 const { param, body } = require("express-validator");
 const authorization = require("../middlewares/authorization");
 
+// api/files
+
 router.use(authorization());
 
 router.get("/get", [

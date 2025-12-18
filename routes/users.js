@@ -7,15 +7,17 @@ const userController = require('../controllers/userController');
 const authorization = require("../middlewares/authorization");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 
+// api/users
+
 router.get("/get-all", userController.getAllUsers);
 
 router.get("/logout", userController.logoutUser)
 
 router.post("/register-admin",[
-    body("name").trim().toUpperCase().
+    body("name").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("name is required").
     isLength({max:50}).withMessage("name must be less or equal than 50 characters"),
-    body("surname").trim().toUpperCase().
+    body("surname").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("surname is required").
     isLength({max:50}).withMessage("surname must be less or equal than 50 characters"),
     body("password").
@@ -33,10 +35,10 @@ router.use(authorization());
 router.use(roleAuthorization(["ADMIN"]));
 
 router.post("/insert",[
-    body("name").trim().toUpperCase().
+    body("name").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("name is required").
     isLength({max:50}).withMessage("name must be less or equal than 50 characters"),
-    body("surname").trim().toUpperCase().
+    body("surname").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("surname is required").
     isLength({max:50}).withMessage("surname must be less or equal than 50 characters"),
     body("password").
@@ -50,10 +52,10 @@ router.post("/insert",[
 router.put("/update", [
     body("idUser").trim().
     exists({checkFalsy:true}).withMessage("idUser is required"),
-    body("name").trim().toUpperCase().
+    body("name").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("name is required").
     isLength({max:50}).withMessage("name must be less or equal than 50 characters"),
-    body("surname").trim().toUpperCase().
+    body("surname").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("surname is required").
     isLength({max:50}).withMessage("surname must be less or equal than 50 characters"),
     body("role").

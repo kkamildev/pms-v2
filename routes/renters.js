@@ -8,6 +8,8 @@ const { query, body } = require("express-validator");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 const authorization = require("../middlewares/authorization");
 
+// api/renters
+
 router.use(authorization());
 
 router.get("/get-all", renterController.getAllRenters);
@@ -27,7 +29,7 @@ router.get("/get", [
 ], renterController.getRenters);
 
 router.post("/insert",[
-    body("name").trim().toUpperCase().
+    body("name").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("name is required").
     isLength({max:100}).withMessage("name must be less or equal 100 characters"),
     body("phone").trim().
@@ -38,7 +40,7 @@ router.post("/insert",[
 router.put("/update", [
     body("idRenter").trim().
     exists({checkFalsy:true}).withMessage("idRenter is required"),
-    body("name").trim().toUpperCase().
+    body("name").trim().toLowerCase().
     exists({checkFalsy:true}).withMessage("name is required").
     isLength({max:100}).withMessage("name must be less or equal 100 characters"),
     body("phone").trim().

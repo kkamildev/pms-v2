@@ -8,6 +8,8 @@ const { body } = require("express-validator");
 const authorization = require("../middlewares/authorization");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 
+// api/land-purposes
+
 router.use(authorization());
 
 router.get("/get-all", landPurposeController.getAllLandPurposes);

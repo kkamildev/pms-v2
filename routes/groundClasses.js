@@ -7,6 +7,8 @@ const { query, body } = require("express-validator");
 const authorization = require("../middlewares/authorization");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 
+// api/ground-classes
+
 router.use(authorization());
 
 router.get("/get",[

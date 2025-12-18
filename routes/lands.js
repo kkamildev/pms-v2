@@ -8,6 +8,8 @@ const { query, body } = require("express-validator");
 const authorization = require("../middlewares/authorization");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 
+// api/lands
+
 router.use(authorization());
 
 router.get("/serial-exist", [

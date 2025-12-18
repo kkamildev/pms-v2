@@ -7,6 +7,8 @@ const { query, body } = require("express-validator");
 const authorization = require("../middlewares/authorization");
 const roleAuthorization = require("../middlewares/roleAuthorization");
 
+// api/locations
+
 router.use(authorization());
 
 router.get("/get-towns", [
