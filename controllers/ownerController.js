@@ -11,6 +11,7 @@ const withErrorHandling = require("../middlewares/withErrorHandling");
 exports.getOwners = withErrorHandling(async (req, res) => {
     const {nameFilter, limit} = req.query;
     const owners = await Owner.findAll({
+        attributes:["id", "name", "phone"],
         include:{
             model:Land,
             as:"lands",

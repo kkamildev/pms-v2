@@ -12,11 +12,11 @@ exports.getRenters = withErrorhandling(async (req, res) => {
     const {monthFilter, nameFilter, endYearFilter, ownerNameFilter, limit, showExpired} = req.query;
     const renters = await Renter.findAll({
         subQuery:false,
-        attributes:["name", "phone"],
+        attributes:["id", "name", "phone"],
         include:{
             model:Rent,
             as:"rents",
-            required:true,
+            required:false,
             include:{
                 model:Land,
                 as:"land",
