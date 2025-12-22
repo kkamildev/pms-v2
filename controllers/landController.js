@@ -87,8 +87,12 @@ exports.getLand = withErrorHandling(async (req, res) => {
                 attributes:["id", "code"]
             },
         ]
-    })
-    res.status(200).json({success:true, message:`pobrano działkę o ID ${idLand}`, land})  
+    });
+    if(!land.id) {
+        res.status(404).json({error:`Taka działka nie istnieje`})  
+    } else {
+        res.status(200).json({success:true, message:`pobrano działkę o ID ${idLand}`, land})  
+    }
 });
 
 exports.getRentLands = withErrorHandling(async (req, res) => {
@@ -112,7 +116,7 @@ exports.getRentLands = withErrorHandling(async (req, res) => {
             },
             {
                 model:LandPurpose,
-                as:"purpose",
+                as:"landPurpose",
                 required:false,
                 attributes:[],
                 where:{
@@ -128,7 +132,7 @@ exports.getLandInsertionRequiredData = withErrorHandling(async (req, res) => {
     const owners = await Owner.findAll({order:[["name", "ASC"]]});
     const landTypes = await LandType.findAll();
     const landPurposes = await LandPurpose.findAll();
-    const generalPlans = await LandPurpose.findAll({order:[["code", "ASC"]]});
+    const generalPlans = await GeneralPlan.findAll({order:[["code", "ASC"]]});
     const mpzp = await Mpzp.findAll({order:[["code", "ASC"]]});
     res.status(200).json({success:true, message:"Pobrano dane do dodania nowej działki", data:{
         owners,

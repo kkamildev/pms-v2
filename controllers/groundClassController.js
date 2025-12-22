@@ -1,6 +1,7 @@
 
 const GroundClass = require("../models/GroundClass");
 const withErrorHandling = require("../middlewares/withErrorHandling");
+const {Sequelize} = require("sequelize");
 
 exports.getGroundClassCount = withErrorHandling(async (req, res) => {
     const {groundClass, taxDistrict} = req.query;

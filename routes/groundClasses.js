@@ -25,7 +25,7 @@ router.get("/count",[
     isInt().withMessage("taxDistrict must be a int value").toInt(),
 ], groundClassController.getGroundClassCount);
 
-router.get("/get-unique", groundClassController.getUniqueGroundClasses);
+router.get("/unique", groundClassController.getUniqueGroundClasses);
 
 router.use(roleAuthorization(["KSIEGOWOSC", "SEKRETARIAT"]));
 

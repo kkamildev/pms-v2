@@ -41,29 +41,37 @@ exports.upload = upload;
 exports.getFile = withErrorHandling(async (req, res) => {
     const {idLand, filename} = req.params;
     const folder = path.join(folderPath, idLand);
-    fs.readdir(folder, (err, files) => {
-        if(err) {
-            return res.status(500).json({error:"Błąd w trakcie czytania plików"})
-        }
-        const file = files.find(file => path.parse(file).base === filename);
-        if(file) {
-            res.status(200).sendFile(path.join(folder, file));
-        } else {
-            return res.status(404).json({error:"pliku nie znaleziono"})
-        }
-    });
+    if (fs.existsSync(folder)) {
+        fs.readdir(folder, (err, files) => {
+            if(err) {
+                return res.status(500).json({error:"Błąd w trakcie czytania plików"})
+            }
+            const file = files.find(file => path.parse(file).base === filename);
+            if(file) {
+                res.status(200).sendFile(path.join(folder, file));
+            } else {
+                return res.status(404).json({error:"pliku nie znaleziono"})
+            }
+        });
+    } else {
+        res.status(404).json({error:"Taka działka o takim id nie istnieje"})
+    }
 })
 
 exports.confirmUpload = withErrorHandling(async (req, res) => {
     if(req.files) {
         res.status(200).json({success:true, message:"Pliki zostały poprawnie wgrane", files:req.files})
     } else {
-        res.status(400).json({success:false, message:"Pliki zostały odrzucony"})
+        res.status(400).json({success:false, message:"Pliki zostały odrzucone"})
     }
 });
 
 exports.deleteFile = withErrorHandling(async (req, res) => {
     const {idLand, filename} = req.body;
-    fs.unlinkSync(path.join(folderPath, String(idLand), filename));
-    res.status(200).json({success:true, message:"Pomyślnie usunięto plik"})
+    if (fs.existsSync(path.join(folderPath, String(idLand), filename))) {
+        fs.unlinkSync(path.join(folderPath, String(idLand), filename));
+        res.status(200).json({success:true, message:"Pomyślnie usunięto plik"});
+    } else {
+        res.status(404).json({error:"Pliku nie znaleziono"});
+    }
 });

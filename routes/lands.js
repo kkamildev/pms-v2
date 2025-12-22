@@ -42,7 +42,7 @@ router.get("/get", [
     query("districtFilter").trim().default(null),
     query("provinceFilter").trim().default(null),
     query("townFilter").trim().default(null),
-    query("landNumber").trim().default(null),
+    query("landNumberFilter").trim().default(null),
     query("groundClassFilter").trim().default(null),
     query("limit").trim().default(null).optional({checkFalsy:true}).
     isInt({min:0}).withMessage("limit must be a int value greater or equal 0").toInt()
