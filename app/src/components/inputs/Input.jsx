@@ -7,6 +7,7 @@ const Input = ({type = "text", placeholder = "", title = <></>, handleChange, er
             <p className="font-bold mb-1 text-lg">{title}</p>
             <input type={type}
                 placeholder={placeholder}
+                autoComplete="off"
                 className="p-2 border-2 border-black rounded-md inline-block w-full"
                 onChange={handleChange} value={(value ?? "")}
             />

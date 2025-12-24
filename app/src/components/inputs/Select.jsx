@@ -6,7 +6,8 @@ const Select = ({options, defaultOption = "", defaultOptionHidden = true, title 
     return (
         <section className="w-full">
             <p className="font-bold mb-1 text-lg">{title}</p>
-            <select className="p-2 border-2 border-black rounded-md inline-block w-full" onChange={handleChange} value={(value ?? "")}>
+            <select className="p-2 border-2 border-black rounded-md inline-block w-full"
+             onChange={handleChange} value={(value ?? "")} autoComplete="off">
                 <option value="" className={`${defaultOptionHidden && "hidden"}`} >{defaultOption}</option>
                 {options}
             </select>
