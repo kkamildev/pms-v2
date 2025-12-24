@@ -25,13 +25,13 @@ exports.registerAdmin = withErrorHandling(async (req, res) => {
     });
     const passwordHash = await bcrypt.hash(password, config.saltOrRounds);
     if(adminExist == 0) {
-        await User.create({
+        const user = await User.create({
             name,
             surname,
             passwordHash,
             role:"ADMIN"
         });
-        res.status(200).json({success:true, message:"Zarejestrowano pomyślnie konto ADMIN"})
+        res.status(200).json({success:true, message:"Zarejestrowano pomyślnie konto ADMIN", idUser:user.id})
     } else {
         res.status(406).json({error:"Konto Admin już istnieje"})
     }
@@ -70,6 +70,10 @@ exports.logoutUser = withErrorHandling(async (req, res) => {
     res.clearCookie("REFRESH_TOKEN")
     res.status(200).json({success:true, message:"Wylogowano"})
 });
+
+exports.authUser = withErrorHandling(async (req, res) => {
+    res.status(200).json({success:true, user:req.user});
+})
 
 exports.updateUser = withErrorHandling(async (req, res) => {
     const {idUser, name, surname, role} = req.body

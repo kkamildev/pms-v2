@@ -11,7 +11,7 @@ const roleAuthorization = require("../middlewares/roleAuthorization");
 
 router.get("/get-all", userController.getAllUsers);
 
-router.get("/logout", userController.logoutUser)
+router.get("/logout", userController.logoutUser);
 
 router.post("/register-admin",[
     body("name").trim().toLowerCase().
@@ -32,6 +32,9 @@ router.post("/login-user",[
 ], userController.loginUser);
 
 router.use(authorization());
+
+router.get("/auth", userController.authUser);
+
 router.use(roleAuthorization(["ADMIN"]));
 
 router.post("/insert",[
