@@ -1,16 +1,17 @@
-import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import useFormFields from "../../../hooks/useFormFields"
 import Input from "../../inputs/Input"
 import Select from "../../inputs/Select";
 import useApi from "../../../hooks/useApi";
+import { useEffect } from "react";
+import { useUpdateDataStore } from "../../../hooks/stores";
 
 
-const InsertUser = ({onClose = () => {}, reload = () => {}}) => {
-
-    const {post} = useApi();
-
+const UpdateUser = ({onClose = () => {}, reload = () => {}}) => {
+    const {put} = useApi();
+    const userData = useUpdateDataStore((state) => state.data);
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
         {
             name:"name",
@@ -28,36 +29,31 @@ const InsertUser = ({onClose = () => {}, reload = () => {}}) => {
             name:"role",
             allowNull:false
         },
-        {
-            name:"password",
-            allowNull:false,
-            regexp:/^.{8,}$/,
-            errorText:"Za słabe"
-        },
-        {
-            name:"repeatedPassword",
-            allowNull:false
-        }
     ]);
+
+    useEffect(() => {
+        setFieldData({
+            name:userData.name,
+            surname:userData.surname,
+            role:userData.role
+        })
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {
-            if(fieldData.password === fieldData.repeatedPassword) {
-                post("/api/users/insert", {...fieldData, repeatedPassword:null}, (res) => {
-                    onClose()
-                    reload()
-                })
-            } else {
-                setErrors((prev) => ({...prev, repeatedPassword:"Hasła nie są takie same"}));
-            }
+            put("/api/users/update", {idUser:userData.id, ...fieldData}, (res) => {
+                onClose()
+                reload()
+            })
         }
     }
 
     return (
         <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
-            <h1 className="text-2xl font-bold">Dodaj użytkownika</h1>
+            <h1 className="text-2xl font-bold">Edycja użytkownika</h1>
+            <h2 className="text-2xl font-bold">Nr {userData.number}</h2>
             <section className="my-4 gap-y-2 flex flex-col w-[80%]">
                 <Input
                     placeholder="Podaj imie"
@@ -81,26 +77,10 @@ const InsertUser = ({onClose = () => {}, reload = () => {}}) => {
                     handleChange={(e) => setFieldData((prev) => ({...prev, role:e.target.value}))}
                     value={fieldData.role}
                 />
-                <Input
-                    type="password"
-                    placeholder="Podaj nowe hasło"
-                    title="Nowe hasło"
-                    error={errors.password}
-                    handleChange={(e) => setFieldData((prev) => ({...prev, password:e.target.value}))}
-                    value={fieldData.password}
-                />
-                <Input
-                    type="password"
-                    placeholder="Powtórz hasło"
-                    title="Powtórz hasło"
-                    error={errors.repeatedPassword}
-                    handleChange={(e) => setFieldData((prev) => ({...prev, repeatedPassword:e.target.value}))}
-                    value={fieldData.repeatedPassword}
-                />
             </section>
-            <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
+            <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
         </form>
     )
 }
 
-export default InsertUser;
+export default UpdateUser;

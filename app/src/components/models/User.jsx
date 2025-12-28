@@ -1,10 +1,11 @@
 import { faPen, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDeleteConfirmStore } from "../../hooks/stores";
+import { useDeleteConfirmStore, useUpdateDataStore } from "../../hooks/stores";
 
-const User = ({data, number, onDelete}) => {
+const User = ({data, number, onDelete, onUpdate, onPaswordUpdate}) => {
 
     const updateDeleteConfirm = useDeleteConfirmStore((state) => state.update);
+    const updateUpdateData = useUpdateDataStore((state) => state.update);
 
     return (
         <section className="flex justify-between p-5 border-3 m-1 items-center">
@@ -14,11 +15,20 @@ const User = ({data, number, onDelete}) => {
                 <p className="text-2xl ml-10 font-bold">{data.role}</p>
             </section>
             <section className="flex justify-around items-center gap-x-3">
+                <button className="edit-btn" onClick={() => {
+                        updateUpdateData({...data, number})
+                        onUpdate()
+                    }}>
+                    <FontAwesomeIcon icon={faPen}/> Edytuj
+                </button>
+                <button className="edit-btn" onClick={() => {
+                    updateUpdateData({number, id:data.id})
+                    onPaswordUpdate()
+                }}>
+                    <FontAwesomeIcon icon={faPen}/> Zmień hasło
+                </button>
                 <button className="error-btn" onClick={() => updateDeleteConfirm(true, () => onDelete(data.id))}>
                     <FontAwesomeIcon icon={faTrashCan}/> Usuń
-                </button>
-                <button className="edit-btn">
-                    <FontAwesomeIcon icon={faPen}/> Edytuj
                 </button>
             </section>
         </section>

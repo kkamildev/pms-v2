@@ -17,6 +17,11 @@ const useDeleteConfirmStore = create((set) => ({
     update:(active, onConfirm) => set({active, onConfirm}),
     onConfirm:() => {},
     onCancel:() => set({active:false})
+}));
+
+const useUpdateDataStore = create((set) => ({
+    data:null,
+    update:(data) => set({data})
 }))
 
-export {useUserStore, useErrorStore, useDeleteConfirmStore}
+export {useUserStore, useErrorStore, useDeleteConfirmStore, useUpdateDataStore}

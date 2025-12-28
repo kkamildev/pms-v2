@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import InsertUser from "../forms/user/InsertUser";
 import { useUserStore } from "../../hooks/stores";
+import UpdateUser from "../forms/user/UpdateUser";
+import UpdateUserPassword from "../forms/user/UpdateUserPassword";
 
 const UsersDisplay = ({authorize}) => {
     const {get, deleteReq} = useApi();
@@ -43,16 +45,24 @@ const UsersDisplay = ({authorize}) => {
                 <section className="my-5">
                     {
                         users.map((obj, index) => <User
-                                                    data={obj}
-                                                    key={obj.id}
-                                                    number={index + 1}
-                                                    onDelete={handleDelete}
+                                                        data={obj}
+                                                        key={obj.id}
+                                                        number={index + 1}
+                                                        onDelete={handleDelete}
+                                                        onUpdate={() => setFormName("update")}
+                                                        onPaswordUpdate={() => setFormName("updatePassword")}
                                                     />)
                     }
                 </section>
             </section>
             {
                 formName == "insert" && <InsertUser onClose={() => setFormName(null)} reload={getUsers}/>
+            }
+            {
+                formName == "update" && <UpdateUser onClose={() => setFormName(null)} reload={getUsers}/>
+            }
+            {
+                formName == "updatePassword" && <UpdateUserPassword onClose={() => setFormName(null)} reload={getUsers}/>
             }
         </section>
     )
