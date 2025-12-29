@@ -6,7 +6,7 @@ const fs = require("fs");
 
 exports.getAllGeneralPlans = withErrorHandling(async (req, res) => {
     const generalPlans = await GeneralPlan.findAll({order:[["code", "ASC"]]});
-    res.status(200).json({success:true, message:"pobrano plany ogólne", mpzp: generalPlans})
+    res.status(200).json({success:true, message:"pobrano plany ogólne", generalPlans})
 });
 
 exports.insertGeneralPlan = withErrorHandling(async (req, res) => {

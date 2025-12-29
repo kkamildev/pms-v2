@@ -1,51 +1,49 @@
-
 import { useEffect, useState } from "react";
+import useApi from "../../hooks/useApi";
 import Title from "../nav/Title"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import useApi from "../../hooks/useApi";
-import Mpzp from "../models/Mpzp";
-import InsertMpzp from "../forms/mpzp/InsertMpzp";
-import UpdateMpzp from "../forms/mpzp/UpdateMpzp";
+import LandType from "../models/LandType";
 
-const MpzpDisplay = () => {
+
+const LandTypesDisplay = () => {
     const {get, deleteReq, post} = useApi();
     const [formName, setFormName] = useState(null);
-    const [mpzp, setMpzp] = useState([]);
-
-    const getMpzp = () => {
-        get("/api/mpzp/get-all", (res) => setMpzp(res.data.mpzp))
+    const [landTypes, setLandTypes] = useState([]);
+    
+    const getLandTypes = () => {
+        get("/api/land-types/get-all", (res) => setLandTypes(res.data.landTypes))
     }
 
     const insertFile = () => {
-        post("/api/mpzp/insert-file", {}, (res) => getMpzp())
+        post("/api/land-types/insert-file", {}, (res) => getLandTypes())
     }
 
     const handleDelete = (id) => {
-        deleteReq("/api/mpzp/delete", {idMpzp:id}, (res) => setMpzp((prev) => [...prev.filter((obj) => obj.id != id)]))
+        deleteReq("/api/land-types/delete", {idLandType:id}, (res) => setLandTypes((prev) => [...prev.filter((obj) => obj.id != id)]))
     }
 
     useEffect(() => {
-        getMpzp();
+        getLandTypes();
     }, []);
 
     return (
         <section className="flex justify-between h-full">
-            <Title title={"PMS-v2 - MPZP"}/>
+            <Title title={"PMS-v2 - Rodzaje działek"}/>
             <section className="flex flex-col w-full p-5">
                 <section className="flex items-center gap-x-5">
-                    <h1 className="text-4xl font-bold">MPZP</h1>
+                    <h1 className="text-4xl font-bold">Rodzaje działek</h1>
                     <button className="primary-btn" onClick={() => setFormName("insert")}>
-                        <FontAwesomeIcon icon={faPlus}/> Dodaj nowy MPZP
+                        <FontAwesomeIcon icon={faPlus}/> Dodaj nowy rodzaj działki
                     </button>
                     <button className="primary-btn" onClick={insertFile}>
-                        <FontAwesomeIcon icon={faFolderPlus}/> Dodaj zapisane MPZP
+                        <FontAwesomeIcon icon={faFolderPlus}/> Dodaj zapisane rodzaje działek
                     </button>
                 </section>
-                <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {mpzp.length}</h2>
+                <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {landTypes.length}</h2>
                 <section className="my-5">
                     {
-                        mpzp.map((obj, index) => <Mpzp 
+                        landTypes.map((obj, index) => <LandType
                                                         data={obj}
                                                         key={obj.id}
                                                         number={index + 1}
@@ -55,14 +53,8 @@ const MpzpDisplay = () => {
                     }
                 </section>
             </section>
-            {
-                formName == "insert" && <InsertMpzp onClose={() => setFormName(null)} reload={getMpzp} mpzp={mpzp}/>
-            }
-            {
-                formName == "update" && <UpdateMpzp onClose={() => setFormName(null)} reload={getMpzp} mpzp={mpzp}/>
-            }
         </section>
     )
 }
 
-export default MpzpDisplay;
+export default LandTypesDisplay;

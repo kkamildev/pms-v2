@@ -14,7 +14,7 @@ const GeneralPlansDisplay = () => {
     const [generalPlans, setGeneralPlans] = useState([]);
 
     const getGeneralPlans = () => {
-        get("/api/general-plans/get-all", (res) => setGeneralPlans(res.data.mpzp))
+        get("/api/general-plans/get-all", (res) => setGeneralPlans(res.data.generalPlans))
     }
 
     const insertFile = () => {
@@ -39,7 +39,7 @@ const GeneralPlansDisplay = () => {
                         <FontAwesomeIcon icon={faPlus}/> Dodaj nowy plan ogólny
                     </button>
                     <button className="primary-btn" onClick={insertFile}>
-                        <FontAwesomeIcon icon={faFolderPlus}/> Dodaj Zapisane plany ogólne
+                        <FontAwesomeIcon icon={faFolderPlus}/> Dodaj zapisane plany ogólne
                     </button>
                 </section>
                 <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {generalPlans.length}</h2>
