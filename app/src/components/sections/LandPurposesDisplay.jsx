@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useApi from "../../hooks/useApi";
 import Title from "../nav/Title"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolderPlus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faFolderPlus, faPlus, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import LandPurpose from "../models/LandPurpose";
 import InsertLandPurpose from "../forms/landPurpose/InsertLandPurpose"
 import UpdateLandPurpose from "../forms/landPurpose/UpdateLandPurpose"
@@ -34,13 +34,18 @@ const LandPurposesDisplay = () => {
             <section className="flex justify-between h-full">
                 <Title title={"PMS-v2 - Przeznaczenia działek"}/>
                 <section className="flex flex-col w-full p-5">
-                    <section className="flex items-center gap-x-5">
-                        <h1 className="text-4xl font-bold">Przeznaczenia działek</h1>
-                        <button className="primary-btn" onClick={() => setFormName("insert")}>
-                            <FontAwesomeIcon icon={faPlus}/> Dodaj nowe przeznaczenie działki
-                        </button>
-                        <button className="primary-btn" onClick={insertFile}>
-                            <FontAwesomeIcon icon={faFolderPlus}/> Dodaj zapisane przeznaczenia działek
+                    <section className="flex justify-between">
+                        <section className="flex items-center gap-x-5">
+                            <h1 className="text-4xl font-bold">Przeznaczenia działek</h1>
+                            <button className="primary-btn" onClick={() => setFormName("insert")}>
+                                <FontAwesomeIcon icon={faPlus}/> Dodaj nowe przeznaczenie działki
+                            </button>
+                            <button className="primary-btn" onClick={insertFile}>
+                                <FontAwesomeIcon icon={faFolderPlus}/> Dodaj zapisane przeznaczenia działek
+                            </button>
+                        </section>
+                        <button className="edit-btn" onClick={getLandPurposes}>
+                            <FontAwesomeIcon icon={faRefresh}/> Odśwież
                         </button>
                     </section>
                     <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {landPurposes.length}</h2>

@@ -4,7 +4,7 @@ import Title from "../nav/Title"
 import useApi from "../../hooks/useApi"
 import User from "../models/User"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faRefresh} from "@fortawesome/free-solid-svg-icons";
 import InsertUser from "../forms/user/InsertUser";
 import { useUserStore } from "../../hooks/stores";
 import UpdateUser from "../forms/user/UpdateUser";
@@ -38,10 +38,15 @@ const UsersDisplay = () => {
             <section className="flex justify-between h-full">
                 <Title title={"PMS-v2 - Użytkownicy"}/>
                 <section className="flex flex-col w-full p-5">
-                    <section className="flex items-center gap-x-5">
-                        <h1 className="text-4xl font-bold">Użytkownicy</h1>
-                        <button className="primary-btn" onClick={() => setFormName("insert")}>
-                            <FontAwesomeIcon icon={faPlus}/> Dodaj nowego użytkownika
+                    <section className="flex justify-between">
+                        <section className="flex items-center gap-x-5">
+                            <h1 className="text-4xl font-bold">Użytkownicy</h1>
+                            <button className="primary-btn" onClick={() => setFormName("insert")}>
+                                <FontAwesomeIcon icon={faPlus}/> Dodaj nowego użytkownika
+                            </button>
+                        </section>
+                        <button className="edit-btn" onClick={getUsers}>
+                            <FontAwesomeIcon icon={faRefresh}/> Odśwież
                         </button>
                     </section>
                     <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {users.length}</h2>
