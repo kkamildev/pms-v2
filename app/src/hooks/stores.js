@@ -3,7 +3,9 @@ import { create } from "zustand";
 
 const useUserStore = create((set) => ({
     user:null,
-    update:(user) => set({user:user})
+    auth:null,
+    update:(user) => set({user:user}),
+    setAuth:(callback) => set({auth:callback}) 
 }));
 
 const useErrorStore = create((set) => ({
@@ -12,4 +14,16 @@ const useErrorStore = create((set) => ({
     disable:() => set({error:null})
 }));
 
-export {useUserStore, useErrorStore}
+const useDeleteConfirmStore = create((set) => ({
+    active:false,
+    update:(active, onConfirm) => set({active, onConfirm}),
+    onConfirm:() => {},
+    onCancel:() => set({active:false})
+}));
+
+const useUpdateDataStore = create((set) => ({
+    data:null,
+    update:(data) => set({data})
+}));
+
+export {useUserStore, useErrorStore, useDeleteConfirmStore, useUpdateDataStore}

@@ -28,7 +28,31 @@ const useApi = () => {
             }
         }
     }
-    return {get, post}
+    const deleteReq = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
+        try {
+            const response = await axios.delete(url, {data:body, ...config});
+            onSuccess(response);
+        } catch (err) {
+            if(err.status < 500) {
+                onClientError(err.response.data);
+            } else {
+                onServerError ? onServerError(err) : updateError(null);
+            }
+        }
+    }
+    const put = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
+        try {
+            const response = await axios.put(url, body, config);
+            onSuccess(response);
+        } catch (err) {
+            if(err.status < 500) {
+                onClientError(err.response.data);
+            } else {
+                onServerError ? onServerError(err) : updateError(null);
+            }
+        }
+    }
+    return {get, post, deleteReq, put}
 }
 
 export default useApi;

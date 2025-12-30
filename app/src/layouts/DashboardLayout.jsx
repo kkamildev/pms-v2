@@ -3,18 +3,20 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "../components/nav/Navbar"
 import { useUserStore } from "../hooks/stores";
 import useApi from "../hooks/useApi";
+import DeleteConfirm from "../components/popups/DeleteConfirm";
 
-const DashboardLayout = ({children, authorize}) => {
+const DashboardLayout = ({children}) => {
 
     const user = useUserStore((state) => state.user);
+    const auth = useUserStore((state) => state.auth)
     const {get} = useApi();
 
     const logout = () => {
-        get("/api/users/logout", (res) => authorize());
+        get("/api/users/logout", (res) => auth());
     }
 
     return (
-        <section className="flex flex-col h-screen">
+        <section className="flex flex-col h-screen max-h-screen overflow-hidden">
             <header className="bg-green-700 flex p-2 items-center gap-5">
                 <section className="p-1 bg-white rounded-xl">
                     <img src="/PMS-V2.png" alt="PMS - logo" width={50}/>
@@ -29,9 +31,10 @@ const DashboardLayout = ({children, authorize}) => {
                 </section>
             </header>
             <BrowserRouter>
-                <section className="flex w-full justify-between items-center h-full">
+                <section className="flex w-full justify-between items-center flex-1 min-h-0">
                     <Navbar/>
-                    <main>
+                    <main className="flex flex-col w-full h-full relative overflow-y-auto">
+                        <DeleteConfirm/>
                         {children}
                     </main>
                 </section>

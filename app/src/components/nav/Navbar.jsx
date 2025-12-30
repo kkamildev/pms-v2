@@ -10,7 +10,7 @@ const Navbar = () => {
                 <h1 className="text-center font-bold text-3xl text-green-600">Panel Systemowy</h1>
             </section>
             <section className="border-t-4 border-t-green-700 w-full flex flex-col">
-                <Navbutton path="/lands">
+                <Navbutton path="/">
                     <FontAwesomeIcon icon={faHouse}/> Działki
                 </Navbutton>
                 <Navbutton path="/owners">
@@ -31,7 +31,7 @@ const Navbar = () => {
                 </Navbutton>
 
                 <Navbutton roles={["ADMIN"]} path="/users">
-                    <FontAwesomeIcon icon={faUserTie}/> Użytkowicy
+                    <FontAwesomeIcon icon={faUserTie}/> Użytkownicy
                 </Navbutton>
                 <Navbutton roles={["ADMIN"]} path="/mpzp">
                     <FontAwesomeIcon icon={faCity}/> Mpzp

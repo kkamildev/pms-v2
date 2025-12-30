@@ -6,10 +6,12 @@ import Input from "../../inputs/Input"
 import useFormFields from "../../../hooks/useFormFields"
 import useApi from "../../../hooks/useApi"
 import ErrorBox from "../../popups/ErrorBox";
+import { useUserStore } from "../../../hooks/stores";
 
 
-const LoginUser = ({authorize}) => {
+const LoginUser = () => {
     const {get, post} = useApi();
+    const auth = useUserStore((state) => state.auth)
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
         {
             name:"idUser",
@@ -29,7 +31,7 @@ const LoginUser = ({authorize}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {
-            post("/api/users/login-user", fieldData, (res) => authorize(),
+            post("/api/users/login-user", fieldData, (res) => auth(),
              (err) => setErrors((prev) => ({...prev, password:err.error})));
         }
         

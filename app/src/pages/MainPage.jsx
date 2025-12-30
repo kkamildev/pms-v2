@@ -5,7 +5,7 @@ import useApi from "../hooks/useApi";
 import ErrorBox from "../components/popups/ErrorBox";
 import RegisterAdmin from "../components/forms/user/RegisterAdmin";
 
-const MainPage = ({authorize}) => {
+const MainPage = () => {
     const [registered, setRegistered] = useState(false);
     const {get} = useApi();
 
@@ -16,7 +16,7 @@ const MainPage = ({authorize}) => {
         <MainLayout>
             <ErrorBox/>
             {
-                registered ? <LoginUser authorize={authorize}/> : <RegisterAdmin authorize={authorize}/>
+                registered ? <LoginUser/> : <RegisterAdmin/>
             }
         </MainLayout>
     )

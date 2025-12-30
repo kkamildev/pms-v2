@@ -9,12 +9,12 @@ import DashboardPage from "./pages/DashboardPage";
 const App = () => {
     const {get} = useApi();
     const updateUser = useUserStore((state) => state.update);
+    const setAuthorization = useUserStore((state) => state.setAuth);
 
     const [auth, setAuth] = useState(true);
     const [ready, setReady] = useState(false);
 
     const authorize = async () => {
-        console.log("Hello world");
         await get("/api/users/auth", (res) => {
             updateUser(res.data.user)
             setAuth(true);
@@ -28,11 +28,12 @@ const App = () => {
         }
     }
     useEffect(() => {
-        authorize()
+        authorize();
+        setAuthorization(authorize);
     }, []);
     return (
         ready ?
-            auth ? <DashboardPage authorize={authorize}/> : <MainPage authorize={authorize}/>
+            auth ? <DashboardPage/> : <MainPage/>
         :
             <></>
     )

@@ -1,27 +1,32 @@
+import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-import Input from "../../inputs/Input"
 import useFormFields from "../../../hooks/useFormFields"
-import useApi from "../../../hooks/useApi"
-import ErrorBox from "../../popups/ErrorBox";
-import { useUserStore } from "../../../hooks/stores";
+import Input from "../../inputs/Input"
+import Select from "../../inputs/Select";
+import useApi from "../../../hooks/useApi";
 
 
-const RegisterAdmin = () => {
+const InsertUser = ({onClose = () => {}, reload = () => {}}) => {
+
     const {post} = useApi();
-    const auth = useUserStore((state) => state.auth)
+
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
         {
             name:"name",
             allowNull:false,
-            regexp:/^.{1,50}$/,
-            errorText:"Za długie"
+            regexp:/^[A-Za-zĄŚĆŻŹŃÓĘŁąćśńżźęół]{1,50}$/,
+            errorText:"Za długie lub nie właściwe"
         },
         {
             name:"surname",
             allowNull:false,
-            regexp:/^.{1,50}$/,
-            errorText:"Za długie"
+            regexp:/^[A-Za-zĄŚĆŻŹŃÓĘŁąćśńżźęół]{1,50}$/,
+            errorText:"Za długie lub nie właściwe"
+        },
+        {
+            name:"role",
+            allowNull:false
         },
         {
             name:"password",
@@ -35,26 +40,25 @@ const RegisterAdmin = () => {
         }
     ]);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        let idUser;
         if(isValidated()) {
             if(fieldData.password === fieldData.repeatedPassword) {
-                await post("/api/users/register-admin", fieldData, (res) => idUser = res.data.idUser, (err) => {
-                    setErrors((prev) => ({...prev, name:err.error}))
-                });
-                post("/api/users/login-user", {idUser, password:fieldData.password}, (res) => auth());
+                post("/api/users/insert", {...fieldData, repeatedPassword:null}, (res) => {
+                    onClose()
+                    reload()
+                })
             } else {
                 setErrors((prev) => ({...prev, repeatedPassword:"Hasła nie są takie same"}));
             }
         }
-        
     }
+
     return (
-        <form method="POST" onSubmit={handleSubmit} className="flex justify-center flex-col items-center border-3 xl:w-[40%] lg:w-[60%] w-[90%] p-2 rounded-xl">
-            <h1 className="font-bold text-3xl text-center mt-10">Rejestracja ADMINA</h1>
-            <ErrorBox/>
-            <section className="py-5 w-[50%] flex flex-col gap-y-5">
+        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
+            <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
+            <h1 className="text-2xl font-bold">Dodaj użytkownika</h1>
+            <section className="my-4 gap-y-2 flex flex-col w-[80%]">
                 <Input
                     placeholder="Podaj imie"
                     title="Imie"
@@ -69,10 +73,18 @@ const RegisterAdmin = () => {
                     handleChange={(e) => setFieldData((prev) => ({...prev, surname:e.target.value}))}
                     value={fieldData.surname}
                 />
+                <Select
+                    defaultOption="Wybierz role"
+                    title="Rola"
+                    error={errors.role}
+                    options={["ADMIN", "SEKRETARIAT", "KSIEGOWOSC", "TEREN"].map(obj => <option key={obj} value={obj}>{obj}</option>)}
+                    handleChange={(e) => setFieldData((prev) => ({...prev, role:e.target.value}))}
+                    value={fieldData.role}
+                />
                 <Input
                     type="password"
-                    placeholder="Podaj hasło"
-                    title="Hasło"
+                    placeholder="Podaj nowe hasło"
+                    title="Nowe hasło"
                     error={errors.password}
                     handleChange={(e) => setFieldData((prev) => ({...prev, password:e.target.value}))}
                     value={fieldData.password}
@@ -86,13 +98,9 @@ const RegisterAdmin = () => {
                     value={fieldData.repeatedPassword}
                 />
             </section>
-            <section className="my-4">
-                <button type="submit" className="primary-btn text-2xl">
-                    Zarejestruj się
-                </button>
-            </section>
+            <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
         </form>
     )
 }
 
-export default RegisterAdmin;
+export default InsertUser;
