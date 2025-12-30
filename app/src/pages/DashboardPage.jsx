@@ -4,6 +4,7 @@ import UsersDisplay from "../components/sections/UsersDisplay";
 import MpzpDisplay from "../components/sections/MpzpDisplay";
 import GeneralPlansDisplay from "../components/sections/GeneralPlansDisplay";
 import LandTypesDisplay from "../components/sections/LandTypesDisplay";
+import LandPurposesDisplay from "../components/sections/LandPurposesDisplay";
 
 const DashboardPage = () => {
     return (
@@ -13,6 +14,7 @@ const DashboardPage = () => {
                 <Route path="/mpzp" element={<MpzpDisplay/>}/>
                 <Route path="/general-plans" element={<GeneralPlansDisplay/>}/>
                 <Route path="/land-types" element={<LandTypesDisplay/>}/>
+                <Route path="/land-purposes" element={<LandPurposesDisplay/>}/>
             </Routes>
         </DashboardLayout>
     )
