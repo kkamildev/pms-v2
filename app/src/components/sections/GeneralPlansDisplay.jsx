@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import useApi from "../../hooks/useApi";
 import GeneralPlan from "../models/GeneralPlan";
-import InsertGeneralPlan from "../forms/generalPlans/InsertGeneralPlan";
-import UpdateGeneralPlan from "../forms/generalPlans/UpdateGeneralPlan";
+import InsertGeneralPlan from "../forms/generalPlan/InsertGeneralPlan";
+import UpdateGeneralPlan from "../forms/generalPlan/UpdateGeneralPlan";
 
 const GeneralPlansDisplay = () => {
     const {get, deleteReq, post} = useApi();

@@ -4,6 +4,8 @@ import Title from "../nav/Title"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import LandType from "../models/LandType";
+import InsertLandType from "../forms/landType/InsertLandType";
+import UpdateLandType from "../forms/landType/UpdateLandType";
 
 
 const LandTypesDisplay = () => {
@@ -53,6 +55,12 @@ const LandTypesDisplay = () => {
                     }
                 </section>
             </section>
+            {
+                formName == "insert" && <InsertLandType onClose={() => setFormName(null)} reload={getLandTypes}/>
+            }
+            {
+                formName == "update" && <UpdateLandType onClose={() => setFormName(null)} reload={getLandTypes}/>
+            }
         </section>
     )
 }
