@@ -16,6 +16,7 @@ exports.getOwners = withErrorHandling(async (req, res) => {
             model:Land,
             as:"lands",
             attributes:["id", "serialNumber", "landNumber", "area"],
+            required:false,
             include:[
                 {
                     model:Town,
