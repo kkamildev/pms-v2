@@ -13,14 +13,14 @@ const SearchBarLayout = ({ onClose, children, isValidated = () => {}, onClear}) 
             const formData = new FormData(e.currentTarget);
             const params = {};
             for (const [key, value] of formData.entries()) {
-                params[key] = value;
+                if(value != "" && value != null) params[key] = value;
             }
             setSearchParams(params);
         }
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
+        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center h-full overflow-auto">
             <section className="flex gap-x-2 items-center">
                 <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
                 <button type="submit" className="error-btn m-3" onClick={onClear}><FontAwesomeIcon icon={faBroom}/> Wyczyść</button>
