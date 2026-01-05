@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPlus, faPrint, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import LandsSearch from "../searchBars/LandsSearch";
 import InsertLand from "../forms/land/InsertLand";
+import Land from "../models/Land";
 
 
 const LandsDisplay = () => {
@@ -61,7 +62,13 @@ const LandsDisplay = () => {
                     <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {lands.length}</h2>
                     <section className="my-5">
                         {
-                            lands.map((obj, index) => <h1>Hello world</h1>)
+                            lands.map((obj, index) => <Land
+                                                        data={obj}
+                                                        number={index + 1}
+                                                        onDelete={handleDelete}
+                                                        onUpdate={() => setFormName("update")}
+                                                        key={obj.id}
+                                                        />)
                         }
                     </section>
                 </section>

@@ -49,7 +49,7 @@ const Owner = ({data, number, onDelete, onUpdate}) => {
                                 </div>
                                 <div className="flex-col text-center flex items-center text-xl">
                                     <span className="font-bold">Przeznaczenie</span>
-                                    <p>{obj.landPurpose || "Brak"}</p>
+                                    <p>{obj.landPurpose ? obj.landPurpose.type : "Brak"}</p>
                                 </div>
                                 <section className="flex gap-x-8 ml-6">
                                     <div className="flex-col text-center flex items-center text-xl mr-3">

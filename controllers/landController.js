@@ -222,12 +222,13 @@ exports.getLands = withErrorHandling(async (req, res) => {
             {
                 model:LandPurpose,
                 as:"landPurpose",
-                required:purposeFilter,
+                required:purposeFilter || rentFilter,
                 attributes:["type"],
-                ...(purposeFilter && {
+                ...((purposeFilter || rentFilter) && {
                     where:{
                         type:{
-                            [Op.like]:`${purposeFilter || ""}%`
+                            ...(purposeFilter && {[Op.like]:`${purposeFilter || ""}%`}),
+                            ...(rentFilter && {[Op.eq]:"Dzierżawa"})
                         }
                     }
                 })
@@ -284,7 +285,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                     ...(lowAreaFilter && {[Op.gte]:lowAreaFilter}),
                     ...(highAreaFilter && {[Op.lte]:highAreaFilter})
                 }
-            })
+            }),
         },
         ...(limit && {limit:Number(limit)})
     });

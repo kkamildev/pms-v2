@@ -17,6 +17,10 @@
     @apply font-bold bg-blue-800 hover:bg-blue-700 transition-colors duration-100 ease-in-out text-white p-2 rounded-xl cursor-pointer
 }
 
+.file-btn {
+    @apply font-bold bg-orange-700 hover:bg-orange-600 transition-colors duration-100 ease-in-out text-white p-2 rounded-xl cursor-pointer
+}
+
 .nav-btn {
     @apply p-1 text-xl font-bold bg-white text-green-600 hover:text-white hover:bg-green-700 border-b-4 border-b-green-700 cursor-pointer transition-colors duration-100 ease-in-out
 }
