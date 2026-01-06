@@ -23,8 +23,8 @@ const Land = ({data, number, onDelete, onUpdate, onShowFiles}) => {
                         <FontAwesomeIcon icon={faEye}/> {more ? "Mniej" : "Więcej"}
                     </button>
                     <button className="file-btn" onClick={() => {
-                            updateUpdateData({...data, number})
-                            onUpdate()
+                            updateUpdateData({files:data.files || [], id:data.id, number})
+                            onShowFiles()
                         }}>
                         <FontAwesomeIcon icon={faFolderOpen}/> Pliki
                     </button>

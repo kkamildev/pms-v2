@@ -68,6 +68,7 @@ const LandsDisplay = () => {
                                                         onDelete={handleDelete}
                                                         onUpdate={() => setFormName("update")}
                                                         key={obj.id}
+                                                        onShowFiles={() => setFormName("files")}
                                                         />)
                         }
                     </section>
@@ -78,6 +79,9 @@ const LandsDisplay = () => {
             }
             {
                 formName == "insert" && <InsertLand onClose={() => setFormName(null)} reload={getLands}/>
+            }
+            {
+                formName == "files" && <></>
             }
         </section>
     )
