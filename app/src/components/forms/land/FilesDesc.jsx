@@ -1,9 +1,10 @@
 import { faFileCirclePlus, faTrashCan, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useUpdateDataStore } from "../../../hooks/stores";
+import { useDeleteConfirmStore, useUpdateDataStore } from "../../../hooks/stores";
 import useApi from "../../../hooks/useApi";
 import { useRef } from "react";
 import ErrorBox from "../../popups/ErrorBox";
+import RoleRequired from "../../nav/RoleRequired"
 
 const FilesDesc = ({onClose, reload}) => {
 
@@ -13,6 +14,7 @@ const FilesDesc = ({onClose, reload}) => {
 
     const landData = useUpdateDataStore((state) => state.data);
     const updateLandData = useUpdateDataStore((state) => state.update);
+    const updateDeleteConfirm = useDeleteConfirmStore((state) => state.update);
 
     const insertFile = (e) => {
         const formData = new FormData();
@@ -40,18 +42,22 @@ const FilesDesc = ({onClose, reload}) => {
             <ErrorBox/>
             <h1 className="text-2xl font-bold">Pliki działki</h1>
             <p className="text-2xl">Nr {landData.number}</p>
-            <input ref={filesUploadRef} type="file" multiple hidden onChange={insertFile} />
-            <button className="my-1 primary-btn" onClick={() => filesUploadRef.current.click()}>
-                <FontAwesomeIcon icon={faFileCirclePlus}/> Wybierz pliki
-            </button>
-            <section className="my-3 self-start flex flex-col">
+            <RoleRequired roles={["SEKRETARIAT"]}>
+                <input ref={filesUploadRef} type="file" multiple hidden onChange={insertFile} />
+                <button className="my-1 primary-btn" onClick={() => filesUploadRef.current.click()}>
+                    <FontAwesomeIcon icon={faFileCirclePlus}/> Wybierz pliki
+                </button>
+            </RoleRequired>
+            <section className="my-3 self-start flex flex-col w-full">
                 {
                     landData.files.map((obj, index) =>
-                        <section key={index} className="flex gap-x-1 items-center justify-between">
+                        <section key={index} className="flex gap-x-1 items-center justify-between w-full">
                             <a href={`/api/files/get/${landData.id}/${obj}`} target="_blank" className="p-2 flex-1 text-black font-bold hover:text-white hover:bg-green-700 m-1 transition-colors duration-100 ease-in-out">
                                 {obj}
                             </a>
-                            <button className="error-btn" onClick={() => handleDelete(obj)}><FontAwesomeIcon icon={faTrashCan}/></button>
+                            <RoleRequired roles={["SEKRETARIAT"]}>
+                                <button className="error-btn" onClick={() => updateDeleteConfirm(true, () => handleDelete(obj))}><FontAwesomeIcon icon={faTrashCan}/></button>
+                            </RoleRequired>
                         </section> 
                     )
                 }
