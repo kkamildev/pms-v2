@@ -1,12 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ErrorBox from "../../popups/ErrorBox";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useUpdateDataStore } from "../../../hooks/stores";
 import useFormFields from "../../../hooks/useFormFields";
+import Input from "../../inputs/Input";
+import TipSelect from "../../inputs/TipSelect";
+import { useEffect, useState } from "react";
+import InsertRenter from "../rent/InsertRenter"
+import useApi from "../../../hooks/useApi";
+import Select from "../../inputs/Select";
 
 const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
     const landData = useUpdateDataStore((state) => state.data);
+    const {get} = useApi();
+
+    const [renters, setRenters] = useState([]);
+
+    const [issueRentalFactureDate, setIssueRentalFactureDate] = useState({year:"2000"});
 
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
         {
@@ -35,6 +46,10 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
         },
     ]);
 
+    useEffect(() => {
+        get("/api/renters/get-all", (res) => setRenters(res.data.renters));
+    }, []);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,13 +63,87 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
     return (
         <section className="w-full flex justify-center items-start">
-            <form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center scroll-auto">
+            <form className="min-w-[43%] p-5 flex flex-col items-center justify-center scroll-auto">
                 <ErrorBox/>
                 <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
                 <h1 className="text-2xl font-bold">Dodaj dzierżawe do działki nr {landData.number}</h1>
                 <section className="my-4 gap-y-2 flex flex-col w-full">
-
+                    <Input
+                        type="date"
+                        title="Data rozpoczęcia dzierżawy"
+                        error={errors.startDate}
+                        handleChange={(e) => setFieldData((prev) => ({...prev, startDate:e.target.value}))}
+                        value={fieldData.startDate}
+                    />
+                    <Input
+                        type="date"
+                        title="Data zakończenia dzierżawy"
+                        error={errors.endDate}
+                        handleChange={(e) => setFieldData((prev) => ({...prev, endDate:e.target.value}))}
+                        value={fieldData.endDate}
+                    />
+                    <section className="flex items-start w-full justify-between gap-x-5 my-5">
+                        <TipSelect
+                            placeholder="Podaj dzierżawcę"
+                            title="Dzierżawca"
+                            options={renters.map((obj) => ({key:`${obj.name} ${obj.phone.match(/.{1,3}/g).join(" ")}`, value:obj.id}))}
+                            error={errors.idRenter}
+                            handleChange={(value) => setFieldData((prev) => ({...prev, idRenter:value}))}
+                            value={fieldData.idRenter}
+                        />
+                        <section className="w-full">
+                            <InsertRenter onInsert={(renter) => {
+                                    setRenters((prev) => [...prev, renter])
+                                    setFieldData((prev) => ({...prev, idRenter:renter.id}))
+                                }}/>
+                        </section>
+                    </section>
+                    <Input
+                        type="number"
+                        placeholder="Podaj stawkę czynszu(zł)"
+                        title="Stawka czynszu(zł)"
+                        error={errors.rental}
+                        handleChange={(e) => setFieldData((prev) => ({...prev, rental:e.target.value}))}
+                        value={fieldData.rental}
+                    />
+                    <section className="w-full flex justify-center items-end gap-x-4">
+                        <section className="flex-1">
+                            <Select
+                                title="Data wystawienia faktury czynszowej"
+                                error={errors.issueRentalFactureDate}
+                                options={<>
+                                    <option value="1">Styczeń</option>
+                                    <option value="2">Luty</option>
+                                    <option value="3">Marzec</option>
+                                    <option value="4">Kwiecień</option>
+                                    <option value="5">Maj</option>
+                                    <option value="6">Czerwiec</option>
+                                    <option value="7">Lipiec</option>
+                                    <option value="8">Sierpień</option>
+                                    <option value="9">Wrzesień</option>
+                                    <option value="10">Październik</option>
+                                    <option value="11">Listopad</option>
+                                    <option value="12">Grudzień</option>
+                                </>}
+                                defaultOption="Nie wybrano"
+                                defaultOptionHidden={true}
+                                handleChange={(e) => setIssueRentalFactureDate((prev) => ({...prev, month:e.target.value}))}
+                                value={issueRentalFactureDate.month}
+                            />
+                        </section>
+                        <section className="flex-1">
+                            <Input
+                                min={1}
+                                max={31}
+                                type="number"
+                                placeholder="Dzień miesiąca"
+                                handleChange={(e) => setIssueRentalFactureDate((prev) => ({...prev, day:e.target.value}))}
+                                value={issueRentalFactureDate.day}
+                            />
+                        </section>
+                    </section>
                 </section>
+                <button type="button" className="primary-btn" onClick={handleSubmit}><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
              </form>
              
         </section>

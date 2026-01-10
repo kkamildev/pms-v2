@@ -48,7 +48,7 @@ const RentsDisplay = () => {
                 </section>
                 <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {renters.length}</h2>
                 <section className="my-5">
-                
+                    
                 </section>
             </section>
             {

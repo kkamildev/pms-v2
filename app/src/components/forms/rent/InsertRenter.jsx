@@ -1,10 +1,11 @@
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useApi from "../../../hooks/useApi";
 import Input from "../../inputs/Input";
 import { faPlus} from "@fortawesome/free-solid-svg-icons";
 import useFormFields from "../../../hooks/useFormFields";
 
-const InsertOwner = ({onInsert = (owner) => {}}) => {
+const InsertRenter = ({onInsert = (renter) => {}}) => {
     const {post} = useApi();
 
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
@@ -16,7 +17,7 @@ const InsertOwner = ({onInsert = (owner) => {}}) => {
         },
         {
             name:"phone",
-            allowNull:true,
+            allowNull:false,
             regexp:/^[0-9]{9}$/,
             errorText:"Nie poprawny"
         },
@@ -24,8 +25,8 @@ const InsertOwner = ({onInsert = (owner) => {}}) => {
 
     const handleSubmit = () => {
         if(isValidated()) {
-            post("/api/owners/insert", {...fieldData}, (res) => {
-                onInsert({id:res.data.idOwner, ...fieldData});
+            post("/api/renters/insert", {...fieldData}, (res) => {
+                onInsert({id:res.data.idRenter, ...fieldData});
                 setFieldData({});
                 setErrors({});
             });
@@ -33,7 +34,7 @@ const InsertOwner = ({onInsert = (owner) => {}}) => {
     }
     return (
         <section className="border-3 p-5 flex flex-col items-center scroll-auto">
-            <h1 className="text-2xl font-bold text-center">Dodawanie właściciela do systemu</h1>
+            <h1 className="text-2xl font-bold text-center">Dodawanie dzierżawcy do systemu</h1>
             <section className="my-4 gap-y-2 flex flex-col w-[80%]">
                 <Input
                     placeholder="Podaj imie/nazwisko"
@@ -45,7 +46,7 @@ const InsertOwner = ({onInsert = (owner) => {}}) => {
                 <Input
                     type="phone"
                     placeholder="Podaj telefon"
-                    title="Numer telefonu (opcjonalnie)"
+                    title="Numer telefonu"
                     error={errors.phone}
                     handleChange={(e) => setFieldData((prev) => ({...prev, phone:e.target.value}))}
                     value={fieldData.phone}
@@ -56,4 +57,4 @@ const InsertOwner = ({onInsert = (owner) => {}}) => {
     )
 }
 
-export default InsertOwner;
+export default InsertRenter;
