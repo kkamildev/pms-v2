@@ -9,11 +9,12 @@ import { useEffect, useState } from "react";
 import InsertRenter from "../rent/InsertRenter"
 import useApi from "../../../hooks/useApi";
 import Select from "../../inputs/Select";
+import {DateTime} from "luxon";
 
 const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
     const landData = useUpdateDataStore((state) => state.data);
-    const {get} = useApi();
+    const {get, post} = useApi();
 
     const [renters, setRenters] = useState([]);
 
@@ -41,7 +42,11 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
             errorText:"Nie poprawny lub za duży"
         },
         {
-            name:"issueRentalFactureDate",
+            name:"issueRentalFactureMonth",
+            allowNull:false,
+        },
+        {
+            name:"issueRentalFactureDay",
             allowNull:false,
         },
     ]);
@@ -54,7 +59,9 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {
-            post("/api/rents/insert", {...fieldData, idLand:landData.id}, (res) => {
+            const date = new Date(2000, fieldData.issueRentalFactureMonth - 1, fieldData.issueRentalFactureDay);
+            post("/api/rents/insert", {...fieldData, issueRentalFactureDate:DateTime.fromJSDate(date).toFormat("yyyy-MM-dd"),
+                 idLand:landData.id}, (res) => {
                 onClose()
                 reload()
             });
@@ -110,7 +117,7 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
                         <section className="flex-1">
                             <Select
                                 title="Data wystawienia faktury czynszowej"
-                                error={errors.issueRentalFactureDate}
+                                error={errors.issueRentalFactureMonth}
                                 options={<>
                                     <option value="1">Styczeń</option>
                                     <option value="2">Luty</option>
@@ -127,8 +134,8 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
                                 </>}
                                 defaultOption="Nie wybrano"
                                 defaultOptionHidden={true}
-                                handleChange={(e) => setIssueRentalFactureDate((prev) => ({...prev, month:e.target.value}))}
-                                value={issueRentalFactureDate.month}
+                                handleChange={(e) => setFieldData((prev) => ({...prev, issueRentalFactureMonth:e.target.value}))}
+                                value={fieldData.issueRentalFactureMonth}
                             />
                         </section>
                         <section className="flex-1">
@@ -137,8 +144,9 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
                                 max={31}
                                 type="number"
                                 placeholder="Dzień miesiąca"
-                                handleChange={(e) => setIssueRentalFactureDate((prev) => ({...prev, day:e.target.value}))}
-                                value={issueRentalFactureDate.day}
+                                handleChange={(e) => setFieldData((prev) => ({...prev, issueRentalFactureDay:e.target.value}))}
+                                value={fieldData.issueRentalFactureDay}
+                                error={errors.issueRentalFactureDay}
                             />
                         </section>
                     </section>

@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import RentsSearch from "../searchBars/RentsSearch";
+import UpdateRenter from "../forms/rent/UpdateRenter"
+import Renter from "../models/Renter";
 
 const RentsDisplay = () => {
 
@@ -48,11 +50,22 @@ const RentsDisplay = () => {
                 </section>
                 <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {renters.length}</h2>
                 <section className="my-5">
-                    
+                    {
+                        renters.map((obj, index) => <Renter
+                            key={obj.id}
+                            number={index + 1}
+                            data={obj}
+                            onDelete={handleDelete}
+                            onUpdate={(e) => setFormName("update")}
+                        />)
+                    }
                 </section>
             </section>
             {
                 formName == "search" && <RentsSearch onClose={() => setFormName(null)}/>
+            }
+            {
+                formName == "update" && <UpdateRenter onClose={() => setFormName(null)} reload={getRenters}/>
             }
         </section>
     )
