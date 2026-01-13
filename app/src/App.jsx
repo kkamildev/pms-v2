@@ -22,7 +22,7 @@ const App = () => {
             if(err.unauthorized) {
                 setAuth(false);
             }
-        });
+        }, (err) => setAuth(false));
         if(!ready) {
             setReady(true);
         }

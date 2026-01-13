@@ -9,6 +9,7 @@ import OwnersDisplay from "../components/sections/OwnersDisplay";
 import LandsDisplay from "../components/sections/LandsDisplay";
 import RentsDisplay from "../components/sections/RentsDisplay";
 import FormsDisplay from "../components/sections/FormsDisplay";
+import CommunesDisplay from "../components/sections/CommunesDisplay";
 
 const DashboardPage = () => {
     return (
@@ -23,6 +24,7 @@ const DashboardPage = () => {
                 <Route path="/rents" element={<RentsDisplay/>}/>
                 <Route path="/" element={<LandsDisplay/>}/>
                 <Route path="/forms" element={<FormsDisplay/>}/>
+                <Route path="/communes" element={<CommunesDisplay/>}/>
             </Routes>
         </DashboardLayout>
     )

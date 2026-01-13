@@ -5,7 +5,6 @@ import Select from "../../inputs/Select"
 import Input from "../../inputs/Input"
 import useFormFields from "../../../hooks/useFormFields"
 import useApi from "../../../hooks/useApi"
-import ErrorBox from "../../popups/ErrorBox";
 import { useUserStore } from "../../../hooks/stores";
 
 
@@ -37,9 +36,8 @@ const LoginUser = () => {
         
     }
     return (
-        <form method="POST" onSubmit={handleSubmit} className="flex justify-center flex-col items-center border-3 xl:w-[40%] lg:w-[60%] w-[90%] p-2 rounded-xl">
+        <form method="POST" onSubmit={handleSubmit} className="flex justify-center flex-col items-center border-3 xl:w-[40%] lg:w-[60%] w-[90%] p-2 rounded-xl m-5">
             <h1 className="font-bold text-3xl text-center mt-10">Logowanie jako</h1>
-            <ErrorBox/>
             <section className="py-5 w-[50%] flex flex-col gap-y-5">
                 <Select
                     defaultOption="Wybierz użytkownika"
