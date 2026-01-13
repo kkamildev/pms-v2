@@ -37,14 +37,14 @@ exports.getTowns = withErrorHandling(async (req, res) => {
 });
 
 exports.getLocations = withErrorHandling(async (req, res) => {
-    const {taxDistrict, agriculturalTax, forestTax, commune, district, province, limit} = req.query
+    const {taxDistrict, agriculturalTax, forestTax, commune, district, province, limit} = req.query;
     const locations = await Location.findAll({
         where:{
             province:{
-                [Op.like]:`${province | ""}%`
+                [Op.like]:`${province || ""}%`
             },
             district:{
-                [Op.like]:`${district | ""}%`
+                [Op.like]:`${district || ""}%`
             },
             commune:{
                 [Op.like]:`${commune || ""}%`
