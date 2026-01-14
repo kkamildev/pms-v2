@@ -25,10 +25,10 @@ const UpdateAllLocations = ({onClose = () => {}, reload = () => {}}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {
-            // put("/api/locations/update", {idLocation:locationData.id, ...fieldData}, (res) => {
-            //     onClose()
-            //     reload()
-            // });
+            put("/api/locations/update-all", {...fieldData}, (res) => {
+                onClose()
+                reload()
+            });
         }
     }
 
@@ -56,7 +56,7 @@ const UpdateAllLocations = ({onClose = () => {}, reload = () => {}}) => {
                     value={fieldData.forestTax}
                 />
             </section>
-            <p className="text-xl font-bold text-red-800 text-center my-3">Zostaną nadpisane wszystkie dane gmin (jeżeli zostały wyżej podane)</p>
+            <p className="text-xl font-bold text-red-800 text-center m-5">Zostaną nadpisane wszystkie dane gmin (jeżeli zostały wyżej podane)</p>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Nadpisz dla wszystkich</button>
         </form>
     )
