@@ -7,7 +7,7 @@ const useApi = () => {
     const get = async (url, onSuccess, onClientError, onServerError) => {
         try {
             const response = await axios.get(url);
-            onSuccess(response);
+            onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
                 onClientError(err.response.data);
@@ -19,7 +19,7 @@ const useApi = () => {
     const post = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.post(url, body, config);
-            onSuccess(response);
+            onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
                 onClientError(err.response.data);
@@ -31,7 +31,7 @@ const useApi = () => {
     const deleteReq = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.delete(url, {data:body, ...config});
-            onSuccess(response);
+            onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
                 onClientError(err.response.data);
@@ -43,7 +43,7 @@ const useApi = () => {
     const put = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.put(url, body, config);
-            onSuccess(response);
+            onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
                 onClientError(err.response.data);

@@ -11,11 +11,7 @@ const roleAuthorization = require("../middlewares/roleAuthorization");
 
 router.use(authorization());
 
-router.get("/get",[
-    query("taxDistrict").trim().
-    exists({checkFalsy:true}).withMessage("taxDistrict is required").
-    isInt().withMessage("taxDistrict must be a int value").toInt(),
-], groundClassController.getGroundClasses);
+router.get("/get", groundClassController.getGroundClasses);
 
 router.get("/count",[
     query("groundClass").trim().

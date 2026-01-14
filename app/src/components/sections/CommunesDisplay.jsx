@@ -9,9 +9,10 @@ import CommunesSearch from "../searchBars/CommunesSearch";
 import Commune from "../models/Commune";
 import UpdateLocation from "../forms/location/UpdateLocation";
 import UpdateAllLocations from "../forms/location/UpdateAllLocations";
+import RoleRequired from "../nav/RoleRequired";
 
 const CommunesDisplay = () => {
-    const {get, put} = useApi();
+    const {get} = useApi();
     const [searchParams] = useSearchParams();
 
     const [formName, setFormName] = useState(null);
@@ -26,48 +27,50 @@ const CommunesDisplay = () => {
     }, [searchParams]);
 
     return (
-        <section className="flex justify-between h-full">
-            <Title title={"PMS-v2 - Gminy i stawki podatkowe"}/>
-            <section className={`flex flex-col w-full p-5 overflow-y-auto ${(["updateRent"].includes(formName)) && "hidden"}`}>
-                <section className="self-start mb-3">
-                    <ErrorBox/>
-                </section>
-                <section className="flex justify-between">
-                    <section className="flex items-center gap-x-5">
-                        <h1 className="text-4xl font-bold">Gminy</h1>
-                        <button className="primary-btn" onClick={() => setFormName("search")}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass}/> Opcje szukania
-                        </button>
-                        <button className="edit-btn" onClick={() => setFormName("updateAll")}>
-                            <FontAwesomeIcon icon={faEdit}/> Edycja wszystkich
+        <RoleRequired roles={["KSIEGOWOSC", "SEKRETARIAT"]}>
+            <section className="flex justify-between h-full">
+                <Title title={"PMS-v2 - Gminy i stawki podatkowe"}/>
+                <section className={`flex flex-col w-full p-5 overflow-y-auto ${(["updateRent"].includes(formName)) && "hidden"}`}>
+                    <section className="self-start mb-3">
+                        <ErrorBox/>
+                    </section>
+                    <section className="flex justify-between">
+                        <section className="flex items-center gap-x-5">
+                            <h1 className="text-4xl font-bold">Gminy</h1>
+                            <button className="primary-btn" onClick={() => setFormName("search")}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass}/> Opcje szukania
+                            </button>
+                            <button className="edit-btn" onClick={() => setFormName("updateAll")}>
+                                <FontAwesomeIcon icon={faEdit}/> Edycja wszystkich
+                            </button>
+                        </section>
+                        <button className="edit-btn" onClick={getCommunes}>
+                            <FontAwesomeIcon icon={faRefresh}/> Odśwież
                         </button>
                     </section>
-                    <button className="edit-btn" onClick={getCommunes}>
-                        <FontAwesomeIcon icon={faRefresh}/> Odśwież
-                    </button>
+                    <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {communes.length}</h2>
+                    <section className="my-5">
+                        {
+                            communes.map((obj, index) => <Commune
+                                key={obj.id}
+                                number={index + 1}
+                                data={obj}
+                                onUpdate={() => setFormName("update")}
+                            />)
+                        }
+                    </section>
                 </section>
-                <h2 className="text-3xl font-bold ml-5 mt-2">Znaleziono: {communes.length}</h2>
-                <section className="my-5">
-                    {
-                        communes.map((obj, index) => <Commune
-                            key={obj.id}
-                            number={index + 1}
-                            data={obj}
-                            onUpdate={() => setFormName("update")}
-                        />)
-                    }
-                </section>
+                {
+                    formName == "search" && <CommunesSearch onClose={() => setFormName(null)}/>
+                }
+                {
+                    formName == "update" && <UpdateLocation onClose={() => setFormName(null)} reload={getCommunes}/>
+                }
+                {
+                    formName == "updateAll" && <UpdateAllLocations onClose={() => setFormName(null)} reload={getCommunes}/>
+                }
             </section>
-            {
-                formName == "search" && <CommunesSearch onClose={() => setFormName(null)}/>
-            }
-            {
-                formName == "update" && <UpdateLocation onClose={() => setFormName(null)} reload={getCommunes}/>
-            }
-            {
-                formName == "updateAll" && <UpdateAllLocations onClose={() => setFormName(null)} reload={getCommunes}/>
-            }
-        </section>
+        </RoleRequired>
     )
 }
 

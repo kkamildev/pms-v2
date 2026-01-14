@@ -29,7 +29,7 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
             name:"area",
             allowNull:false,
             regexp:/^\d{0,4}.\d{0,4}$/,
-            errorText:"Nie poprawna"
+            errorText:"Nie poprawna (4 miejsca po przecinku)"
         },
         {
             name:"town",

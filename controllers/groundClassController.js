@@ -19,15 +19,11 @@ exports.getUniqueGroundClasses = withErrorHandling(async (req, res) => {
 });
 
 exports.getGroundClasses = withErrorHandling(async (req, res) => {
-    const {taxDistrict} = req.query;
     const classes = await GroundClass.findAll({
-        attributes:["class", "converter", "tax", "id"],
-        where:{
-            taxDistrict
-        },
+        attributes:["id", "class", "converter", "tax", "taxDistrict"],
         order:[["class", "ASC"]]
     });
-    res.status(200).json({success:true, message:`Pobrano klasy gruntu dla okręgu ${taxDistrict}`, classes})
+    res.status(200).json({success:true, message:`Pobrano klasy gruntu`, classes})
 });
 
 exports.updateGroundClass = withErrorHandling(async (req, res) => {
