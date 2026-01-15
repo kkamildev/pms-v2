@@ -1,10 +1,11 @@
 import { faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDeleteConfirmStore } from "../../hooks/stores";
+import { useDeleteConfirmStore, useUpdateDataStore } from "../../hooks/stores";
 
-const GroundClassesTable = ({title = "", data = [], headHeaders = [], onDelete}) => {
+const GroundClassesTable = ({title = "", data = [], headHeaders = [], onDelete, onUpdate}) => {
     
     const updateDeleteConfirm = useDeleteConfirmStore((state) => state.update);
+    const updateUpdateData = useUpdateDataStore((state) => state.update);
 
     return (
         <section className="my-5">
@@ -30,7 +31,13 @@ const GroundClassesTable = ({title = "", data = [], headHeaders = [], onDelete})
                                 }
                                 <td className="p-5 min-w-20 min-h-20 flex gap-x-3 text-base">
                                     <button className="error-btn" onClick={() => updateDeleteConfirm(true, () => onDelete(obj.id))}><FontAwesomeIcon icon={faTrashCan}/> Usuń</button>
-                                    <button className="edit-btn"><FontAwesomeIcon icon={faPen}/> Edytuj</button>
+                                    <button className="edit-btn" onClick={() => {
+                                        updateUpdateData({
+                                            ...obj,
+                                            converters:obj.converters.sort((a, b) => a.taxDistrict - b.taxDistrict)
+                                        })
+                                        onUpdate();
+                                    }}><FontAwesomeIcon icon={faPen}/> Edytuj</button>
                                 </td>
                                 
                             </tr>

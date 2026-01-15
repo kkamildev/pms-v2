@@ -8,6 +8,7 @@ import { faPlus, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import RoleRequired from "../nav/RoleRequired";
 import GroundClassesTable from "../models/GroundClassesTable"
 import InsertGroundClass from "../forms/groundClass/InsertGroundClass";
+import UpdateGroundClass from "../forms/groundClass/UpdateGroundClass";
 
 const GroundClassesDisplay = () => {
     const {get, deleteReq} = useApi();
@@ -50,18 +51,21 @@ const GroundClassesDisplay = () => {
                     <section className="my-5">
                         <GroundClassesTable
                             onDelete={handleDelete}
+                            onUpdate={() => setFormName("update")}
                             title="Przeliczniki klas rolnych"
                             data={groundClasses.filter((obj) => obj.tax == "rolny")}
                             headHeaders={["Klasa", "I", "II", "III", "IV", "Operacje"]}
                         />
                         <GroundClassesTable
                             onDelete={handleDelete}
+                            onUpdate={() => setFormName("update")}
                             title="Klasy gruntów leśnych"
                             data={groundClasses.filter((obj) => obj.tax == "lesny")}
                             headHeaders={["Klasa", "Operacje"]}
                         />
                         <GroundClassesTable
                             onDelete={handleDelete}
+                            onUpdate={() => setFormName("update")}
                             title="Inne klasy gruntów"
                             data={groundClasses.filter((obj) => obj.tax == "brak")}
                             headHeaders={["Klasa", "Operacje"]}
@@ -70,6 +74,9 @@ const GroundClassesDisplay = () => {
                 </section>
                 {
                     formName == "insert" && <InsertGroundClass onClose={() => setFormName(null)} reload={getGroundClasses}/>
+                }
+                {
+                    formName == "update" && <UpdateGroundClass onClose={() => setFormName(null)} reload={getGroundClasses}/>
                 }
             </section>
         </RoleRequired>

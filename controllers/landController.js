@@ -15,6 +15,7 @@ const Rent = require("../models/Rent");
 const LandArea = require("../models/LandArea");
 const Renter = require("../models/Renter");
 const GroundClass = require("../models/GroundClass");
+const Converter = require("../models/Converter");
 const { Op} = require("sequelize");
 const path = require("path");
 const config = require("../util/config");
@@ -264,7 +265,12 @@ exports.getLands = withErrorHandling(async (req, res) => {
                 include:{
                     model:GroundClass,
                     as:"groundClass",
-                    attributes:["id", "class", "converter", "tax"],
+                    attributes:["id", "class", "tax"],
+                    include:{
+                        attributes:["converter"],
+                        model:Converter,
+                        as:"converters"
+                    },
                     where:{
                         class:{
                             [Op.like]:`%${groundClassFilter || ""}%`
