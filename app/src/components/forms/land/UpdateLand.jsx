@@ -213,6 +213,16 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
         func()
     }, []);
 
+    useEffect(() => {
+        if(fieldData.serialNumber && fieldData.serialNumber != landData.serialNumber && fieldData.serialNumber.length > 10) {
+            get("/api/lands/serial-exist?serialNumber=" + fieldData.serialNumber, (res) => {
+                if(res.data.exist) {
+                    setErrors((prev) => ({...prev, serialNumber:"Ten ID już istnieje"}))
+                }
+            })
+        }
+    }, [fieldData.serialNumber])
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {

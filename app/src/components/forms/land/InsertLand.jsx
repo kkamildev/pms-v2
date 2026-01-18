@@ -180,6 +180,16 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
         get("/api/lands/get-insertion-data", (res) => setInsertionData(res.data.data));
     }, []);
 
+    useEffect(() => {
+        if(fieldData.serialNumber && fieldData.serialNumber.length > 10) {
+            get("/api/lands/serial-exist?serialNumber=" + fieldData.serialNumber, (res) => {
+                if(res.data.exist) {
+                    setErrors((prev) => ({...prev, serialNumber:"Ten ID już istnieje"}))
+                }
+            })
+        }
+    }, [fieldData.serialNumber])
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if(isValidated()) {

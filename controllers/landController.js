@@ -250,7 +250,7 @@ exports.getLands = withErrorHandling(async (req, res) => {
                 model:Rent,
                 as:"rent",
                 required:rentFilter == "true",
-                attributes:["id"],
+                attributes:["id", "startDate", "endDate", "rental"],
                 include:{
                     model:Renter,
                     as:"renter",

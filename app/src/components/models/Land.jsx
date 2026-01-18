@@ -129,52 +129,72 @@ const Land = ({data, number, onDelete, onUpdate, onShowFiles, onAddRent}) => {
                     </section>
                     {
                         data.rent &&
-                        <section className="flex gap-x-5 items-center justify-center">
-                            <h1 className="font-bold text-zinc-600 text-3xl">Dane dzierżawy</h1>
+                        <section className="flex flex-col gap-x-5 items-center justify-center">
+                            <h1 className="font-bold text-zinc-600 text-2xl text-center">Dane dzierżawy</h1>
+                            <section className="flex gap-x-5 w-full">
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Okres dzierżawy</span>
+                                    <p>{DateTime.fromISO(data.rent.startDate).toFormat("dd.MM.yyyy")} - {DateTime.fromISO(data.rent.endDate).toFormat("dd.MM.yyyy")}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Stawka czynszu</span>
+                                    <p>{data.rent.rental}zł/ha</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Czynsz</span>
+                                    <p>{data.rent.rental * data.area}zł</p>
+                                </div>
+                            </section>
                         </section>
                     }
-                    <section className="flex flex-col gap-x-5 items-center justify-center">
-                        <h1 className="font-bold text-zinc-600 text-2xl self-center">Dane Nabycia</h1>
-                        <section className="flex gap-x-5 w-full">
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Data nabycia</span>
-                                <p>{data.purchase.date ? DateTime.fromISO(data.purchase.date).toFormat("dd.MM.yyyy") : "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Nr aktu nabycia</span>
-                                <p>{data.purchase.actNumber || "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Od kogo</span>
-                                <p>{data.purchase.seller || "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Cena(zł) nabycia</span>
-                                <p>{data.purchase.price ? data.purchase.price + "zł" : "Brak"}</p>
-                            </div>
+                    {
+                        data.purchase.date &&
+                        <section className="flex flex-col gap-x-5 items-center justify-center">
+                            <h1 className="font-bold text-zinc-600 text-2xl self-center">Dane Nabycia</h1>
+                            <section className="flex gap-x-5 w-full">
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Data nabycia</span>
+                                    <p>{data.purchase.date ? DateTime.fromISO(data.purchase.date).toFormat("dd.MM.yyyy") : "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Nr aktu nabycia</span>
+                                    <p>{data.purchase.actNumber || "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">sprzedający</span>
+                                    <p>{data.purchase.seller || "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Cena(zł) nabycia</span>
+                                    <p>{data.purchase.price ? data.purchase.price + "zł" : "Brak"}</p>
+                                </div>
+                            </section>
                         </section>
-                    </section>
-                    <section className="flex flex-col gap-x-5 items-center justify-center">
-                        <h1 className="font-bold text-zinc-600 text-2xl self-center">Dane Sprzedaży</h1>
-                        <section className="flex gap-x-5 w-full">
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Data sprzedaży</span>
-                                <p>{data.sell.date ? DateTime.fromISO(data.sell.date).toFormat("dd.MM.yyyy") : "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Nr aktu sprzedaży</span>
-                                <p>{data.sell.actNumber || "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Komu</span>
-                                <p>{data.sell.buyer || "Brak"}</p>
-                            </div>
-                            <div className="flex-col text-center flex items-center text-xl flex-1">
-                                <span className="font-bold">Cena(zł) sprzedaży</span>
-                                <p>{data.sell.price ? data.sell.price + "zł" : "Brak"}</p>
-                            </div>
+                    }
+                    {
+                        data.sell.date &&
+                        <section className="flex flex-col gap-x-5 items-center justify-center">
+                            <h1 className="font-bold text-zinc-600 text-2xl self-center">Dane Sprzedaży</h1>
+                            <section className="flex gap-x-5 w-full">
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Data sprzedaży</span>
+                                    <p>{data.sell.date ? DateTime.fromISO(data.sell.date).toFormat("dd.MM.yyyy") : "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Nr aktu sprzedaży</span>
+                                    <p>{data.sell.actNumber || "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">kupujący</span>
+                                    <p>{data.sell.buyer || "Brak"}</p>
+                                </div>
+                                <div className="flex-col text-center flex items-center text-xl flex-1">
+                                    <span className="font-bold">Wartość(zł) sprzedaży</span>
+                                    <p>{data.sell.price ? data.sell.price + "zł" : "Brak"}</p>
+                                </div>
+                            </section>
                         </section>
-                    </section>
+                    }
                 </>
             }
         </section>
