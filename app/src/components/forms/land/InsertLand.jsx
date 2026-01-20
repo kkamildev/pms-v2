@@ -1,4 +1,4 @@
-import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import useFormFields from "../../../hooks/useFormFields"
@@ -10,6 +10,7 @@ import TipInput from "../../inputs/TipInput";
 import TipSelect from "../../inputs/TipSelect";
 import useLocations from "../../../hooks/useLocations";
 import InsertOwner from "../owner/InsertOwner";
+import InsertArea from "../area/InsertArea"
 import Select from "../../inputs/Select";
 import TextArea from "../../inputs/TextArea";
 
@@ -175,9 +176,11 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
     );
 
     const [insertionData, setInsertionData] = useState({});
+    const [landAreas, setLandAreas] = useState([]);
 
     useEffect(() => {
-        get("/api/lands/get-insertion-data", (res) => setInsertionData(res.data.data));
+        get("/api/lands/get-insertion-data", (res) => setInsertionData((prev) => ({...prev, ...res.data.data})));
+        get("/api/ground-classes/get", (res) => setInsertionData((prev) => ({...prev, groundClasses:res.data.classes})))
     }, []);
 
     useEffect(() => {
@@ -448,8 +451,30 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
                             value={fieldData.sellPrice}
                         /> 
                     </section>
+                    <h1 className="text-center m-3 text-2xl font-bold">Dane podziału na klasy gruntów</h1>
+                    <section className="flex items-start w-full justify-between gap-x-5 my-5">
+                        <section className="w-full flex flex-col gap-y-2">
+                                {
+                                    landAreas.map((obj, index) => <section key={index} className="flex justify-between gap-x-3 p-3 border-2 items-center">
+                                        <section className="flex gap-x-3">
+                                            <p>#{index + 1}</p>
+                                            <p className="font-bold">{insertionData.groundClasses.find((value) => value.id == obj.idGroundClass).class}</p>
+                                            <p>{Number(obj.area).toFixed(4)}ha</p>
+                                        </section>
+                                        <section className="flex gap-x-3">
+                                            <button className="error-btn"><FontAwesomeIcon icon={faXmark}/></button>
+                                        </section>
+                                    </section>)
+                                }
+                        </section>
+                        <section className="w-full">
+                            <InsertArea groundClasses={insertionData.groundClasses} onInsert={(area) => {
+                                    setLandAreas((prev) => [...prev, area])
+                                }}/>
+                        </section>
+                    </section>
                 </section>
-                <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Dodaj</button>
+                <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
             </form>
         </section>
     )
