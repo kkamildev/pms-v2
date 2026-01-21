@@ -17,7 +17,7 @@ const FormsDisplay = () => {
                     </section>
                     <section className="my-5">
                         <PrintButton printComponent={<LandForm/>} documentTitle="System SK INVEST/formularz">
-                            <FontAwesomeIcon icon={faFile}/> Formularz działki
+                            <span className="text-xl"><FontAwesomeIcon icon={faFile}/> Formularz działki</span>
                         </PrintButton>
                     </section>
                 </section>

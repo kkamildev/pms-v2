@@ -11,6 +11,8 @@ import Land from "../models/Land";
 import FilesDesc from "../forms/land/FilesDesc";
 import UpdateLand from "../forms/land/UpdateLand";
 import InsertRent from "../forms/land/InsertRent";
+import PrintButton from "../inputs/PrintButton"
+import LandsForPrint from "../toPrint/LandsForPrint";
 
 
 const LandsDisplay = () => {
@@ -52,9 +54,9 @@ const LandsDisplay = () => {
                         </button>
                     </section>
                     <section className="flex items-center gap-x-5">
-                        <button className="primary-btn">
-                            <FontAwesomeIcon icon={faPrint}/> Drukuj
-                        </button>
+                        <PrintButton printComponent={<LandsForPrint lands={lands}/>} documentTitle="System SK INVEST/działki">
+                            <span className="text-base"><FontAwesomeIcon icon={faPrint}/> Drukuj wyniki</span>
+                        </PrintButton>
                         <button className="edit-btn" onClick={getLands}>
                             <FontAwesomeIcon icon={faRefresh}/> Odśwież
                         </button>

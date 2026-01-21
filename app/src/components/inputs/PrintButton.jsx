@@ -12,7 +12,7 @@ const PrintButton = ({children, documentTitle="dokument", printComponent}) => {
     return (
     <>
         <section className="my-1">
-            <button className="primary-btn text-xl" onClick={handlePrint}>{children}</button>
+            <button className="primary-btn" onClick={handlePrint}>{children}</button>
         </section>
         <section className="hidden">
             <section ref={printComponentRef}>

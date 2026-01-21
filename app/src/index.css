@@ -41,6 +41,10 @@
     @apply p-1 cursor-pointer hover:bg-zinc-300
 }
 
+.print-table-section {
+    @apply border-black border-2 p-1 text-[0.8rem] border-collapse border-spacing-0 m-0.5
+}
+
 @media print {
   @page {
     size: A4 portrait;
