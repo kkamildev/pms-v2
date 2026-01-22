@@ -41,9 +41,22 @@
     @apply p-1 cursor-pointer hover:bg-zinc-300
 }
 
-.print-table-section {
-    @apply border-black border-2 p-1 text-[0.8rem] border-collapse border-spacing-0 m-0.5
+
+.print-table-header > span {
+    @apply h-full justify-center
 }
+
+.print-table-section {
+    @apply p-1 text-[0.8rem] border-2
+}
+
+.print-table-section > span {
+    @apply flex items-center
+}
+
+.print-table-section + .print-table-section {
+    @apply border-l-0
+ }
 
 @media print {
   @page {

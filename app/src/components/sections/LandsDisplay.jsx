@@ -54,7 +54,7 @@ const LandsDisplay = () => {
                         </button>
                     </section>
                     <section className="flex items-center gap-x-5">
-                        <PrintButton printComponent={<LandsForPrint lands={lands}/>} documentTitle="System SK INVEST/działki">
+                        <PrintButton printComponent={<LandsForPrint lands={[...lands, ...lands, ...lands, ...lands]}/>} documentTitle="System SK INVEST/działki">
                             <span className="text-base"><FontAwesomeIcon icon={faPrint}/> Drukuj wyniki</span>
                         </PrintButton>
                         <button className="edit-btn" onClick={getLands}>
