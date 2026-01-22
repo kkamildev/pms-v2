@@ -1,6 +1,6 @@
 import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Form from "../../inputs/Form"
 import useFormFields from "../../../hooks/useFormFields"
 import Input from "../../inputs/Input"
 import useApi from "../../../hooks/useApi";
@@ -39,7 +39,6 @@ const InsertMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
     }, [fieldData.code])
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             post("/api/mpzp/insert", {...fieldData}, (res) => {
                 onClose()
@@ -49,7 +48,7 @@ const InsertMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold">Dodaj MPZP</h1>
             <section className="my-4 gap-y-2 flex flex-col w-[80%]">
@@ -69,7 +68,7 @@ const InsertMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
                 />
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
-        </form>
+        </Form>
     )
 }
 

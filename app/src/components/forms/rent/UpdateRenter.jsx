@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Input from "../../inputs/Input";
 import useFormFields from "../../../hooks/useFormFields";
 import { useEffect } from "react";
+import Form from "../../inputs/Form"
 
 const UpdateRenter = ({onClose = () => {}, reload = () => {}}) => {
 
@@ -34,7 +35,6 @@ const UpdateRenter = ({onClose = () => {}, reload = () => {}}) => {
     }, []);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             put("/api/renters/update", {...fieldData, idRenter:renterData.id}, (res) => {
                 onClose()
@@ -44,7 +44,7 @@ const UpdateRenter = ({onClose = () => {}, reload = () => {}}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold text-center">Edycja dzierżawcy</h1>
             <h2 className="text-2xl font-bold">Nr {renterData.number}</h2>
@@ -66,7 +66,7 @@ const UpdateRenter = ({onClose = () => {}, reload = () => {}}) => {
                 />
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
-        </form>
+        </Form>
     )
 }
 export default UpdateRenter;

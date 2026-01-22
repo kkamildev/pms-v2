@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-
+import Form from "../../inputs/Form"
 import Select from "../../inputs/Select"
 import Input from "../../inputs/Input"
 import useFormFields from "../../../hooks/useFormFields"
@@ -28,7 +28,6 @@ const LoginUser = () => {
     }, []);
     
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             post("/api/users/login-user", fieldData, (res) => auth(),
              (err) => setErrors((prev) => ({...prev, password:err.error})));
@@ -36,7 +35,7 @@ const LoginUser = () => {
         
     }
     return (
-        <form method="POST" onSubmit={handleSubmit} className="flex justify-center flex-col items-center border-3 xl:w-[40%] lg:w-[60%] w-[90%] p-2 rounded-xl m-5">
+        <Form onSubmit={handleSubmit} className="flex justify-center flex-col items-center border-3 xl:w-[40%] lg:w-[60%] w-[90%] p-2 rounded-xl m-5">
             <h1 className="font-bold text-3xl text-center mt-10">Logowanie jako</h1>
             <section className="py-5 w-[50%] flex flex-col gap-y-5">
                 <Select
@@ -64,7 +63,7 @@ const LoginUser = () => {
                     Zaloguj się
                 </button>
             </section>
-        </form>
+        </Form>
     )
 }
 

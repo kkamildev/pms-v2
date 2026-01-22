@@ -73,7 +73,7 @@ const Renter = ({data, number, onDelete, onUpdate, onRentDelete, onRentUpdate}) 
                                 </div>
                                 <div className="flex-col text-center flex items-center text-xl">
                                     <span className="font-bold">Czynsz</span>
-                                    <p>{obj.land.area * obj.rental}zł</p>
+                                    <p>{(obj.land.area * obj.rental).toFixed(2)}zł</p>
                                 </div>
                                 <div className="flex-col text-center flex items-center text-xl">
                                     <span className="font-bold">Data wystawienia faktury czynszowej</span>

@@ -10,6 +10,7 @@ import InsertRenter from "../rent/InsertRenter"
 import useApi from "../../../hooks/useApi";
 import Select from "../../inputs/Select";
 import {DateTime} from "luxon";
+import Form from "../../inputs/Form"
 
 const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
@@ -55,7 +56,6 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             const date = new Date(2000, fieldData.issueRentalFactureMonth - 1, fieldData.issueRentalFactureDay);
             post("/api/rents/insert", {...fieldData, issueRentalFactureDate:DateTime.fromJSDate(date).toFormat("yyyy-MM-dd"),
@@ -68,7 +68,7 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
 
     return (
         <section className="w-full flex justify-center items-start overflow-auto">
-            <form className="min-w-[43%] p-5 flex flex-col items-center justify-center">
+            <Form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
                 <ErrorBox/>
                 <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
                 <h1 className="text-2xl font-bold">Dodaj dzierżawe do działki nr {landData.number}</h1>
@@ -149,9 +149,8 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
                         </section>
                     </section>
                 </section>
-                <button type="button" className="primary-btn" onClick={handleSubmit}><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
-             </form>
-             
+                <button type="button" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
+            </Form>
         </section>
     )
 }

@@ -1,6 +1,6 @@
 import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Form from "../../inputs/Form"
 import useFormFields from "../../../hooks/useFormFields"
 import Input from "../../inputs/Input"
 import useApi from "../../../hooks/useApi";
@@ -48,7 +48,6 @@ const UpdateMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
     }, [fieldData.code])
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             put("/api/mpzp/update", {idMpzp:mpzpData.id, ...fieldData}, (res) => {
                 onClose()
@@ -58,7 +57,7 @@ const UpdateMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold">Edycja MPZP</h1>
             <h2 className="text-2xl font-bold">Nr {mpzpData.number}</h2>
@@ -79,7 +78,7 @@ const UpdateMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
                 />
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
-        </form>
+        </Form>
     )
 }
 

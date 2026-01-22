@@ -7,6 +7,7 @@ import Input from "../../inputs/Input"
 import useApi from "../../../hooks/useApi";
 import TextArea from "../../inputs/TextArea";
 import { useEffect } from "react";
+import Form from "../../inputs/Form"
 
 const InsertGeneralPlan = ({onClose = () => {}, reload = () => {}, generalPlans = []}) => {
     const {post} = useApi();
@@ -38,7 +39,6 @@ const InsertGeneralPlan = ({onClose = () => {}, reload = () => {}, generalPlans 
     }, [fieldData.code])
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             post("/api/general-plans/insert", {...fieldData}, (res) => {
                 onClose()
@@ -48,7 +48,7 @@ const InsertGeneralPlan = ({onClose = () => {}, reload = () => {}, generalPlans 
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold">Dodaj Plan ogólny</h1>
             <section className="my-4 gap-y-2 flex flex-col w-[80%]">
@@ -68,7 +68,7 @@ const InsertGeneralPlan = ({onClose = () => {}, reload = () => {}, generalPlans 
                 />
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
-        </form>
+        </Form>
     )
 }
 

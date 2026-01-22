@@ -14,6 +14,7 @@ import Select from "../../inputs/Select";
 import TextArea from "../../inputs/TextArea";
 import { useUpdateDataStore } from "../../../hooks/stores";
 import {DateTime} from "luxon"
+import Form from "../../inputs/Form"
 
 const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
 
@@ -224,7 +225,6 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
     }, [fieldData.serialNumber])
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             put("/api/lands/update", {...fieldData, idLand:landData.id}, (res) => {
                 onClose()
@@ -244,7 +244,7 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
 
     return (
         <section className="w-full flex justify-center items-start overflow-auto">
-            <form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
+            <Form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
                 <ErrorBox/>
                 <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
                 <h1 className="text-2xl font-bold">Edycja działki Nr {landData.number}</h1>
@@ -482,7 +482,7 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
                     </section>
                 </section>
                 <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> zapisz zmiany</button>
-            </form>
+            </Form>
         </section>
     )
 }

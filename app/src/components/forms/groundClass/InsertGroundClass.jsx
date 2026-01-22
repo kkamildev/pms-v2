@@ -5,6 +5,7 @@ import useApi from "../../../hooks/useApi";
 import Select from "../../inputs/Select";
 import Input from "../../inputs/Input";
 import { useEffect } from "react";
+import Form from "../../inputs/Form"
 
 
 const InsertGroundClass = ({onClose = () => {}, reload = () => {}}) => {
@@ -63,14 +64,12 @@ const InsertGroundClass = ({onClose = () => {}, reload = () => {}}) => {
 
     const handleSubmit = (e) => {
         const insertion = async () => {
-
             const converters = [
                 fieldData.converter1,
                 fieldData.converter2,
                 fieldData.converter3,
                 fieldData.converter4
             ]
-
             await post("/api/ground-classes/insert", {
                 groundClass:fieldData.groundClass,
                 tax:fieldData.tax,
@@ -80,7 +79,6 @@ const InsertGroundClass = ({onClose = () => {}, reload = () => {}}) => {
             onClose();
             reload()
         }
-        e.preventDefault();
         if(isValidated()) {
             insertion()
         }
@@ -115,7 +113,7 @@ const InsertGroundClass = ({onClose = () => {}, reload = () => {}}) => {
     }, [fieldData.groundClass])
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center overflow-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold">Dodaj klasę gruntu</h1>
             <section className="my-4 gap-y-2 flex flex-col w-[80%]">
@@ -198,7 +196,7 @@ const InsertGroundClass = ({onClose = () => {}, reload = () => {}}) => {
                 }
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
-        </form>
+        </Form>
     )
 }
 export default InsertGroundClass;

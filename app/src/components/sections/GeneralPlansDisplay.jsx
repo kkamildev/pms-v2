@@ -70,7 +70,7 @@ const GeneralPlansDisplay = () => {
                     formName == "insert" && <InsertGeneralPlan onClose={() => setFormName(null)} reload={getGeneralPlans} generalPlans={generalPlans}/>
                 }
                 {
-                    formName == "update" && <UpdateGeneralPlan onClose={() => setFormName(null)} reload={getGeneralPlans} mpzp={generalPlans}/>
+                    formName == "update" && <UpdateGeneralPlan onClose={() => setFormName(null)} reload={getGeneralPlans} generalPlans={generalPlans}/>
                 }
             </section>
         </RoleRequired>

@@ -14,6 +14,7 @@ import InsertArea from "../area/InsertArea"
 import Select from "../../inputs/Select";
 import TextArea from "../../inputs/TextArea";
 import RoleRequired from "../../nav/RoleRequired";
+import Form from "../../inputs/Form"
 
 
 const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
@@ -213,7 +214,6 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
                 });
             }
         }
-        e.preventDefault();
         insertion()
     }
 
@@ -229,7 +229,7 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
 
     return (
         <section className="w-full flex justify-center items-start overflow-auto">
-            <form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
+            <Form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
                 <ErrorBox/>
                 <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
                 <h1 className="text-2xl font-bold">Dodaj działkę</h1>
@@ -498,7 +498,7 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
                     </RoleRequired>
                 </section>
                 <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
-            </form>
+            </Form>
         </section>
     )
 }

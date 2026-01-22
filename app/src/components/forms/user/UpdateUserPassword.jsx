@@ -1,6 +1,6 @@
 import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Form from "../../inputs/Form"
 import useFormFields from "../../../hooks/useFormFields"
 import Input from "../../inputs/Input"
 import useApi from "../../../hooks/useApi";
@@ -24,7 +24,6 @@ const UpdateUserPassword = ({onClose = () => {}, reload = () => {}}) => {
     ]);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
         if(isValidated()) {
             if(fieldData.password === fieldData.repeatedPassword) {
                 put("/api/users/update-password", {idUser:userData.id, ...fieldData, repeatedPassword:null}, (res) => {
@@ -38,7 +37,7 @@ const UpdateUserPassword = ({onClose = () => {}, reload = () => {}}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
+        <Form onSubmit={handleSubmit} className="w-[33%] border-l-4 border-l-green-700 p-5 flex flex-col items-center scroll-auto">
             <button className="error-btn m-2" onClick={onClose}><FontAwesomeIcon icon={faXmark}/> Zamknij</button>
             <h1 className="text-2xl font-bold">Zmiana hasła użytkownika</h1>
             <h2 className="text-2xl font-bold">Nr {userData.number}</h2>
@@ -61,7 +60,7 @@ const UpdateUserPassword = ({onClose = () => {}, reload = () => {}}) => {
                 />
             </section>
             <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
-        </form>
+        </Form>
     )
 }
 
