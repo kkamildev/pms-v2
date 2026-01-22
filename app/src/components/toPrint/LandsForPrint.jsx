@@ -69,67 +69,6 @@ const LandsForPrint = ({lands}) => {
             </main>
         </section>
     )
-
-    // return (
-    //     <section className="max-h-[95%] p-3">
-    //        
-    //                 {
-    //                     lands.map((obj) =>
-    //                     <Fragment key={obj.id}>
-    //                         <tr className="border-t-black border-t-2 break-inside-avoid">
-    //                             <td className="print-table-section">{obj.landNumber}</td>
-    //                             <td className="print-table-section">
-    //                                 <p className="">m:{obj.town.name}</p>
-    //                                 <p className="break-all">gm:{obj.town.location.commune}</p>
-    //                                 <p className="break-all">pow:{obj.town.location.district}</p>
-    //                                 <p className="">woj:{obj.town.location.province}</p>
-    //                             </td>
-    //                             <td className="print-table-section">
-    //                                 <p>MPZP: {obj.mpzp ? obj.mpzp.code : "brak"}</p>
-    //                                 <p>plan ogól.: {obj.generalPlan ? obj.generalPlan.code : "brak"}</p>
-    //                                 <p>Przeznaczenie: {obj.landPurpose ? obj.landPurpose.type : "brak"}</p>
-    //                                 <p>Rodzaj: {obj.landType ? obj.landType.type : "brak"}</p>
-    //                             </td>
-    //                             <td className="print-table-section">
-    //                                 {
-    //                                     obj.areas.map((obj, index) =>
-    //                                         <p key={`${index}k`}>{obj.groundClass.class} {obj.area}ha</p>
-    //                                         )
-    //                                 }
-    //                            </td>
-    //                             <td className="print-table-section">
-    //                                 {obj.area}ha
-    //                             </td>
-    //                             <td className="print-table-section w-[16%]">
-    //                                 <p className="break-all">{obj.owner.name}</p>
-    //                                 <p>tel:{obj.owner.phone || "BRAK"}</p>
-    //                             </td>
-    //                             <td className="print-table-section">
-    //                                 <p>{obj.registerNumber}</p>
-    //                                 <p>spół. wodna {obj.waterCompany ? "TAK" : "NIE"}</p>
-    //                                 <p>hipoteka {obj.mortgage ? "TAK" : "NIE"}</p>
-    //                             </td>
-    //                         </tr>
-    //                         <tr className="border-solid mt-3 break-inside-avoid">
-    //                             <td className="whitespace-nowrap text-sm my-2 py-3" colSpan={7}>ID: <span className="font-bold">{obj.serialNumber || "BRAK"}</span></td>
-    //                         </tr>
-    //                         <tr className="border-solid mt-3 break-inside-avoid">
-    //                             <hr className="w-full my-3"/>
-    //                         </tr>
-    //                     </Fragment>)
-    //                 }
-    //              </tbody>
-    //         </table>
-    //         <h1 className="text-xl text-start font-bold mt-5">Podsumowanie</h1>
-    //         <hr className="w-full bg-zinc-800 h-1"/>
-    //         <section className="flex flex-col gap-y-4 justify-center items-start mt-2">
-    //             <section className="flex gap-x-1">
-    //                 <p>Powierzchnia ogólna:</p>
-    //                 <p>{(lands.reduce((acc, value) => acc + Number(value.area), 0)).toFixed(4)}ha</p>
-    //             </section>
-    //          </section>
-    //     </section>
-    // )
 }
 
 export default LandsForPrint;
