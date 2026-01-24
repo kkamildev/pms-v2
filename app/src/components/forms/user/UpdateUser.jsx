@@ -37,7 +37,7 @@ const UpdateUser = ({onClose = () => {}, reload = () => {}}) => {
             surname:userData.surname,
             role:userData.role
         })
-    }, [])
+    }, [userData])
 
     const handleSubmit = (e) => {
         if(isValidated()) {

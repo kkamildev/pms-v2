@@ -26,7 +26,7 @@ const UpdateUserPassword = ({onClose = () => {}, reload = () => {}}) => {
     const handleSubmit = (e) => {
         if(isValidated()) {
             if(fieldData.password === fieldData.repeatedPassword) {
-                put("/api/users/update-password", {idUser:userData.id, ...fieldData, repeatedPassword:null}, (res) => {
+                put("/api/users/update-password", {idUser:userData.id, password:fieldData.password}, (res) => {
                     onClose()
                     reload()
                 })

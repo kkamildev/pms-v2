@@ -24,7 +24,7 @@ const UpdateLandType = ({onClose = () => {}, reload = () => {}}) => {
         setFieldData({
             type:landTypeData.type,
         });
-    }, []);
+    }, [landTypeData]);
 
     const handleSubmit = (e) => {
         if(isValidated()) {

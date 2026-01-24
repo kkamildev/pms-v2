@@ -33,7 +33,7 @@ const UpdateGeneralPlan = ({onClose = () => {}, reload = () => {}, generalPlans 
             code:generalPlanData.code,
             description:generalPlanData.description
         });
-    }, []);
+    }, [generalPlanData]);
 
     useEffect(() => {
         if(fieldData.code) {

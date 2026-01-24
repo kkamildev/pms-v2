@@ -55,7 +55,7 @@ const UpdateRent = ({onClose = () => {}, reload = () => {}}) => {
 
     useEffect(() => {
         const func = async () => {
-            await get("/api/renters/get-all", (res) => setRenters(res.data.renters));
+            if(renters.length == 0) await get("/api/renters/get-all", (res) => setRenters(res.data.renters));
             setFieldData({
                 idRenter:rentData.idRenter,
                 startDate:DateTime.fromISO(rentData.startDate).toFormat("yyyy-MM-dd"),
@@ -66,7 +66,7 @@ const UpdateRent = ({onClose = () => {}, reload = () => {}}) => {
             })
         }
         func()
-    }, []);
+    }, [rentData]);
 
 
     const handleSubmit = (e) => {

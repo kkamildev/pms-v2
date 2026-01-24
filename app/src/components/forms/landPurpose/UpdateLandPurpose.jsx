@@ -24,7 +24,7 @@ const UpdateLandPurpose = ({onClose = () => {}, reload = () => {}}) => {
         setFieldData({
             type:landPurposeData.type,
         });
-    }, []);
+    }, [landPurposeData]);
 
     const handleSubmit = (e) => {
         if(isValidated()) {

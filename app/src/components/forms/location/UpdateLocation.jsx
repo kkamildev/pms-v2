@@ -39,7 +39,7 @@ const UpdateLocation = ({onClose = () => {}, reload = () => {}}) => {
             agriculturalTax:locationData.agriculturalTax,
             forestTax:locationData.forestTax
         });
-    }, []);
+    }, [locationData]);
 
     const handleSubmit = (e) => {
         if(isValidated()) {

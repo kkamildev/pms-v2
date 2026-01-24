@@ -212,7 +212,7 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
             });
         }
         func()
-    }, []);
+    }, [landData]);
 
     useEffect(() => {
         if(fieldData.serialNumber && fieldData.serialNumber != landData.serialNumber && fieldData.serialNumber.length > 10) {

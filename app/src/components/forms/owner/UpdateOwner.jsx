@@ -31,7 +31,7 @@ const UpdateOwner = ({onClose = () => {}, reload = () => {}}) => {
             name:ownerData.name,
             phone:ownerData.phone
         });
-    }, []);
+    }, [ownerData]);
 
     const handleSubmit = (e) => {
         if(isValidated()) {

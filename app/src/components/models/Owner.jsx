@@ -37,7 +37,7 @@ const Owner = ({data, number, onDelete, onUpdate}) => {
                     {
                         data.lands.map((obj, index) =>
                         <section key={obj.id} className="flex flex-col gap-y-2 p-2 mb-5">
-                            <h1 className="text-xl font-bold">{obj.serialNumber || "Brak ID działki"}</h1>
+                            <h1 className="text-xl"><strong>ID:</strong> {obj.serialNumber || "Brak"}</h1>
                             <section className="flex gap-x-8">
                                 <div className="flex-col text-center flex items-center text-xl">
                                     <span className="font-bold">Nr</span>

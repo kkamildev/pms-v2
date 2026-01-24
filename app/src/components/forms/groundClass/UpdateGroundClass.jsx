@@ -73,7 +73,7 @@ const UpdateGroundClass = ({onClose = () => {}, reload = () => {}}) => {
             converter3:`${groundClassData.converters[2].converter}`,
             converter4:`${groundClassData.converters[3].converter}`,
         });
-    }, []);
+    }, [groundClassData]);
 
     useEffect(() => {
         if(fieldData.tax && fieldData.tax != "rolny") {

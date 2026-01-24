@@ -32,7 +32,7 @@ const UpdateRenter = ({onClose = () => {}, reload = () => {}}) => {
             name:renterData.name,
             phone:renterData.phone
         });
-    }, []);
+    }, [renterData]);
 
     const handleSubmit = (e) => {
         if(isValidated()) {

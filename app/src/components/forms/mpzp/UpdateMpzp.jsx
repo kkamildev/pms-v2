@@ -34,7 +34,7 @@ const UpdateMpzp = ({onClose = () => {}, reload = () => {}, mpzp = []}) => {
             code:mpzpData.code,
             description:mpzpData.description
         });
-    }, []);
+    }, [mpzpData]);
 
     useEffect(() => {
         if(fieldData.code) {
