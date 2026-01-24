@@ -4,9 +4,11 @@ import { useErrorStore } from "./stores";
 
 const useApi = () => {
     const updateError = useErrorStore((state) => state.update);
+    const disableError = useErrorStore((state) => state.disable);
     const get = async (url, onSuccess, onClientError, onServerError) => {
         try {
             const response = await axios.get(url);
+            disableError();
             onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
@@ -19,6 +21,7 @@ const useApi = () => {
     const post = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.post(url, body, config);
+            disableError();
             onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
@@ -31,6 +34,7 @@ const useApi = () => {
     const deleteReq = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.delete(url, {data:body, ...config});
+            disableError();
             onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {
@@ -43,6 +47,7 @@ const useApi = () => {
     const put = async (url, body, onSuccess, onClientError, onServerError, config = {}) => {
         try {
             const response = await axios.put(url, body, config);
+            disableError();
             onSuccess && onSuccess(response);
         } catch (err) {
             if(err.status < 500) {

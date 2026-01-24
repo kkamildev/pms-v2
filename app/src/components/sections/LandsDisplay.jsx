@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Title from "../nav/Title";
 import ErrorBox from "../popups/ErrorBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPlus, faPrint, faRefresh } from "@fortawesome/free-solid-svg-icons";
+import { faFile, faMagnifyingGlass, faPlus, faPrint, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import LandsSearch from "../searchBars/LandsSearch";
 import InsertLand from "../forms/land/InsertLand";
 import Land from "../models/Land";
@@ -13,6 +13,7 @@ import UpdateLand from "../forms/land/UpdateLand";
 import InsertRent from "../forms/land/InsertRent";
 import PrintButton from "../inputs/PrintButton"
 import LandsForPrint from "../toPrint/LandsForPrint";
+import LandsSummarize from "../summaries/LandsSummarize";
 
 
 const LandsDisplay = () => {
@@ -51,6 +52,9 @@ const LandsDisplay = () => {
                         </button>
                         <button className="primary-btn" onClick={() => setFormName("search")}>
                             <FontAwesomeIcon icon={faMagnifyingGlass}/> Opcje szukania
+                        </button>
+                        <button className="primary-btn" onClick={() => setFormName("summarize")}>
+                            <FontAwesomeIcon icon={faFile}/> Podsumowanie
                         </button>
                     </section>
                     <section className="flex items-center gap-x-5">
@@ -91,6 +95,9 @@ const LandsDisplay = () => {
             }
             {
                 formName == "addRent" && <InsertRent onClose={() => setFormName(null)} reload={getLands}/>
+            }
+            {
+                formName == "summarize" && <LandsSummarize onClose={() => setFormName(null)} lands={lands}/>
             }
         </section>
     )

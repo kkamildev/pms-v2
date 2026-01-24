@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import calculateAreaData from "../../functions/calculateAreaData"
 
 const Area = ({data, number, taxDistrict, forestTax, agriculturalTax}) => {
 
@@ -8,12 +9,9 @@ const Area = ({data, number, taxDistrict, forestTax, agriculturalTax}) => {
         "brak":"border-red-500"
     }
 
-    const converter = useMemo(() => {
-        if(taxDistrict && data.groundClass.tax == "rolny")
-            return data.groundClass.converters.find((obj) => obj.taxDistrict == taxDistrict).converter;
-        else
-            return null;
-    }, [data, taxDistrict])
+    const taxData = useMemo(() => {
+        return calculateAreaData(data, taxDistrict, agriculturalTax, forestTax)
+    }, [data, taxDistrict, agriculturalTax, forestTax]);
 
     return (
         <section className={`flex p-5 border-5 gap-x-5 items-center w-full ${colorsMap[data.groundClass.tax]}`}>
@@ -26,22 +24,17 @@ const Area = ({data, number, taxDistrict, forestTax, agriculturalTax}) => {
                     <p className="text-2xl font-bold">Rolny</p>
                     <p className="text-2xl font-bold">Przelicznik:
                         {
-                            taxDistrict ?
-                            data.groundClass.converters.find((obj) => obj.taxDistrict == taxDistrict).converter
-                            :
-                            <span className="text-red-800">Nie można stwierdzić</span>
+                            taxData.converter || <span className="text-red-800">Nie można stwierdzić</span>
                         }
                     </p>
                     {
                         taxDistrict && <>
-                            <p className="text-2xl font-bold">ha. przel:{(converter * data.area).toFixed(4)}</p>
+                            <p className="text-2xl font-bold">ha. przel:{taxData.calculateArea.toFixed(4)}</p>
                             
                             {
-                                !data.groundClass.released && (
-                                (agriculturalTax) ? <p className="text-2xl font-bold">Podatek:{(agriculturalTax * converter * data.area).toFixed(4)}zł</p>
+                                agriculturalTax ? <p className="text-2xl font-bold">Podatek:{(taxData.tax || 0).toFixed(4)}zł</p>
                                 :
                                 <p className="text-2xl font-bold text-red-800">Brak stawk. podatku roln.</p>
-                                )
                             }
                         </>
                     }
@@ -51,7 +44,7 @@ const Area = ({data, number, taxDistrict, forestTax, agriculturalTax}) => {
                 data.groundClass.tax == "lesny" &&<>
                     <p className="text-2xl font-bold">Leśny</p>
                     {
-                        forestTax ? <p className="text-2xl font-bold">Podatek:{(forestTax * data.area).toFixed(4)}zł</p>
+                        forestTax ? <p className="text-2xl font-bold">Podatek:{(taxData.tax || 0).toFixed(4)}zł</p>
                         :
                         <p className="text-2xl font-bold text-red-800">Brak stawk. podatku leśn.</p>
                     }
