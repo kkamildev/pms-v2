@@ -19,7 +19,8 @@ const Converter = require("../models/Converter");
 const { Op} = require("sequelize");
 const path = require("path");
 const config = require("../util/config");
-const withErrorHandling = require("../middlewares/withErrorHandling")
+const withErrorHandling = require("../middlewares/withErrorHandling");
+const sequelize = require("../util/db");
 
 exports.getSerialExist = withErrorHandling(async (req, res) => {
     const {serialNumber} = req.query;
@@ -310,157 +311,166 @@ exports.getLands = withErrorHandling(async (req, res) => {
 exports.insertLand = withErrorHandling(async (req, res) => {
     const {serialNumber, landNumber, area, town, commune, district, province, idOwner, registerNumber, mortgage, idLandType, description, idLandPurpose,
          idMpzp, idGeneralPlan, waterCompany, purchaseDate, purchaseActNumber, seller, purchasePrice, sellDate, sellActNumber, buyer, sellPrice, propertyTax} = req.body;
-    let idTown;
-    const foundTown = await Town.findOne({
-        attributes:["id"],
-        where:{
-            name:town
-        }
-    });
-    if(foundTown) {
-        idTown = foundTown.id;
-    } else {
-        let idLocation;
-        const foundLocation = await Location.findOne({
+    await sequelize.transaction(async (t) => {
+        let idTown;
+        const foundTown = await Town.findOne({
             attributes:["id"],
             where:{
-                commune,
-                district,
-                province
-            }
+                name:town
+            },
+            transaction:t
         });
-        if(foundLocation) {
-            idLocation = foundLocation.id;
+        if(foundTown) {
+            idTown = foundTown.id;
         } else {
-            const taxDistrict = await Location.findOne({
-                attributes:["taxDistrict"],
+            let idLocation;
+            const foundLocation = await Location.findOne({
+                attributes:["id"],
                 where:{
+                    commune,
                     district,
                     province
-                }
+                },
+                transaction:t
             });
-            const createResult = await Location.create({
-                province,
-                district,
-                commune,
-                taxDistrict:taxDistrict ? taxDistrict.taxDistrict : null
-            })
-            idLocation = createResult.id;
+            if(foundLocation) {
+                idLocation = foundLocation.id;
+            } else {
+                const taxDistrict = await Location.findOne({
+                    attributes:["taxDistrict"],
+                    where:{
+                        district,
+                        province
+                    },
+                    transaction:t
+                });
+                const createResult = await Location.create({
+                    province,
+                    district,
+                    commune,
+                    taxDistrict:taxDistrict ? taxDistrict.taxDistrict : null
+                }, {transaction:t})
+                idLocation = createResult.id;
+            }
+            const createResult = await Town.create({
+                idLocation,
+                name:town
+            }, {transaction:t})
+            idTown = createResult.id;
         }
-        const createResult = await Town.create({
-            idLocation,
-            name:town
-        })
-        idTown = createResult.id;
-    }
-    const createdLand = await Land.create({
-        serialNumber,
-        landNumber,
-        area,
-        idTown,
-        registerNumber:registerNumber || null,
-        mortgage,
-        idOwner,
-        idLandType:idLandType || null,
-        idLandPurpose:idLandPurpose || null,
-        idMpzp:idMpzp || null,
-        idGeneralPlan:idGeneralPlan || null,
-        description,
-        waterCompany,
-        propertyTax
+        const createdLand = await Land.create({
+            serialNumber,
+            landNumber,
+            area,
+            idTown,
+            registerNumber:registerNumber || null,
+            mortgage,
+            idOwner,
+            idLandType:idLandType || null,
+            idLandPurpose:idLandPurpose || null,
+            idMpzp:idMpzp || null,
+            idGeneralPlan:idGeneralPlan || null,
+            description,
+            waterCompany,
+            propertyTax
+        }, {transaction:t});
+        await Sell.create({
+            id:createdLand.id,
+            date:sellDate || null,
+            actNumber:sellActNumber || null,
+            price:sellPrice || null,
+            buyer:buyer || null
+        }, {transaction:t});
+        await Purchase.create({
+            id:createdLand.id,
+            date:purchaseDate || null,
+            actNumber:purchaseActNumber || null,
+            price:purchasePrice || null,
+            seller:seller || null
+        }, {transaction:t});
+        res.status(201).json({success:true, message:"Dodano działkę", insertId:createdLand.id})
     });
-    await Sell.create({
-        id:createdLand.id,
-        date:sellDate || null,
-        actNumber:sellActNumber || null,
-        price:sellPrice || null,
-        buyer:buyer || null
-    });
-    await Purchase.create({
-        id:createdLand.id,
-        date:purchaseDate || null,
-        actNumber:purchaseActNumber || null,
-        price:purchasePrice || null,
-        seller:seller || null
-    });
-    res.status(201).json({success:true, message:"Dodano działkę", insertId:createdLand.id})
 });
 
 exports.updateLand = withErrorHandling(async (req, res) => {
     const {idLand, serialNumber, landNumber, area, town, commune, district, province, idOwner, registerNumber, mortgage, idLandType, description, idLandPurpose,
          idMpzp, idGeneralPlan, waterCompany, purchaseDate, purchaseActNumber, seller, purchasePrice, sellDate, sellActNumber, buyer, sellPrice, propertyTax} = req.body;
     let idTown;
-    const foundTown = await Town.findOne({
-        attributes:["id"],
-        where:{
-            name:town
-        }
-    });
-    if(foundTown) {
-        idTown = foundTown.id;
-    } else {
-        let idLocation;
-        const foundLocation = await Location.findOne({
+    await sequelize.transaction(async (t) => {
+        const foundTown = await Town.findOne({
             attributes:["id"],
             where:{
-                commune,
-                district,
-                province
+                name:town
             }
         });
-        if(foundLocation) {
-            idLocation = foundLocation.id;
+        if(foundTown) {
+            idTown = foundTown.id;
         } else {
-            const taxDistrict = await Location.findOne({
-                attributes:["taxDistrict"],
+            let idLocation;
+            const foundLocation = await Location.findOne({
+                attributes:["id"],
                 where:{
+                    commune,
                     district,
                     province
-                }
+                },
+                transaction:t
             });
-            const createResult = await Location.create({
-                province,
-                district,
-                commune,
-                taxDistrict:taxDistrict ? taxDistrict.taxDistrict : null
-            })
-            idLocation = createResult.id;
+            if(foundLocation) {
+                idLocation = foundLocation.id;
+            } else {
+                const taxDistrict = await Location.findOne({
+                    attributes:["taxDistrict"],
+                    where:{
+                        district,
+                        province
+                    },
+                    transaction:t
+                });
+                const createResult = await Location.create({
+                    province,
+                    district,
+                    commune,
+                    taxDistrict:taxDistrict ? taxDistrict.taxDistrict : null
+                }, {transaction:t})
+                idLocation = createResult.id;
+            }
+            const createResult = await Town.create({
+                idLocation,
+                name:town
+            }, {transaction:t})
+            idTown = createResult.id;
         }
-        const createResult = await Town.create({
-            idLocation,
-            name:town
-        })
-        idTown = createResult.id;
-    }
-    await Sell.update({
-        date:sellDate || null,
-        actNumber:sellActNumber || null,
-        price:sellPrice || null,
-        buyer:buyer || null,
-    }, {where:{id:idLand}});
-    await Purchase.update({
-        date:purchaseDate || null,
-        actNumber:purchaseActNumber || null,
-        price:purchasePrice || null,
-        seller:seller || null,
-    }, {where:{id:idLand}});
-    await Land.update({
-        serialNumber,
-        landNumber,
-        area,
-        idTown,
-        idOwner,
-        registerNumber,
-        mortgage,
-        idLandPurpose:idLandPurpose || null,
-        idLandType:idLandType || null,
-        idMpzp:idMpzp || null,
-        idGeneralPlan:idGeneralPlan || null,
-        description,
-        waterCompany,
-        propertyTax
-    }, {where:{id:idLand}})
-    res.status(200).json({success:true, message:"Zaktualizowano działkę"})
+        await Sell.update({
+            date:sellDate || null,
+            actNumber:sellActNumber || null,
+            price:sellPrice || null,
+            buyer:buyer || null,
+        }, {where:{id:idLand}, transaction:t});
+        await Purchase.update({
+            date:purchaseDate || null,
+            actNumber:purchaseActNumber || null,
+            price:purchasePrice || null,
+            seller:seller || null,
+        }, {where:{id:idLand}, transaction:t});
+        await Land.update({
+            serialNumber,
+            landNumber,
+            area,
+            idTown,
+            idOwner,
+            registerNumber,
+            mortgage,
+            idLandPurpose:idLandPurpose || null,
+            idLandType:idLandType || null,
+            idMpzp:idMpzp || null,
+            idGeneralPlan:idGeneralPlan || null,
+            description,
+            waterCompany,
+            propertyTax
+        }, {where:{id:idLand}, transaction:t})
+        res.status(200).json({success:true, message:"Zaktualizowano działkę"})
+    });
 });
 
 exports.deleteLand = withErrorHandling(async (req, res) => {
