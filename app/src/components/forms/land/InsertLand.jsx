@@ -204,11 +204,7 @@ const InsertLand = ({onClose = () => {}, reload = () => {}}) => {
             if(isValidated()) {
                 await post("/api/lands/insert", {...fieldData}, async (res) => {
                     const idLand = res.data.insertId;
-                    for(let i = 0;i<landAreas.length;i++) {
-                        await post("/api/areas/insert", {
-                            idLand, area:landAreas[i].area, idGroundClass:landAreas[i].idGroundClass
-                        });
-                    }
+                    await post("/api/areas/insert", {idLand, areasData:landAreas});
                     onClose()
                     reload();
                 });

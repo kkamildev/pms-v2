@@ -28,8 +28,12 @@ const InsertArea = ({onInsert = (area) => {}, groundClasses = [], areas = []}) =
             if(isValidated()) {
                 onInsert({...fieldData});
                 setFieldData({});
-                setErrors({});
+                setTimeout(() => {
+                    setErrors({});
+                }, 20)
             }
+        } else {
+            setErrors((prev) => ({...prev, idGroundClass:"Taka powierzchnia już istnieje"}))
         }
     }
 
@@ -40,6 +44,7 @@ const InsertArea = ({onInsert = (area) => {}, groundClasses = [], areas = []}) =
                 <TipSelect
                     placeholder="Podaj klasę gruntu"
                     title="Klasa gruntu"
+                    error={errors.idGroundClass}
                     options={groundClasses.map((obj) => ({key:`${obj.class}`, value:obj.id}))}
                     handleChange={(value) => setFieldData((prev) => ({...prev, idGroundClass:value}))}
                     value={fieldData.idGroundClass}

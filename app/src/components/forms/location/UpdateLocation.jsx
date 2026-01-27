@@ -35,7 +35,7 @@ const UpdateLocation = ({onClose = () => {}, reload = () => {}}) => {
 
     useEffect(() => {
         setFieldData({
-            taxDistrict:`${locationData.taxDistrict}`,
+            taxDistrict:locationData.taxDistrict ? `${locationData.taxDistrict}` : null,
             agriculturalTax:locationData.agriculturalTax,
             forestTax:locationData.forestTax
         });
@@ -44,7 +44,7 @@ const UpdateLocation = ({onClose = () => {}, reload = () => {}}) => {
     const handleSubmit = (e) => {
         if(isValidated()) {
             put("/api/locations/update", {idLocation:locationData.id,
-                taxDistrict:fieldData.taxDistrict,
+                taxDistrict:fieldData.taxDistrict || null,
                 agriculturalTax:fieldData.agriculturalTax || null,
                 forestTax:fieldData.forestTax || null
                 }, (res) => {
