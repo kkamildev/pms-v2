@@ -8,7 +8,7 @@ import DeleteConfirm from "../components/popups/DeleteConfirm";
 const DashboardLayout = ({children}) => {
 
     const user = useUserStore((state) => state.user);
-    const auth = useUserStore((state) => state.auth)
+    const auth = useUserStore((state) => state.auth);
     const {get} = useApi();
 
     const logout = () => {

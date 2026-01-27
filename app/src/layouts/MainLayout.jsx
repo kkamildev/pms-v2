@@ -1,5 +1,4 @@
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 const MainLayout = ({children}) => {
@@ -16,7 +15,7 @@ const MainLayout = ({children}) => {
             </main>
             <footer className="bg-green-700 flex p-2 items-center gap-5 justify-around">
                 <p className="text-2xl font-extrabold text-white">&copy; Kamil Kijak 2026</p>
-                <p className="text-2xl font-extrabold text-white"><FontAwesomeIcon icon={faEnvelope}/>kamil.kijak@pixlesofte.com</p>
+                <p className="text-xl font-extrabold text-white">Contact: kamil.kijak@pixlesofte.com</p>
             </footer>
         </section>  
     )
