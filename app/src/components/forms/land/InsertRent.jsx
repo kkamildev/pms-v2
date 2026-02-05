@@ -149,7 +149,7 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
                         </section>
                     </section>
                 </section>
-                <button type="button" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
+                <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPlus}/> Dodaj</button>
             </Form>
         </section>
     )

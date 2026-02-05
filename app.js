@@ -62,7 +62,7 @@ const main = async () => {
 
     if(!config.development) {
         app.use(express.static(path.join(__dirname, "app", "dist")));
-        app.use((req, res) => res.redirect(path.join(__dirname, "app", "dist", "index.html")));
+        app.use((req, res) => res.sendFile(path.join(__dirname, "app", "dist", "index.html")))
     } else {
       app.use((req, res) => res.status(404).json({error:"Route not found"}));
     }

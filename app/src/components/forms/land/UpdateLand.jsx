@@ -240,8 +240,12 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
     const handleSubmit = (e) => {
         if(isValidated()) {
             put("/api/lands/update", {...fieldData, idLand:landData.id}, async (res) => {
-                await deleteReq("/api/areas/delete", {areasIds:landAreasToDelete.map((obj) => obj.id)})
-                await post("/api/areas/insert", {idLand:landData.id, areasData:landAreasToInsert})
+                if(landAreasToDelete.length > 0) {
+                    await deleteReq("/api/areas/delete", {areasIds:landAreasToDelete.map((obj) => obj.id)})
+                }
+                if(landAreasToInsert.length > 0) {
+                    await post("/api/areas/insert", {idLand:landData.id, areasData:landAreasToInsert})
+                }
                 onClose()
                 reload()
             });
