@@ -18,6 +18,8 @@ router.get("/get-towns", [
     query("province").trim().default(null)
 ], locationController.getTowns);
 
+router.get("/unique", locationController.getUniqueLocationsData);
+
 router.use(roleAuthorization(["KSIEGOWOSC", "SEKRETARIAT"]))
 
 router.get("/get", [

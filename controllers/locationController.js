@@ -3,7 +3,7 @@
 const Town = require("../models/Town");
 const Location = require("../models/Location");
 const withErrorHandling = require("../middlewares/withErrorHandling");
-const {Op} = require("sequelize");
+const {Op, Sequelize} = require("sequelize");
 
 exports.getTowns = withErrorHandling(async (req, res) => {
     const {town, commune, district, province} = req.query;
@@ -34,6 +34,27 @@ exports.getTowns = withErrorHandling(async (req, res) => {
         order:[["name", "ASC"]]
     });
     res.status(200).json({success:true, message:"Pobrano miejscowości", towns})
+});
+
+
+exports.getUniqueLocationsData = withErrorHandling(async (req, res) => {
+    const provinces = await Location.findAll({
+        attributes:[
+            [Sequelize.fn("DISTINCT", Sequelize.col("province")), "name"]
+        ]
+    });
+    const districts = await Location.findAll({
+        attributes:[
+            [Sequelize.fn("DISTINCT", Sequelize.col("district")), "name"]
+        ]
+    })
+    const communes = await Location.findAll({
+        attributes:[["commune", "name"]]
+    });
+    const towns = await Town.findAll({
+        attributes:["name"]
+    });
+    res.status(200).json({success:true, message:"Pobrano unikatowe dane lokalizacji", locationsData:{provinces, districts, communes, towns}})
 });
 
 exports.getLocations = withErrorHandling(async (req, res) => {

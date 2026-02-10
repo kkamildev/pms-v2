@@ -6,10 +6,28 @@ import useFormFields from "../../hooks/useFormFields";
 import SearchBarLayout from "../../layouts/SearchBarLayout";
 import Select from "../inputs/Select";
 import TipSelect from "../inputs/TipSelect";
+import { useState } from "react";
 
 const CommunesSearch = ({onClose = () => {}}) => {
     const {get} = useApi();
     const [searchParams] = useSearchParams();
+
+    const [existLocationsData, setExistLocationsData] = useState({
+        towns:[],
+        provinces:[],
+        districts:[],
+        communes:[]
+    });
+
+    useEffect(() => {
+        getLocationsData();
+    }, []);
+
+    const getLocationsData = () => {
+        get("/api/locations/unique", (res) => Object.keys(res.data.locationsData).forEach((key) => setExistLocationsData((prev) =>
+            ({...prev, [key]:res.data.locationsData[key].map((obj) => obj.name)})
+        )))
+    }
 
     const [setFieldData, fieldData, errors, setErrors, isValidated] = useFormFields([
         {
@@ -103,7 +121,7 @@ const CommunesSearch = ({onClose = () => {}}) => {
             <TipSelect
                 placeholder="Podaj województwo"
                 title="Województwo"
-                options={provinces.map((obj) => ({key:obj, value:obj}))}
+                options={provinces.filter((obj) => [...existLocationsData.provinces].includes(obj)).map((obj) => ({key:obj, value:obj}))}
                 error={errors.province}
                 handleChange={(value) => setFieldData((prev) => ({...prev, province:value}))}
                 value={fieldData.province}
@@ -112,7 +130,7 @@ const CommunesSearch = ({onClose = () => {}}) => {
             <TipSelect
                 placeholder="Podaj powiat"
                 title="Powiat"
-                options={districts.map((obj) => ({key:obj, value:obj}))}
+                options={districts.filter((obj) => [...existLocationsData.districts].includes(obj)).map((obj) => ({key:obj, value:obj}))}
                 error={errors.district}
                 handleChange={(value) => setFieldData((prev) => ({...prev, district:value}))}
                 value={fieldData.district}
@@ -121,7 +139,7 @@ const CommunesSearch = ({onClose = () => {}}) => {
             <TipSelect
                 placeholder="Podaj gminę"
                 title="Gmina"
-                options={communes.map((obj) => ({key:obj, value:obj}))}
+                options={communes.filter((obj) => [...existLocationsData.communes].includes(obj)).map((obj) => ({key:obj, value:obj}))}
                 error={errors.commune}
                 handleChange={(value) => setFieldData((prev) => ({...prev, commune:value}))}
                 value={fieldData.commune}
