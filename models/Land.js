@@ -23,7 +23,7 @@ const Land = sequelize.define("Land", {
     },
     serialNumber:{
         type:DataTypes.STRING(20),
-        allowNull:true,
+        allowNull:false
     },
     landNumber:{
         type:DataTypes.STRING(7),

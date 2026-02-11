@@ -59,12 +59,23 @@ const InsertRent = ({onClose = () => {}, reload = () => {}}) => {
         if(isValidated()) {
             const date = new Date(2000, fieldData.issueRentalFactureMonth - 1, fieldData.issueRentalFactureDay);
             post("/api/rents/insert", {...fieldData, issueRentalFactureDate:DateTime.fromJSDate(date).toFormat("yyyy-MM-dd"),
-                 idLand:landData.id}, (res) => {
+                    idLand:landData.id}, (res) => {
                 onClose()
                 reload()
             });
+            
         }
     }
+    useEffect(() => {
+        const monthDaysMap = [
+            0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+        ];
+        if(fieldData.issueRentalFactureMonth) {
+            if(monthDaysMap[Number(fieldData.issueRentalFactureMonth)] < fieldData.issueRentalFactureDay) {
+                setErrors((prev) => ({...prev, issueRentalFactureDay:"Nie poprawny numer dnia"}))
+            }
+        }
+    }, [fieldData])
 
     return (
         <section className="w-full flex justify-center items-start overflow-auto">

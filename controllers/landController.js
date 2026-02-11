@@ -26,7 +26,10 @@ exports.getSerialExist = withErrorHandling(async (req, res) => {
     const {serialNumber} = req.query;
     const exist = await Land.count({
         where:{
-            serialNumber
+            serialNumber:{
+                [Op.eq]:serialNumber,
+                [Op.ne]:"000000_0.0000.0"
+            }
         }
     })
     res.status(200).json({success:true, message:"Pobrano pomyślnie", exist})

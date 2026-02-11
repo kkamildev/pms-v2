@@ -37,6 +37,12 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
             errorText:"Nie poprawna"
         },
         {
+            name:"serialNumber",
+            regexp:/^\d+_\d\.\d{4}\.\d+(?:\/\d+)?$/,
+            errorText:"Nie poprawny",
+            defaultValue:"000000_0.0000.0"
+        },
+        {
             name:"town",
             allowNull:false,
             regexp:/^.{1,50}$/,
@@ -72,12 +78,6 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
             regexp:/^(false|true)$/,
             errorText:"Nie poprawne",
             defaultValue:"false"
-        },
-        {
-            name:"serialNumber",
-            allowNull:true,
-            regexp:/^\d+_\d\.\d{4}\.\d+(?:\/\d+)?$/,
-            errorText:"Nie poprawny"
         },
         {
             name:"registerNumber",
@@ -271,7 +271,7 @@ const UpdateLand = ({onClose = () => {}, reload = () => {}}) => {
                     <section className="flex gap-x-5 items-start w-full">
                         <Input
                             placeholder="Podaj ID działki"
-                            title="Numer ID działki (opcjonalny)"
+                            title="Numer ID działki"
                             error={errors.serialNumber}
                             handleChange={(e) => setFieldData((prev) => ({...prev, serialNumber:e.target.value}))}
                             value={fieldData.serialNumber}

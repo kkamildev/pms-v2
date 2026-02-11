@@ -54,6 +54,17 @@ const UpdateRent = ({onClose = () => {}, reload = () => {}}) => {
     ]);
 
     useEffect(() => {
+        const monthDaysMap = [
+            0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+        ];
+        if(fieldData.issueRentalFactureMonth) {
+            if(monthDaysMap[Number(fieldData.issueRentalFactureMonth)] < fieldData.issueRentalFactureDay) {
+                setErrors((prev) => ({...prev, issueRentalFactureDay:"Nie poprawny numer dnia"}))
+            }
+        }
+    }, [fieldData])
+
+    useEffect(() => {
         const func = async () => {
             if(renters.length == 0) await get("/api/renters/get-all", (res) => setRenters(res.data.renters));
             setFieldData({
@@ -79,7 +90,8 @@ const UpdateRent = ({onClose = () => {}, reload = () => {}}) => {
             });
         }
     }
-
+    
+    console.log(errors);
     return (
         <section className="w-full flex justify-center items-start overflow-auto">
             <Form onSubmit={handleSubmit} className="min-w-[43%] p-5 flex flex-col items-center justify-center">
@@ -164,7 +176,7 @@ const UpdateRent = ({onClose = () => {}, reload = () => {}}) => {
                         </section>
                     </section>
                 </section>
-                <button type="button" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
+                <button type="submit" className="primary-btn"><FontAwesomeIcon icon={faPen}/> Zapisz zmiany</button>
             </Form>
         </section>
     )

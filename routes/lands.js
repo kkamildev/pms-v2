@@ -54,8 +54,7 @@ router.get("/get-rent", landController.getRentLands);
 router.get("/get-insertion-data", landController.getLandInsertionRequiredData);
 
 router.post("/insert", [
-    body("serialNumber").trim().
-    default(null).optional({checkFalsy:true}).
+    body("serialNumber").trim().exists({checkFalsy:true}).withMessage("serialNumber is required").
     isLength({max:20}).withMessage("serialNumber must be less or equal 20 characters"),
     body("landNumber").trim().
     exists({checkFalsy:true}).withMessage("landNumber is required").
@@ -118,8 +117,7 @@ router.post("/insert", [
 
 router.put("/update", [
     body("idLand").trim().exists({checkFalsy:true}).withMessage("idLand is required"),
-    body("serialNumber").trim().
-    default(null).optional({checkFalsy:true}).
+    body("serialNumber").trim().exists({checkFalsy:true}).withMessage("serialNumber is required").
     isLength({max:20}).withMessage("serialNumber must be less or equal 20 characters"),
     body("landNumber").trim().
     exists({checkFalsy:true}).withMessage("landNumber is required").
