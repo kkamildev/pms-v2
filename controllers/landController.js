@@ -37,7 +37,7 @@ exports.getSerialExist = withErrorHandling(async (req, res) => {
 
 exports.getLand = withErrorHandling(async (req, res) => {
     const {idLand} = req.query;
-    const land = Land.findByPk(idLand, {
+    const land = await Land.findByPk(idLand, {
         attributes:["id", "serialNumber", "landNumber", "propertyTax", "area", "registerNumber", "mortgage", "description", "waterCompany"],
         include:[
             {
@@ -91,9 +91,36 @@ exports.getLand = withErrorHandling(async (req, res) => {
                 required:false,
                 attributes:["id", "code"]
             },
+            {
+                model:Rent,
+                as:"rent",
+                required:false,
+                attributes:["id", "startDate", "endDate", "rental"],
+                include:{
+                    model:Renter,
+                    as:"renter",
+                    attributes:["id", "name", "phone"]
+                }
+            },
+            {
+                model:LandArea,
+                as:"areas",
+                attributes:["id", "area"],
+                required:false,
+                include:{
+                    model:GroundClass,
+                    as:"groundClass",
+                    attributes:["id", "class", "tax", "released"],
+                    include:{
+                        attributes:["converter", "taxDistrict"],
+                        model:Converter,
+                        as:"converters"
+                    }
+                }
+            }
         ]
     });
-    if(!land.id) {
+    if(!land) {
         res.status(404).json({error:`Taka działka nie istnieje`})  
     } else {
         res.status(200).json({success:true, message:`pobrano działkę o ID ${idLand}`, land})  

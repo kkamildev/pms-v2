@@ -11,11 +11,13 @@ import RentsDisplay from "../components/sections/RentsDisplay";
 import FormsDisplay from "../components/sections/FormsDisplay";
 import CommunesDisplay from "../components/sections/CommunesDisplay";
 import GroundClassesDisplay from "../components/sections/GroundClassesDisplay";
+import LandDataDisplay from "../components/sections/LandDataDisplay";
 
 const DashboardPage = () => {
     return (
         <DashboardLayout>
             <Routes>
+                <Route path="/lands/:id" element={<LandDataDisplay/>}/>
                 <Route path="/users" element={<UsersDisplay/>}/>
                 <Route path="/mpzp" element={<MpzpDisplay/>}/>
                 <Route path="/general-plans" element={<GeneralPlansDisplay/>}/>

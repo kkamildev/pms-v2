@@ -1,4 +1,4 @@
-import { faEye, faFolderOpen, faPen, faTrashCan, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faFolderOpen, faPen, faTrashCan, faUpRightFromSquare, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDeleteConfirmStore, useUpdateDataStore } from "../../hooks/stores";
 import { useState } from "react";
@@ -26,6 +26,9 @@ const Land = ({data, number, onDelete, onUpdate, onShowFiles, onAddRent}) => {
                     }
                 </section>
                 <section className="flex gap-x-3 items-center">
+                    <a className="primary-btn" target="_blank" href={`/lands/${data.id}`}>
+                        <FontAwesomeIcon icon={faUpRightFromSquare}/> Otwórz
+                    </a>
                     {
                         (!data.rent && data.landPurpose && data.landPurpose.type == "Dzierżawa") &&
                         <button className="primary-btn" onClick={() => {
