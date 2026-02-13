@@ -47,7 +47,7 @@ exports.getLand = withErrorHandling(async (req, res) => {
                 include:{
                     model:Location,
                     as:"location",
-                    attributes:["province", "district", "commune"]
+                    attributes:["province", "district", "commune", "taxDistrict", "forestTax", "agriculturalTax"]
                 }
             },
             {

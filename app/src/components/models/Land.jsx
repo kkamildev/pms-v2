@@ -165,7 +165,7 @@ const Land = ({data, number, onDelete, onUpdate, onShowFiles, onAddRent}) => {
                                     <p>{data.purchase.actNumber || "Brak"}</p>
                                 </div>
                                 <div className="flex-col text-center flex items-center text-xl flex-1">
-                                    <span className="font-bold">sprzedający</span>
+                                    <span className="font-bold">Sprzedający</span>
                                     <p>{data.purchase.seller || "Brak"}</p>
                                 </div>
                                 <div className="flex-col text-center flex items-center text-xl flex-1">
