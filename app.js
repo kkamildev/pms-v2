@@ -57,13 +57,13 @@ const main = async () => {
     app.use("/api/areas", areas);
 
     if(!config.development) {
+      app.use(express.static(path.join(__dirname, "app", "dist")));
       app.use((req, res) => res.sendFile(path.join(__dirname, "app", "dist", "index.html")))
     } else {
       app.use(cors({
         origin:"localhost:5173",
         methods:["GET", "POST", "PUT", "DELETE"],
       }));
-      app.use(express.static(path.join(__dirname, "app", "dist")));
       app.use((req, res) => res.status(404).json({error:"Route not found"}));
     }
 
