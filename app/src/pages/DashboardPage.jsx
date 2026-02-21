@@ -12,6 +12,7 @@ import FormsDisplay from "../components/sections/FormsDisplay";
 import CommunesDisplay from "../components/sections/CommunesDisplay";
 import GroundClassesDisplay from "../components/sections/GroundClassesDisplay";
 import LandDataDisplay from "../components/sections/LandDataDisplay";
+import NotFound from "../components/sections/NotFound";
 
 const DashboardPage = () => {
     return (
@@ -29,6 +30,7 @@ const DashboardPage = () => {
                 <Route path="/forms" element={<FormsDisplay/>}/>
                 <Route path="/communes" element={<CommunesDisplay/>}/>
                 <Route path="/ground-classes" element={<GroundClassesDisplay/>}/>
+                <Route path="/*" element={<NotFound/>}/>
             </Routes>
         </DashboardLayout>
     )
