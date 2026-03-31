@@ -13,7 +13,8 @@ const authorization = () => {
                 res.cookie("ACCESS_TOKEN", accessToken, {
                     maxAge:1000*60*10,
                     httpOnly:true,
-                    secure:config.cookieSecurity
+                    secure:config.cookieSecurity,
+                    sameSite:"strict"
                 });
                 req.user = decoded;
                 next();

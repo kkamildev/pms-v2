@@ -56,7 +56,8 @@ exports.loginUser = withErrorHandling(async (req, res) => {
             res.cookie("REFRESH_TOKEN", refreshToken, {
                 maxAge:1000 * 60 * 60 * 8,
                 httpOnly:true,
-                secure:config.cookieSecurity
+                secure:config.cookieSecurity,
+                sameSite:"strict"
             })
             res.status(200).json({success:true, message:"Zalogowano pomyślnie", payload})
         } else {
