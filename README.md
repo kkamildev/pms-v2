@@ -10,7 +10,7 @@ Project includes sending rents ending reports, backup creating, automatic databa
 - You must install ```node.js``` and ```npm``` to run this project
 - Clone this repository using:
 ```
-git clone https://github.com/Kamil-Kijak/pms-v2.git
+git clone https://github.com/kkamildev/pms-v2.git
 ```
 - Enter to cloned repository and install dependencies using:
 ```
@@ -59,6 +59,6 @@ CRON_EXPRESSION=<cron expression for sending report creating backup default '0 1
 
 
 ## 👦 Authors
-- Kamil Kijak ```(solo developer)```
+- Kkamildev ```(solo developer)```
 
 ## Project protected using Apache license 2.0
